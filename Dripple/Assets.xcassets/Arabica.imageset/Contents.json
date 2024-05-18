@@ -1,7 +1,12 @@
 {
   "images" : [
     {
-      "filename" : "12381716002702_.pic_hd.jpg",
+      "filename" : "11861715917754_.pic_hd.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "12391716002721_.pic.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
