@@ -9,6 +9,8 @@ import SwiftUI
 
 struct VarietyDetailedTypeView: View {
 
+    @State var searchText = ""
+    
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -20,9 +22,11 @@ struct VarietyDetailedTypeView: View {
                         }, label: {
                             VarietyTypeTemplate(Variety: currentVariety)
                         })
-                        .tint(.primary)
+                        .tint(.brown1)
                     }
+                    .padding(.horizontal)
                 }
+                .searchable(text: $searchText)
             }
             }
         }
