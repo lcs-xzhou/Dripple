@@ -8,8 +8,42 @@
 import SwiftUI
 
 struct NotesColumnsView: View {
+    
+    // MARK: Stored properties
+    let twoColumns = [
+        GridItem(.adaptive(minimum: 100, maximum: 200), alignment: .top),
+        GridItem(.adaptive(minimum: 100, maximum: 200), alignment: .top),
+    ]
+    @State var notes: [NotesItem] = exampleItems
+        
+    // MARK: Computed properties
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        NavigationStack {
+            
+            Text("Notes")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+                .foregroundStyle(.brown1)
+                .fontDesign(.rounded)
+                .padding()
+           
+            ScrollView {
+                LazyVGrid(columns: twoColumns) {
+                    
+                    ForEach(notes) { note in
+                        
+                        NavigationLink {
+                            NotesItemView(pictures: "NotePicture1")
+                        } label: {
+                            NotesLabelView(item: note)
+                        }
+                        .tint(.primary)
+                        
+                    }
+                }
+            }
+        }
     }
 }
 

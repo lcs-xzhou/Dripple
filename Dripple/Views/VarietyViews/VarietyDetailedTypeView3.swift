@@ -8,9 +8,27 @@
 import SwiftUI
 
 struct VarietyDetailedTypeView3: View {
+    @State var searchText = ""
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+        NavigationStack {
+            ScrollView {
+                LazyVStack {
+                    ForEach(allExcelsaBeans) { currentVariety in
+                        
+                        NavigationLink(destination: {
+                            VarietyDetailedTemplate(Variety: currentVariety)
+                        }, label: {
+                            VarietyTypeTemplate(Variety: currentVariety)
+                        })
+                        .tint(.brown1)
+                    }
+                    .padding(.horizontal)
+                }
+                .searchable(text: $searchText)
+            }
+            }
+        }
 }
 
 #Preview {

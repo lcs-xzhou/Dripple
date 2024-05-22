@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct VarietyDetailedTypeView: View {
+struct VarietyDetailedTypeView1: View {
 
     @State var searchText = ""
     
@@ -33,5 +33,5 @@ struct VarietyDetailedTypeView: View {
     }
 
 #Preview {
-    VarietyDetailedTypeView()
+    VarietyDetailedTypeView1()
 }

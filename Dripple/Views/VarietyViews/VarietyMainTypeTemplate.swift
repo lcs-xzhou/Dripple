@@ -16,8 +16,8 @@ struct VarietyMainTypeTemplate: View {
             HStack(alignment: .center) {
                 Image(MainType.TypeImage)
                     .resizable()
-                    .frame(width: 120, height: 80)
-                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 100)
+                    .aspectRatio(1.2, contentMode: .fit)
                     .padding(.horizontal)
                 Text(MainType.TypeName)
                     .font(.title2)
