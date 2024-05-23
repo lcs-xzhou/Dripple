@@ -16,12 +16,13 @@ struct NotesItemView: View {
     
     var body: some View {
         ScrollView {
-            TextField("Please enter a date", text: $newItemTitle)
+            TextField("Please enter a date", text: $newItemTitle) {createNotes(withTitle: newItemTitle, withPicture: pictures, withContext: newItemContext)}
                 .padding(.top)
                 .foregroundColor(.brown1)
                 .fontWeight(.bold)
                 .fontDesign(.rounded)
                 .multilineTextAlignment(.center)
+        
             Image(pictures)
                 .resizable()
                 .scaledToFit()

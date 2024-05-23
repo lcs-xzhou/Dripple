@@ -15,12 +15,12 @@ struct SubVarietyListView: View {
     var body: some View {
         NavigationStack {
             List {
-                    ForEach(mainType) { currentVariety in
+                ForEach(mainType.subTypes) { currentVariety in
                         
                         NavigationLink(destination: {
-                            VarietyDetailedTemplate(variety: currentVariety)
+                            SubVarietyDetailView(variety: currentVariety)
                         }, label: {
-                            VarietyTypeTemplate(variety: currentVariety)
+                            SubVarietyItemView(variety: currentVariety)
                         })
                         .tint(.brown1)
                     }

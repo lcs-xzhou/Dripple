@@ -27,9 +27,9 @@ struct MainVarietyListView: View {
             List {
                 ForEach(allMainTypes) { currentVariety in
                     NavigationLink(destination: {
-                        VarietyDetailedTypeView1(mainType: currentVariety)
+                        SubVarietyListView(mainType: currentVariety)
                     }, label: {
-                        VarietyMainTypeTemplate(mainType: currentVariety)
+                        MainVarietyItemView(mainType: currentVariety)
                     })
                     .tint(.brown1)
                 }

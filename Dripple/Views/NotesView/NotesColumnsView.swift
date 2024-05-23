@@ -47,6 +47,19 @@ struct NotesColumnsView: View {
     }
 }
 
+    // MARK: Functions
+func createNotes(withTitle title: String, withPicture picture: String, withContext context: String) {
+        
+    let note = NotesItem(
+        title: title,
+        picture: picture,
+        context: context
+    )
+        
+    }
+
+
+
 #Preview {
     NotesColumnsView()
 }

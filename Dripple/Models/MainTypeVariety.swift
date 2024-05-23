@@ -9,28 +9,33 @@ import Foundation
 
 struct MainTypeVariety: Identifiable {
     let id = UUID()
-    let TypeName: String
-    var TypeImage: String
+    let typeName: String
+    var typeImage: String
+    var subTypes: [CoffeeBeansVariety]
 }
 
-let Arabica = MainTypeVariety(
-    TypeName: "Arabica",
-    TypeImage: "Arabica"
+let arabica = MainTypeVariety(
+    typeName: "Arabica",
+    typeImage: "Arabica", 
+    subTypes: allArabicaBeans
 )
 
-let Robusta = MainTypeVariety(
-    TypeName: "Robusta",
-    TypeImage: "Robusta"
+let robusta = MainTypeVariety(
+    typeName: "Robusta",
+    typeImage: "Robusta", 
+    subTypes: allRobustaBeans
 )
 
-let Excelsa = MainTypeVariety(
-    TypeName: "Excelsa",
-    TypeImage: "Excelsa"
+let excelsa = MainTypeVariety(
+    typeName: "Excelsa",
+    typeImage: "Excelsa", 
+    subTypes: allExcelsaBeans
 )
 
-let Liberica = MainTypeVariety(
-    TypeName: "Liberica",
-    TypeImage: "Liberica"
+let liberica = MainTypeVariety(
+    typeName: "Liberica",
+    typeImage: "Liberica", 
+    subTypes: allLibericaBeans
 )
 
-let allMainTypes = [Arabica, Robusta, Excelsa, Liberica]
+let allMainTypes = [arabica, robusta, excelsa, liberica]
