@@ -7,31 +7,29 @@
 
 import SwiftUI
 
-struct VarietyDetailedTypeView1: View {
+struct SubVarietyListView: View {
 
     @State var searchText = ""
+    let mainType: MainTypeVariety
     
     var body: some View {
         NavigationStack {
-            ScrollView {
-                LazyVStack {
-                    ForEach(allArabicaBeans) { currentVariety in
+            List {
+                    ForEach(mainType) { currentVariety in
                         
                         NavigationLink(destination: {
-                            VarietyDetailedTemplate(Variety: currentVariety)
+                            VarietyDetailedTemplate(variety: currentVariety)
                         }, label: {
-                            VarietyTypeTemplate(Variety: currentVariety)
+                            VarietyTypeTemplate(variety: currentVariety)
                         })
                         .tint(.brown1)
                     }
-                    .padding(.horizontal)
-                }
-                .searchable(text: $searchText)
+                    .searchable(text: $searchText)
             }
             }
         }
     }
 
 #Preview {
-    VarietyDetailedTypeView1()
+    SubVarietyListView(mainType: arabica)
 }

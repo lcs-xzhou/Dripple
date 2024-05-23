@@ -7,35 +7,27 @@
 
 import SwiftUI
 
-struct VarietyTypeTemplate: View {
+struct SubVarietyItemView: View {
     
-    let Variety: CoffeeBeansVariety
-    
+    let variety: CoffeeBeansVariety
+
     var body: some View {
-        ScrollView {
-            HStack(alignment: .center) {
-                Image(Variety.Image1Name)
+        HStack(alignment: .center) {
+                Image(variety.image1Name)
                     .resizable()
                     .frame(width: 100)
                     .aspectRatio(1.3, contentMode: .fit)
                     .padding(.horizontal)
-                Text(Variety.NameOfBeans)
+                Text(variety.nameOfBeans)
                     .font(.title2)
                     .foregroundStyle(Color.brown1)
                     .fontWeight(.semibold)
                     .fontDesign(.rounded)
                 Spacer()
-                Image(systemName: "chevron.right")
-                    .font(.title2)
-                    .foregroundStyle(Color.gray2)
-                    .fontWeight(.semibold)
-                    .fontDesign(.rounded)
-                    .padding(.trailing)
             }
-        }
     }
 }
 
 #Preview {
-    VarietyTypeTemplate(Variety: Typica)
+    SubVarietyItemView(variety: typica)
 }

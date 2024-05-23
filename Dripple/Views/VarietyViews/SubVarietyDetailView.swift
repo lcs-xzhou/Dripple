@@ -7,27 +7,27 @@
 
 import SwiftUI
 
-struct VarietyDetailedTemplate: View {
+struct SubVarietyDetailView: View {
     
-    let Variety: CoffeeBeansVariety
+    let variety: CoffeeBeansVariety
     
     var body: some View {
         ScrollView{
             VStack(alignment: .center, spacing: 20) {
-                Text(Variety.NameOfBeans)
+                Text(variety.nameOfBeans)
                     .font(.largeTitle)
                     .fontWeight(.heavy)
                     .foregroundStyle(Color.brown1)
-                Image(Variety.Image1Name)
+                Image(variety.image1Name)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                Text(Variety.History)
+                Text(variety.history)
                     .foregroundStyle(Color.gray1)
                     .fontWeight(.medium)
-                Image(Variety.Image2Name)
+                Image(variety.image2Name)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                Text(Variety.Flavour)
+                Text(variety.flavour)
                     .foregroundStyle(Color.gray1)
                     .fontWeight(.medium)
             }
@@ -38,9 +38,9 @@ struct VarietyDetailedTemplate: View {
 }
 
 #Preview {
-    VarietyDetailedTemplate(Variety: Typica)
+    SubVarietyDetailView(variety: typica)
 }
 
 #Preview {
-    VarietyDetailedTemplate(Variety: Bourbon)
+    SubVarietyDetailView(variety: bourbon)
 }
