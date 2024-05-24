@@ -16,7 +16,7 @@ struct SubVarietyItemView: View {
                 Image(variety.image1Name)
                     .resizable()
                     .frame(width: 100)
-                    .aspectRatio(1.3, contentMode: .fit)
+                    .aspectRatio(2, contentMode: .fit)
                     .padding(.horizontal)
                 Text(variety.nameOfBeans)
                     .font(.title2)

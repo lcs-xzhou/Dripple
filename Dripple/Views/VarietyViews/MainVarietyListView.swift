@@ -25,14 +25,16 @@ struct MainVarietyListView: View {
                     .fontDesign(.rounded)
                     .padding(.bottom)
                 
-                List(allMainTypes) { currentVariety in
+                List(allMainTypes) { currentMainType in
                     NavigationLink(destination: {
-                        SubVarietyListView(mainType: currentVariety)
+                        SubVarietyListView(mainType: currentMainType)
                     }, label: {
-                        MainVarietyItemView(mainType: currentVariety)
+                        MainVarietyItemView(mainType: currentMainType)
                     })
                     .tint(.brown1)
                 }
+                .padding(.trailing)
+                .listStyle(.plain)
                 .tint(.brown1)
             }
             

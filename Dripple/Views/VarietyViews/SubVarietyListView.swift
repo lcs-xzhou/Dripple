@@ -13,18 +13,18 @@ struct SubVarietyListView: View {
     let mainType: MainTypeVariety
     
     var body: some View {
-        List {
-            ForEach(mainType.subTypes) { currentVariety in
-                
-                NavigationLink(destination: {
-                    SubVarietyDetailView(variety: currentVariety)
-                }, label: {
-                    SubVarietyItemView(variety: currentVariety)
-                })
-                .tint(.brown1)
-            }
-            .searchable(text: $searchText)
+        List(mainType.subTypes) { currentVariety in
+            
+            NavigationLink(destination: {
+                SubVarietyDetailView(variety: currentVariety)
+            }, label: {
+                SubVarietyItemView(variety: currentVariety)
+            })
+            .tint(.brown1)
         }
+        .padding(.trailing)
+        .listStyle(.plain)
+        .searchable(text: $searchText)
     }
 }
 

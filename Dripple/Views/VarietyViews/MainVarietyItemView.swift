@@ -16,7 +16,7 @@ struct MainVarietyItemView: View {
                 Image(mainType.typeImage)
                     .resizable()
                     .frame(width: 100)
-                    .aspectRatio(1.2, contentMode: .fit)
+                    .aspectRatio(2, contentMode: .fit)
                     .padding(.horizontal)
                 Text(mainType.typeName)
                     .font(.title2)
