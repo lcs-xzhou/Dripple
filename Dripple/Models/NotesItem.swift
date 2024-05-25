@@ -18,8 +18,5 @@ let firstItem = NotesItem(title: "Apr 14, 2024", picture: "NotePicture1", contex
 
 let secondItem = NotesItem(title: "May 20, 2024", picture: "NotePicture2", context: "Today, I explored the vibrant world of Ethiopian Yirgacheffe coffee. As I brewed it, the aroma filled my kitchen with hints of jasmine and citrus. The first sip was a revelation: bright, complex flavors danced on my palate, leaving a lingering aftertaste of blueberries and black tea.")
 
-let exampleItems = [
-    firstItem,
-    secondItem
-]
+let exampleItems = [firstItem, secondItem]
 

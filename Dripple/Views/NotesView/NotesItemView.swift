@@ -2,43 +2,54 @@
 //  NotesItemView.swift
 //  Dripple
 //
-//  Created by Fiona ZHOU on 2024-05-20.
+//  Created by Fiona ZHOU on 2024-05-22.
 //
 
 import SwiftUI
 
 struct NotesItemView: View {
-    
+  
+    enum FocusedField {
+        case newItemTitle
+    }
     // The item currently being added
     @State var newItemTitle = ""
-    @State var newItemContext = ""
-    let pictures: String
+    @FocusState private var focusedField: FocusedField?
+    let item: NotesItem
     
     var body: some View {
-        ScrollView {
-            TextField("Please enter a date", text: $newItemTitle) {createNotes(withTitle: newItemTitle, withPicture: pictures, withContext: newItemContext)}
-                .padding(.top)
-                .foregroundColor(.brown1)
-                .fontWeight(.bold)
-                .fontDesign(.rounded)
-                .multilineTextAlignment(.center)
         
-            Image(pictures)
+        VStack(spacing: 0) {
+            Image(item.picture)
                 .resizable()
-                .scaledToFit()
-                .padding(.horizontal)
-                .padding(.bottom)
+                .scaledToFill()
+                .frame(height: 150)
+                .clipShape(
+                    Rectangle()
+                )
+                .padding(.bottom, 10)
             
-            TextField("Please note down your thoughts", text: $newItemContext)
-                .padding(.horizontal)
-                .foregroundColor(.brown1)
-                .fontWeight(.semibold)
-                .fontDesign(.rounded)
+            Form {
+                TextField("Please enter a date", text: $newItemTitle)
+                    .font(.headline)
+                    .multilineTextAlignment(.center)
+                    .foregroundColor(.brown1)
+                    .fontDesign(.rounded)
+            }
+            .onAppear{
+                focusedField = .newItemTitle
+            }
         }
         .padding()
     }
 }
 
 #Preview {
-    NotesItemView(pictures: "NotePicture1")
+    HStack {
+        NotesItemView(item: firstItem)
+            .frame(idealHeight: 200, maxHeight: 200)
+        NotesItemView(item: secondItem)
+            .frame(idealHeight: 200, maxHeight: 200)
+        
+    }
 }

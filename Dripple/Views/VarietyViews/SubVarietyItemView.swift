@@ -10,21 +10,21 @@ import SwiftUI
 struct SubVarietyItemView: View {
     
     let variety: CoffeeBeansVariety
-
+    
     var body: some View {
         HStack(alignment: .center) {
-                Image(variety.image1Name)
-                    .resizable()
-                    .frame(width: 100)
-                    .aspectRatio(2, contentMode: .fit)
-                    .padding(.horizontal)
-                Text(variety.nameOfBeans)
-                    .font(.title2)
-                    .foregroundStyle(Color.brown1)
-                    .fontWeight(.semibold)
-                    .fontDesign(.rounded)
-                Spacer()
-            }
+            Image(variety.image1Name)
+                .resizable()
+                .frame(width: 100)
+                .aspectRatio(2, contentMode: .fit)
+                .padding(.horizontal)
+            Text(variety.nameOfBeans)
+                .font(.title2)
+                .foregroundStyle(Color.brown1)
+                .fontWeight(.semibold)
+                .fontDesign(.rounded)
+            Spacer()
+        }
     }
 }
 

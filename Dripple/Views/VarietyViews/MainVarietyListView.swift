@@ -10,7 +10,6 @@ import SwiftUI
 struct MainVarietyListView: View {
     var body: some View {
         NavigationStack {
-            
             VStack {
                 Text("Variety")
                     .font(.largeTitle)
@@ -37,7 +36,6 @@ struct MainVarietyListView: View {
                 .listStyle(.plain)
                 .tint(.brown1)
             }
-            
         }
     }
 }
