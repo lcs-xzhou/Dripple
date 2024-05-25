@@ -15,6 +15,10 @@ struct NotesColumnsView: View {
         GridItem(.adaptive(minimum: 100, maximum: 200), alignment: .top),
     ]
     @State var notes: [NotesItem] = exampleItems
+    // The item currently being added
+    @State var newItemTitle = ""
+    @State var newItemContext = ""
+    var picture: String
     
     // 1. Create a State variable to control presenting the sheet
     @State private var presentingSheet = false
@@ -54,6 +58,9 @@ struct NotesColumnsView: View {
                 ToolbarItem {
                     Button(action: {}) {
                         Image(systemName: "plus")
+                        
+                        // Add the new note item
+                        createNotes(withTitle: newItemTitle, withPicture: picture, withContext: newItemContext)
                     }
                     .fontWeight(.semibold)
                     .fontDesign(.rounded)
@@ -63,8 +70,20 @@ struct NotesColumnsView: View {
             
         }
     }
+    // MARK: Functions
+    func createNotes(withTitle title: String, withPicture picture: String, withContext context: String) {
+        
+        let note = NotesItem(
+            title: title,
+            picture: picture,
+            context: context
+        )
+        
+        // Append to the array
+        notes.append(note)
+    }
 }
 
 #Preview {
-    NotesColumnsView()
+    NotesColumnsView(picture: "NotePicture1")
 }

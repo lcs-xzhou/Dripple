@@ -23,6 +23,7 @@
 		2D5D71E92BF821E1009F83C6 /* SubVarietyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D71E82BF821E1009F83C6 /* SubVarietyDetailView.swift */; };
 		2DA212E32BFE4282009E23A3 /* NotesColumnsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA212E22BFE4282009E23A3 /* NotesColumnsView.swift */; };
 		2DA212E52BFE42BE009E23A3 /* NotesItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA212E42BFE42BE009E23A3 /* NotesItemView.swift */; };
+		2DA212ED2C02352A009E23A3 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA212EC2C02352A009E23A3 /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		2D5D71E82BF821E1009F83C6 /* SubVarietyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubVarietyDetailView.swift; sourceTree = "<group>"; };
 		2DA212E22BFE4282009E23A3 /* NotesColumnsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesColumnsView.swift; sourceTree = "<group>"; };
 		2DA212E42BFE42BE009E23A3 /* NotesItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesItemView.swift; sourceTree = "<group>"; };
+		2DA212EC2C02352A009E23A3 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				2D1B7D7C2BFC1EBA00390E54 /* NotesDetailView.swift */,
 				2DA212E22BFE4282009E23A3 /* NotesColumnsView.swift */,
 				2DA212E42BFE42BE009E23A3 /* NotesItemView.swift */,
+				2DA212EC2C02352A009E23A3 /* ImagePicker.swift */,
 			);
 			path = NotesView;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				2D5D71D62BF70790009F83C6 /* DrippleApp.swift in Sources */,
 				2D5D71E72BF709ED009F83C6 /* CoffeeBeansVariety.swift in Sources */,
 				2DA212E32BFE4282009E23A3 /* NotesColumnsView.swift in Sources */,
+				2DA212ED2C02352A009E23A3 /* ImagePicker.swift in Sources */,
 				2D56E5312BF846050091500C /* SubVarietyListView.swift in Sources */,
 				2D1B7D662BF8E32D00390E54 /* MainTypeVariety.swift in Sources */,
 			);

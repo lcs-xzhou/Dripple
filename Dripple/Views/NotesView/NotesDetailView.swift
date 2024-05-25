@@ -9,12 +9,11 @@ import SwiftUI
 
 struct NotesDetailView: View {
     
-    @Environment(\.dismiss) var dismiss
-    
     // The item currently being added
-    @State var newItemTitle = ""
-    @State var newItemContext = ""
-    var picture: String
+    @Environment(\.dismiss) var dismiss
+    @Binding var note: NotesItem
+    @State private var showImagePicker = false
+    @State private var inputImage: UIImage?
     
     var body: some View {
         ScrollView {
@@ -52,6 +51,9 @@ struct NotesDetailView: View {
             picture: picture,
             context: context
         )
+        
+        // Append to the array
+        notes.append(note)
     }
 }
 
