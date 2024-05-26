@@ -5,14 +5,20 @@
 //  Created by Fiona ZHOU on 2024-05-20.
 //
 
-import Foundation
+import SwiftData
 import SwiftUI
 
+@Model
 struct NotesItem: Identifiable {
-    var id = UUID()
     var title: String
     var picture: Data?
     var context:  String
+    
+    init(title: String, picture: Data? = nil, context: String) {
+        self.title = title
+        self.picture = picture
+        self.context = context
+    }
 }
 
 let firstItem = NotesItem(title: "Apr 14, 2024", picture: nil, context: "Started my day with a cup of smooth Colombian Arabica coffee. Noted the rich flavour and how it perked up my morning. Kept track of my caffeine intake and the environmental impact. Each sip, a journey of flavour and reflection.")

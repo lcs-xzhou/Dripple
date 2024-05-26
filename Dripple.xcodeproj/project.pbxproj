@@ -16,7 +16,6 @@
 		2D56E52F2BF8404E0091500C /* SubVarietyItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D56E52E2BF8404E0091500C /* SubVarietyItemView.swift */; };
 		2D56E5312BF846050091500C /* SubVarietyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D56E5302BF846050091500C /* SubVarietyListView.swift */; };
 		2D5D71D62BF70790009F83C6 /* DrippleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D71D52BF70790009F83C6 /* DrippleApp.swift */; };
-		2D5D71D82BF70790009F83C6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D71D72BF70790009F83C6 /* ContentView.swift */; };
 		2D5D71DA2BF70791009F83C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D5D71D92BF70791009F83C6 /* Assets.xcassets */; };
 		2D5D71DD2BF70791009F83C6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D5D71DC2BF70791009F83C6 /* Preview Assets.xcassets */; };
 		2D5D71E72BF709ED009F83C6 /* CoffeeBeansVariety.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D71E62BF709ED009F83C6 /* CoffeeBeansVariety.swift */; };
@@ -37,7 +36,6 @@
 		2D56E5302BF846050091500C /* SubVarietyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubVarietyListView.swift; sourceTree = "<group>"; };
 		2D5D71D22BF70790009F83C6 /* Dripple.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dripple.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D5D71D52BF70790009F83C6 /* DrippleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrippleApp.swift; sourceTree = "<group>"; };
-		2D5D71D72BF70790009F83C6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2D5D71D92BF70791009F83C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D5D71DC2BF70791009F83C6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2D5D71E62BF709ED009F83C6 /* CoffeeBeansVariety.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeBeansVariety.swift; sourceTree = "<group>"; };
@@ -154,7 +152,6 @@
 		2D5D71E52BF708C0009F83C6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				2D5D71D72BF70790009F83C6 /* ContentView.swift */,
 				2D1B7D752BFC186C00390E54 /* NotesView */,
 				2D1B7D6A2BFBB49500390E54 /* CountingViews */,
 				2D1B7D672BF8E74000390E54 /* VarietyViews */,
@@ -238,7 +235,6 @@
 				2D5D71E92BF821E1009F83C6 /* SubVarietyDetailView.swift in Sources */,
 				2DA212E52BFE42BE009E23A3 /* NotesItemView.swift in Sources */,
 				2D1B7D6C2BFBB4B900390E54 /* CountingTemplate1.swift in Sources */,
-				2D5D71D82BF70790009F83C6 /* ContentView.swift in Sources */,
 				2D1B7D642BF8E26200390E54 /* MainVarietyItemView.swift in Sources */,
 				2D56E52F2BF8404E0091500C /* SubVarietyItemView.swift in Sources */,
 				2D5D71D62BF70790009F83C6 /* DrippleApp.swift in Sources */,

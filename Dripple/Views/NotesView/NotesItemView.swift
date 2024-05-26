@@ -28,7 +28,7 @@ struct NotesItemView: View {
                     )
                     .padding(.bottom, 10)
             } else {
-                Image(systemName: "photo")
+                Image("NotePicture1")
                     .resizable()
                     .scaledToFill()
                     .frame(height: 150)
