@@ -15,12 +15,6 @@ struct NotesColumnsView: View {
         GridItem(.adaptive(minimum: 100, maximum: 200), alignment: .top),
     ]
     @State var notes: [NotesItem] = exampleItems
-    // The item currently being added
-    @State var newItemTitle = ""
-    @State var newItemContext = ""
-    var picture: String
-    
-    // 1. Create a State variable to control presenting the sheet
     @State private var presentingSheet = false
     
     var body: some View {
@@ -35,21 +29,18 @@ struct NotesColumnsView: View {
                     .padding()
                 
                 LazyVGrid(columns: twoColumns) {
-                    
                     ForEach(notes) { note in
-                        
                         NavigationLink {
-                            NotesDetailView(picture: "NotePicture1")
+                            NotesDetailView()
                         } label: {
                             NotesItemView(item: note)
                         }
-                        .tint(.primary)
-                        
+                        .tint(.brown1)
                     }
+                    .onDelete(perform: deleteNotes)
                 }
-                // 3. Listen for State variable changes to true
                 .sheet(isPresented: $presentingSheet) {
-                    NotesDetailView(picture: "NotePicture1")
+                    NotesDetailView()
                 }
                 
                 Spacer()
@@ -71,19 +62,24 @@ struct NotesColumnsView: View {
         }
     }
     // MARK: Functions
-    func createNotes(withTitle title: String, withPicture picture: String, withContext context: String) {
+    func createNotes(withTitle title: String, withPicture picture: UIImage?, withContext context: String) {
         
         let note = NotesItem(
             title: title,
             picture: picture,
             context: context
         )
-        
         // Append to the array
         notes.append(note)
+    }
+    
+    func delete(_ note: NotesItem) {
+        notes.removeAll { currentItem in
+            currentItem.id == note.id
+        }
     }
 }
 
 #Preview {
-    NotesColumnsView(picture: "NotePicture1")
+    NotesColumnsView()
 }

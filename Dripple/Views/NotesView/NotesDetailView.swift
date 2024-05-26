@@ -9,30 +9,34 @@ import SwiftUI
 
 struct NotesDetailView: View {
     
-    // The item currently being added
     @Environment(\.dismiss) var dismiss
-    @Binding var note: NotesItem
+    @State var newItemTitle = ""
+    @State var newItemContext = ""
     @State private var showImagePicker = false
     @State private var inputImage: UIImage?
+    @State private var imageAdded = false
     
     var body: some View {
         ScrollView {
-            
             TextField("Please enter a date", text: $newItemTitle)
-                .onSubmit {
-                    //createNotes(withTitle: newItemTitle, withPicture: picture, withContext: newItemContext)
-                }
                 .padding(.top)
                 .foregroundColor(.brown1)
                 .fontWeight(.bold)
                 .fontDesign(.rounded)
                 .multilineTextAlignment(.center)
             
-            Image(picture)
-                .resizable()
-                .scaledToFit()
-                .padding(.horizontal)
-                .padding(.bottom)
+            if imageAdded, let inputImage = inputImage {
+                Image(uiImage: inputImage)
+                    .resizable()
+                    .scaledToFit()
+                    .padding(.horizontal)
+                    .padding(.bottom)
+            } else {
+                Button("Select Image") {
+                    showImagePicker = true
+                }
+                .padding()
+            }
             
             TextField("Please note down your thoughts", text: $newItemContext)
                 .padding(.horizontal)
@@ -44,20 +48,14 @@ struct NotesDetailView: View {
     }
     
     // MARK: Functions
-    func createNotes(withTitle title: String, withPicture picture: String, withContext context: String) {
-        
-        let note = NotesItem(
-            title: title,
-            picture: picture,
-            context: context
-        )
-        
-        // Append to the array
-        notes.append(note)
+    func loadImage() {
+        if inputImage != nil {
+            imageAdded = true
+        }
     }
 }
 
 
 #Preview {
-    NotesDetailView(picture: "NotePicture1")
+    NotesDetailView()
 }
