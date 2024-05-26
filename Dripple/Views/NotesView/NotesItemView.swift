@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct NotesItemView: View {
-  
+    
     enum FocusedField {
         case newItemTitle
     }
     @FocusState private var focusedField: FocusedField?
     let item: NotesItem
+    var onTap: () -> Void
     
     var body: some View {
         VStack(spacing: 0) {
@@ -39,25 +40,31 @@ struct NotesItemView: View {
             }
             
             Form {
-                TextField("Please enter a date", text: item.title)
-                    .font(.headline)
-                    .multilineTextAlignment(.center)
-                    .foregroundColor(.brown1)
-                    .fontDesign(.rounded)
+                TextField("Please enter a date", text: Binding<String>(
+                    get: { item.title },
+                    set: { _ in }
+                ))
+                .font(.headline)
+                .multilineTextAlignment(.center)
+                .foregroundColor(.brown1)
+                .fontDesign(.rounded)
             }
             .onAppear{
                 focusedField = .newItemTitle
             }
         }
         .padding()
+        .onTapGesture {
+            onTap()
+        }
     }
 }
 
 #Preview {
     HStack {
-        NotesItemView(item: firstItem)
+        NotesItemView(item: firstItem, onTap: {})
             .frame(idealHeight: 200, maxHeight: 200)
-        NotesItemView(item: secondItem)
+        NotesItemView(item: secondItem, onTap: {})
             .frame(idealHeight: 200, maxHeight: 200)
         
     }

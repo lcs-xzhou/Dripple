@@ -18,6 +18,7 @@ struct NotesDetailView: View {
     @State private var imageAdded = false
     
     var onSave: (String, UIImage?, String) -> Void
+    var onDelete: () -> Void
     
     var body: some View {
         ScrollView {
@@ -50,12 +51,19 @@ struct NotesDetailView: View {
         .padding()
         .toolbar {
             ToolbarItem(placement: .confirmationAction) {
-                Button("Save") {
+                Button("Save", action: {
                     onSave(newItemTitle, inputImage, newItemContext)
                     dismiss()
-                }
+                })
                 .foregroundColor(.brown1)
                 .disabled(newItemTitle.isEmpty || newItemContext.isEmpty)
+            }
+            ToolbarItem(placement: .cancellationAction) {
+                Button("Delete", action: {
+                    onDelete()
+                    dismiss()
+                })
+                .foregroundColor(.brown1)
             }
         }
         .sheet(isPresented: $showImagePicker, onDismiss: loadImage) {
@@ -71,7 +79,6 @@ struct NotesDetailView: View {
     }
 }
 
-
 #Preview {
-    NotesDetailView { _, _, _ in }
+    NotesDetailView { _, _, _ in } onDelete: {}
 }

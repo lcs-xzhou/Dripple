@@ -28,28 +28,29 @@ struct NotesColumnsView: View {
                     .fontDesign(.rounded)
                     .padding()
                 
-                LazyVGrid(columns: twoColumns) {
+                ScrollView {
+                    LazyVGrid(columns: twoColumns) {
                     ForEach(notes) { note in
-                        Button(action: {
+                        NotesItemView(item: note) {
                             selectedNote = note
                             presentingSheet = true
-                        }); label: do {
-                            NotesItemView(item: note)
                         }
                         .tint(.brown1)
                     }
                 }
                 .sheet(isPresented: $presentingSheet) {
-                    NotesDetailView(onSave: { _, _, _ in })
+                    NotesDetailView(
+                        onSave: { _, _, _ in },
+                        onDelete: {}
+                    )
                 }
                 Spacer()
+            }
             }
             .toolbar {
                 ToolbarItem {
                     Button(action: {
-                        NotesDetailView { title, picture, context in
-                            createNotes(withTitle: title, withPicture: picture, withContext: context)
-                        }
+                        presentingSheet = true
                     }) {
                         Image(systemName: "plus")
                             .fontWeight(.semibold)
