@@ -11,7 +11,7 @@ import SwiftUI
 struct DrippleApp: App {
     var body: some Scene {
         WindowGroup {
-            NotesColumnsView()
+            NotesDetailView()
         }
     }
 }

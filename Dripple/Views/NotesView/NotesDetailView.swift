@@ -10,11 +10,14 @@ import SwiftUI
 struct NotesDetailView: View {
     
     @Environment(\.dismiss) var dismiss
+    
     @State var newItemTitle = ""
     @State var newItemContext = ""
     @State private var showImagePicker = false
     @State private var inputImage: UIImage?
     @State private var imageAdded = false
+    
+    var onSave: (String, UIImage?, String) -> Void
     
     var body: some View {
         ScrollView {
@@ -45,6 +48,19 @@ struct NotesDetailView: View {
                 .fontDesign(.rounded)
         }
         .padding()
+        .toolbar {
+            ToolbarItem(placement: .confirmationAction) {
+                Button("Save") {
+                    onSave(newItemTitle, inputImage, newItemContext)
+                    dismiss()
+                }
+                .foregroundColor(.brown1)
+                .disabled(newItemTitle.isEmpty || newItemContext.isEmpty)
+            }
+        }
+        .sheet(isPresented: $showImagePicker, onDismiss: loadImage) {
+            ImagePicker(image: $inputImage)
+        }
     }
     
     // MARK: Functions
@@ -57,5 +73,5 @@ struct NotesDetailView: View {
 
 
 #Preview {
-    NotesDetailView()
+    NotesDetailView { _, _, _ in }
 }

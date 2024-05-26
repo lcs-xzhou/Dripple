@@ -16,10 +16,10 @@ struct NotesColumnsView: View {
     ]
     @State var notes: [NotesItem] = exampleItems
     @State private var presentingSheet = false
+    @State private var selectedNote: NotesItem?
     
     var body: some View {
         NavigationStack {
-            
             VStack {
                 Text("Notes")
                     .font(.largeTitle)
@@ -30,32 +30,32 @@ struct NotesColumnsView: View {
                 
                 LazyVGrid(columns: twoColumns) {
                     ForEach(notes) { note in
-                        NavigationLink {
-                            NotesDetailView()
-                        } label: {
+                        Button(action: {
+                            selectedNote = note
+                            presentingSheet = true
+                        }); label: do {
                             NotesItemView(item: note)
                         }
                         .tint(.brown1)
                     }
-                    .onDelete(perform: deleteNotes)
                 }
                 .sheet(isPresented: $presentingSheet) {
-                    NotesDetailView()
+                    NotesDetailView(onSave: { _, _, _ in })
                 }
-                
                 Spacer()
             }
             .toolbar {
                 ToolbarItem {
-                    Button(action: {}) {
+                    Button(action: {
+                        NotesDetailView { title, picture, context in
+                            createNotes(withTitle: title, withPicture: picture, withContext: context)
+                        }
+                    }) {
                         Image(systemName: "plus")
-                        
-                        // Add the new note item
-                        createNotes(withTitle: newItemTitle, withPicture: picture, withContext: newItemContext)
+                            .fontWeight(.semibold)
+                            .fontDesign(.rounded)
+                            .foregroundColor(.brown1)
                     }
-                    .fontWeight(.semibold)
-                    .fontDesign(.rounded)
-                    .foregroundColor(.brown1)
                 }
             }
             
@@ -66,7 +66,7 @@ struct NotesColumnsView: View {
         
         let note = NotesItem(
             title: title,
-            picture: picture,
+            picture: picture?.jpegData(compressionQuality: 1.0),
             context: context
         )
         // Append to the array
