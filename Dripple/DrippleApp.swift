@@ -12,6 +12,7 @@ struct DrippleApp: App {
     var body: some Scene {
         WindowGroup {
             NotesColumnsView(onSave: { _, _, _ in }, onDelete: {})
+                .modelContainer(for: NotesItem.self)
         }
     }
 }
