@@ -5,12 +5,14 @@
 //  Created by Fiona ZHOU on 2024-05-22.
 //
 
+import SwiftData
 import SwiftUI
 
 struct NotesColumnsView: View {
     
     // MARK: Stored properties
     @Environment(\.dismiss) var dismiss
+    @Environment(\.modelContext) var modelContext
 
     let twoColumns = [
         GridItem(.adaptive(minimum: 100, maximum: 200), alignment: .top),
