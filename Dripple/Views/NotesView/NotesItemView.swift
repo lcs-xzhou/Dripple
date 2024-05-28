@@ -10,15 +10,15 @@ import SwiftUI
 struct NotesItemView: View {
     
     enum FocusedField {
-        case newItemTitle
+        case currentItem
     }
     @FocusState private var focusedField: FocusedField?
-    let item: NotesItem
+    @Bindable var currentItem: NotesItem
     var onTap: () -> Void
     
     var body: some View {
         VStack(spacing: 0) {
-            if let picture = item.picture, let uiImage = UIImage(data: picture) {
+            if let picture = currentItem.picture, let uiImage = UIImage(data: picture) {
                 Image(uiImage: uiImage)
                     .resizable()
                     .scaledToFill()
@@ -41,7 +41,7 @@ struct NotesItemView: View {
             
             Form {
                 TextField("Please enter a date", text: Binding<String>(
-                    get: { item.title },
+                    get: { currentItem.title },
                     set: { _ in }
                 ))
                 .font(.headline)
@@ -50,7 +50,7 @@ struct NotesItemView: View {
                 .fontDesign(.rounded)
             }
             .onAppear{
-                focusedField = .newItemTitle
+                focusedField = .currentItem
             }
         }
         .padding()
@@ -60,12 +60,11 @@ struct NotesItemView: View {
     }
 }
 
-#Preview {
-    HStack {
-        NotesItemView(item: firstItem, onTap: {})
-            .frame(idealHeight: 200, maxHeight: 200)
-        NotesItemView(item: secondItem, onTap: {})
-            .frame(idealHeight: 200, maxHeight: 200)
-        
-    }
-}
+//#Preview {
+//     HStack {
+//        NotesItemView(currentItem: firstItem, onTap: {})
+//            .frame(idealHeight: 200, maxHeight: 200)
+//        NotesItemView(currentItem: secondItem, onTap: {})
+//            .frame(idealHeight: 200, maxHeight: 200)
+//    }
+//}

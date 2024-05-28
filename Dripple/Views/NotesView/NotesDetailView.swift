@@ -9,20 +9,17 @@ import SwiftUI
 
 struct NotesDetailView: View {
     
-    @Environment(\.dismiss) var dismiss
-    
-    @State var newItemTitle = ""
-    @State var newItemContext = ""
     @State private var showImagePicker = false
     @State private var inputImage: UIImage?
     @State private var imageAdded = false
+    @Bindable var currentItem: NotesItem
     
     var onSave: (String, UIImage?, String) -> Void
     var onDelete: () -> Void
     
     var body: some View {
         ScrollView {
-            TextField("Please enter a date", text: $newItemTitle)
+            TextField("Please enter a date", text: $currentItem.title)
                 .padding(.top)
                 .foregroundColor(.brown1)
                 .fontWeight(.bold)
@@ -42,30 +39,13 @@ struct NotesDetailView: View {
                 .padding()
             }
             
-            TextField("Please note down your thoughts", text: $newItemContext)
+            TextField("Please note down your thoughts", text: $currentItem.context)
                 .padding(.horizontal)
                 .foregroundColor(.brown1)
                 .fontWeight(.semibold)
                 .fontDesign(.rounded)
         }
         .padding()
-        .toolbar {
-            ToolbarItem(placement: .confirmationAction) {
-                Button("Save", action: {
-                    onSave(newItemTitle, inputImage, newItemContext)
-                    dismiss()
-                })
-                .foregroundColor(.brown1)
-                .disabled(newItemTitle.isEmpty || newItemContext.isEmpty)
-            }
-            ToolbarItem(placement: .cancellationAction) {
-                Button("Delete", action: {
-                    onDelete()
-                    dismiss()
-                })
-                .foregroundColor(.brown1)
-            }
-        }
         .sheet(isPresented: $showImagePicker, onDismiss: loadImage) {
             ImagePicker(image: $inputImage)
         }
@@ -79,6 +59,6 @@ struct NotesDetailView: View {
     }
 }
 
-#Preview {
-    NotesDetailView { _, _, _ in } onDelete: {}
-}
+//#Preview {
+//  NotesDetailView { _, _, _ in } onDelete: {}
+//}

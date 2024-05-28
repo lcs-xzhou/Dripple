@@ -11,14 +11,12 @@ import SwiftUI
 struct NotesColumnsView: View {
     
     // MARK: Stored properties
-    @Environment(\.dismiss) var dismiss
     @Environment(\.modelContext) var modelContext
-
     let twoColumns = [
         GridItem(.adaptive(minimum: 100, maximum: 200), alignment: .top),
         GridItem(.adaptive(minimum: 100, maximum: 200), alignment: .top),
     ]
-    @State var notes: [NotesItem] = exampleItems
+    @Query var notes: [NotesItem]
     @State private var presentingSheet = false
     @State private var selectedNote: NotesItem?
     
@@ -28,6 +26,7 @@ struct NotesColumnsView: View {
     @State var newItemContext = ""
     @State private var showImagePicker = false
     @State private var inputImage: UIImage?
+    @Bindable var currentItem: NotesItem
     
     var body: some View {
         NavigationStack {
@@ -42,73 +41,57 @@ struct NotesColumnsView: View {
                 ScrollView {
                     LazyVGrid(columns: twoColumns) {
                         ForEach(notes) { note in
-                            NotesItemView(item: note) {
+                            NotesItemView(currentItem: note) {
                                 selectedNote = note
                                 presentingSheet = true
                             }
                             .tint(.brown1)
                         }
+                        .onDelete(perform: removeRows)
                     }
                     .sheet(isPresented: $presentingSheet) {
                         NotesDetailView(
-                            onSave: { _, _, _ in },
+                            currentItem: currentItem, onSave: { _, _, _ in },
                             onDelete: {}
                         )
-                        .toolbar {
-                            ToolbarItem(placement: .confirmationAction) {
-                                Button("Save", action: {
-                                    onSave(newItemTitle, inputImage, newItemContext)
-                                    dismiss()
-                                })
-                                .foregroundColor(.brown1)
-                                .disabled(newItemTitle.isEmpty || newItemContext.isEmpty)
-                            }
-                            ToolbarItem(placement: .cancellationAction) {
-                                Button("Delete", action: {
-                                    onDelete()
-                                    dismiss()
-                                })
-                                .foregroundColor(.brown1)
-                            }
-                        }
-                    }
-                    Spacer()
-                }
-            }
-            .toolbar {
-                ToolbarItem {
-                    Button(action: {
-                        presentingSheet = true
-                    }) {
-                        Image(systemName: "plus")
-                            .fontWeight(.semibold)
-                            .fontDesign(.rounded)
-                            .foregroundColor(.brown1)
                     }
                 }
             }
-            
+            Spacer()
         }
-    }
-    // MARK: Functions
-    func createNotes(withTitle title: String, withPicture picture: UIImage?, withContext context: String) {
-        
-        let note = NotesItem(
-            title: title,
-            picture: picture?.jpegData(compressionQuality: 1.0),
-            context: context
-        )
-        // Append to the array
-        notes.append(note)
-    }
-    
-    func delete(_ note: NotesItem) {
-        notes.removeAll { currentItem in
-            currentItem.id == note.id
+        .toolbar {
+            ToolbarItem {
+                Button(action: {
+                    presentingSheet = true
+                }) {
+                    Image(systemName: "plus")
+                        .fontWeight(.semibold)
+                        .fontDesign(.rounded)
+                        .foregroundColor(.brown1)
+                }
+            }
         }
     }
 }
 
-#Preview {
-    NotesColumnsView(onSave: { _, _, _ in }, onDelete: {})
+// MARK: Functions
+func createNotes(withTitle title: String, withPicture picture: UIImage?, withContext context: String) {
+    
+    let note = NotesItem(
+        title: title,
+        picture: picture?.jpegData(compressionQuality: 1.0),
+        context: context
+    )
+    // Append to the array
+    modelContext.insert(note)
 }
+
+func removeRows(at offsets: IndexSet) {
+    for offset in offsets {
+        modelContext.delete(notes[offset])
+    }
+}
+
+//#Preview {
+//    NotesColumnsView(onSave: { _, _, _ in }, onDelete: {})
+//}
