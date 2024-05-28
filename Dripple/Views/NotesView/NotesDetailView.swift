@@ -9,35 +9,18 @@ import SwiftUI
 
 struct NotesDetailView: View {
     
-    @State private var showImagePicker = false
-    @State private var inputImage: UIImage?
-    @State private var imageAdded = false
     @Bindable var currentItem: NotesItem
-    
-    var onSave: (String, UIImage?, String) -> Void
-    var onDelete: () -> Void
     
     var body: some View {
         ScrollView {
-            TextField("Please enter a date", text: $currentItem.title)
+            TextField("Please enter a date", text: $currentItem.title, axis: .vertical)
                 .padding(.top)
                 .foregroundColor(.brown1)
                 .fontWeight(.bold)
                 .fontDesign(.rounded)
                 .multilineTextAlignment(.center)
             
-            if imageAdded, let inputImage = inputImage {
-                Image(uiImage: inputImage)
-                    .resizable()
-                    .scaledToFit()
-                    .padding(.horizontal)
-                    .padding(.bottom)
-            } else {
-                Button("Select Image") {
-                    showImagePicker = true
-                }
-                .padding()
-            }
+            Image("NotePicture1")
             
             TextField("Please note down your thoughts", text: $currentItem.context)
                 .padding(.horizontal)
@@ -46,19 +29,10 @@ struct NotesDetailView: View {
                 .fontDesign(.rounded)
         }
         .padding()
-        .sheet(isPresented: $showImagePicker, onDismiss: loadImage) {
-            ImagePicker(image: $inputImage)
-        }
-    }
-    
-    // MARK: Functions
-    func loadImage() {
-        if inputImage != nil {
-            imageAdded = true
-        }
     }
 }
 
-//#Preview {
-//  NotesDetailView { _, _, _ in } onDelete: {}
-//}
+
+#Preview {
+    NotesDetailView(currentItem: firstItem)
+}

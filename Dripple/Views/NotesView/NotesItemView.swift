@@ -18,26 +18,6 @@ struct NotesItemView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            if let picture = currentItem.picture, let uiImage = UIImage(data: picture) {
-                Image(uiImage: uiImage)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(height: 150)
-                    .clipShape(
-                        Rectangle()
-                    )
-                    .padding(.bottom, 10)
-            } else {
-                Image("NotePicture1")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(height: 150)
-                    .clipShape(
-                        Rectangle()
-                    )
-                    .padding(.bottom, 10)
-                    .foregroundColor(.brown1)
-            }
             
             Form {
                 TextField("Please enter a date", text: Binding<String>(

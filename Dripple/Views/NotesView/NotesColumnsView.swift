@@ -16,20 +16,22 @@ struct NotesColumnsView: View {
         GridItem(.adaptive(minimum: 100, maximum: 200), alignment: .top),
         GridItem(.adaptive(minimum: 100, maximum: 200), alignment: .top),
     ]
-    @Query var notes: [NotesItem]
-    @State private var presentingSheet = false
-    @State private var selectedNote: NotesItem?
     
-    var onSave: (String, UIImage?, String) -> Void
-    var onDelete: () -> Void
+    // The title currently being added
     @State var newItemTitle = ""
+    
+    // The context currently being added
     @State var newItemContext = ""
-    @State private var showImagePicker = false
-    @State private var inputImage: UIImage?
-    @Bindable var currentItem: NotesItem
+    
+    // The search text
+    @State var searchText = ""
+    
+    // The list of note items
+    @State var notes: [NotesItem] = exampleItems
     
     var body: some View {
         NavigationStack {
+            
             VStack {
                 Text("Notes")
                     .font(.largeTitle)
@@ -39,56 +41,55 @@ struct NotesColumnsView: View {
                     .padding()
                 
                 ScrollView {
-                    LazyVGrid(columns: twoColumns) {
-                        ForEach(notes) { note in
-                            NotesItemView(currentItem: note) {
-                                selectedNote = note
-                                presentingSheet = true
-                            }
+                    LazyVGrid(columns: twoColumns) { $note in
+                        
+                        NotesItemView(currentItem: $note)
                             .tint(.brown1)
-                        }
-                        .onDelete(perform: removeRows)
-                    }
-                    .sheet(isPresented: $presentingSheet) {
-                        NotesDetailView(
-                            currentItem: currentItem, onSave: { _, _, _ in },
-                            onDelete: {}
-                        )
+                            .contextMenu {
+                                Button(
+                                    "Delete",
+                                    role: .destructive,
+                                    action: {
+                                        delete(note)
+                                    }
+                                )
+                            }
                     }
                 }
-            }
-            Spacer()
-        }
-        .toolbar {
-            ToolbarItem {
-                Button(action: {
-                    presentingSheet = true
-                }) {
-                    Image(systemName: "plus")
-                        .fontWeight(.semibold)
-                        .fontDesign(.rounded)
-                        .foregroundColor(.brown1)
+                .searchable(text: $searchText)
+                
+                HStack {
+                    TextField("Enter a date", text: $newItemTitle)
+                    
+                    Button("Add") {
+                        // Add the new note item
+                        createNotes(withTitle: $newItemTitle, withContext: $newItemContext)
+                    }
+                    .font(.caption)
+                    .disabled(newItemTitle.isEmpty == true)
                 }
+                .padding(20)
             }
         }
+        Spacer()
     }
-}
-
-// MARK: Functions
-func createNotes(withTitle title: String, withPicture picture: UIImage?, withContext context: String) {
     
-    let note = NotesItem(
-        title: title,
-        picture: picture?.jpegData(compressionQuality: 1.0),
-        context: context
-    )
-    // Append to the array
-    modelContext.insert(note)
-}
-
-func removeRows(at offsets: IndexSet) {
-    for offset in offsets {
-        modelContext.delete(notes[offset])
+    // MARK: Functions
+    func createNotes(withTitle title: String, withContext context: String) {
+        
+        // Create the new note item instance
+        let note = NotesItem(
+            title: title,
+            context: context
+        )
+        // Append to the array
+        notes.append(note)
+    }
+    
+    func removeRows(at offsets: IndexSet) {
+        for offset in offsets {
+            modelContext.delete(notes[offset])
+        }
     }
 }
 
