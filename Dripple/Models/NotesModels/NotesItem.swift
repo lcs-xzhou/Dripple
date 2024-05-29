@@ -12,7 +12,7 @@ struct NotesItem: Identifiable, Codable {
     var title: String
     var context:  String
     var imageURL: String?
-
+    
     // When decoding and encoding from JSON, translate snake_case
     // column names into camelCase
     enum CodingKeys: String, CodingKey {

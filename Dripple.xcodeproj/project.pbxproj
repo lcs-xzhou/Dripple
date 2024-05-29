@@ -12,7 +12,7 @@
 		2D1B7D692BF8E7ED00390E54 /* MainVarietyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1B7D682BF8E7ED00390E54 /* MainVarietyListView.swift */; };
 		2D1B7D6C2BFBB4B900390E54 /* CountingTemplate1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1B7D6B2BFBB4B900390E54 /* CountingTemplate1.swift */; };
 		2D1B7D7B2BFC1BCE00390E54 /* NotesItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1B7D7A2BFC1BCE00390E54 /* NotesItem.swift */; };
-		2D1B7D7D2BFC1EBA00390E54 /* NotesDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1B7D7C2BFC1EBA00390E54 /* NotesDetailView.swift */; };
+		2D1B7D7D2BFC1EBA00390E54 /* NotesItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1B7D7C2BFC1EBA00390E54 /* NotesItemDetailView.swift */; };
 		2D56E52F2BF8404E0091500C /* SubVarietyItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D56E52E2BF8404E0091500C /* SubVarietyItemView.swift */; };
 		2D56E5312BF846050091500C /* SubVarietyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D56E5302BF846050091500C /* SubVarietyListView.swift */; };
 		2D5D71D62BF70790009F83C6 /* DrippleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D71D52BF70790009F83C6 /* DrippleApp.swift */; };
@@ -32,7 +32,7 @@
 		2D6D64A52C0787E900D84023 /* AppEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6D64A42C0787E900D84023 /* AppEntryView.swift */; };
 		2D6D64A72C07882600D84023 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6D64A62C07882600D84023 /* AuthView.swift */; };
 		2D6D64A92C078B0400D84023 /* NotesNewItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6D64A82C078B0400D84023 /* NotesNewItemView.swift */; };
-		2DA212E32BFE4282009E23A3 /* NotesColumnsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA212E22BFE4282009E23A3 /* NotesColumnsView.swift */; };
+		2DA212E32BFE4282009E23A3 /* NotesLandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA212E22BFE4282009E23A3 /* NotesLandingView.swift */; };
 		2DA212E52BFE42BE009E23A3 /* NotesItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA212E42BFE42BE009E23A3 /* NotesItemView.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,7 +42,7 @@
 		2D1B7D682BF8E7ED00390E54 /* MainVarietyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVarietyListView.swift; sourceTree = "<group>"; };
 		2D1B7D6B2BFBB4B900390E54 /* CountingTemplate1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountingTemplate1.swift; sourceTree = "<group>"; };
 		2D1B7D7A2BFC1BCE00390E54 /* NotesItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesItem.swift; sourceTree = "<group>"; };
-		2D1B7D7C2BFC1EBA00390E54 /* NotesDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesDetailView.swift; sourceTree = "<group>"; };
+		2D1B7D7C2BFC1EBA00390E54 /* NotesItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesItemDetailView.swift; sourceTree = "<group>"; };
 		2D56E52E2BF8404E0091500C /* SubVarietyItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubVarietyItemView.swift; sourceTree = "<group>"; };
 		2D56E5302BF846050091500C /* SubVarietyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubVarietyListView.swift; sourceTree = "<group>"; };
 		2D5D71D22BF70790009F83C6 /* Dripple.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dripple.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,7 +57,7 @@
 		2D6D64A42C0787E900D84023 /* AppEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEntryView.swift; sourceTree = "<group>"; };
 		2D6D64A62C07882600D84023 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		2D6D64A82C078B0400D84023 /* NotesNewItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesNewItemView.swift; sourceTree = "<group>"; };
-		2DA212E22BFE4282009E23A3 /* NotesColumnsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesColumnsView.swift; sourceTree = "<group>"; };
+		2DA212E22BFE4282009E23A3 /* NotesLandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesLandingView.swift; sourceTree = "<group>"; };
 		2DA212E42BFE42BE009E23A3 /* NotesItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,8 +101,8 @@
 		2D1B7D752BFC186C00390E54 /* NotesView */ = {
 			isa = PBXGroup;
 			children = (
-				2D1B7D7C2BFC1EBA00390E54 /* NotesDetailView.swift */,
-				2DA212E22BFE4282009E23A3 /* NotesColumnsView.swift */,
+				2D1B7D7C2BFC1EBA00390E54 /* NotesItemDetailView.swift */,
+				2DA212E22BFE4282009E23A3 /* NotesLandingView.swift */,
 				2DA212E42BFE42BE009E23A3 /* NotesItemView.swift */,
 				2D6D64A82C078B0400D84023 /* NotesNewItemView.swift */,
 			);
@@ -284,7 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D6D64A92C078B0400D84023 /* NotesNewItemView.swift in Sources */,
-				2D1B7D7D2BFC1EBA00390E54 /* NotesDetailView.swift in Sources */,
+				2D1B7D7D2BFC1EBA00390E54 /* NotesItemDetailView.swift in Sources */,
 				2D1B7D692BF8E7ED00390E54 /* MainVarietyListView.swift in Sources */,
 				2D1B7D7B2BFC1BCE00390E54 /* NotesItem.swift in Sources */,
 				2D5D71E92BF821E1009F83C6 /* SubVarietyDetailView.swift in Sources */,
@@ -298,7 +298,7 @@
 				2D5D71E72BF709ED009F83C6 /* CoffeeBeansVariety.swift in Sources */,
 				2D6D64A52C0787E900D84023 /* AppEntryView.swift in Sources */,
 				2D6D64922C07741D00D84023 /* NotesViewModel.swift in Sources */,
-				2DA212E32BFE4282009E23A3 /* NotesColumnsView.swift in Sources */,
+				2DA212E32BFE4282009E23A3 /* NotesLandingView.swift in Sources */,
 				2D6D64A12C077AE100D84023 /* Supabase.swift in Sources */,
 				2D56E5312BF846050091500C /* SubVarietyListView.swift in Sources */,
 				2D1B7D662BF8E32D00390E54 /* MainTypeVariety.swift in Sources */,

@@ -23,7 +23,7 @@ struct AppEntryView: View {
             if isAuthenticated {
                 
                 // User is authenticated – show main view of our app
-                NotesColumnsView()
+                NotesLandingView()
             } else {
                 
                 // User not authenticated

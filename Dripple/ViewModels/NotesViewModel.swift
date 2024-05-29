@@ -119,7 +119,7 @@ class NotesViewModel {
         return filePath
     }
     
-    func downloadTodoItemImage(fromPath path: String) async throws -> NotesItemImage? {
+    func downloadNotesItemImage(fromPath path: String) async throws -> NotesItemImage? {
         
         // Attempt to download an image from the provided path
         do {
@@ -158,7 +158,7 @@ class NotesViewModel {
                         debugPrint(error)
                     }
                 }
-
+                
                 // Run the delete command to remove to-do item from database table.
                 try await supabase
                     .from("notes")
@@ -179,24 +179,24 @@ class NotesViewModel {
     }
     
     func update(note updatedNote: NotesItem) {
+        
+        // Create a unit of asynchronous work to add the note item
+        Task {
             
-            // Create a unit of asynchronous work to add the note item
-            Task {
+            do {
                 
-                do {
-                    
-                    // Run the update command
-                    try await supabase
-                        .from("notes")
-                        .update(updatedNote)
-                        .eq("id", value: updatedNote.id!)   // Only update the row whose id
-                        .execute()                          // matches that of the note being deleted
-                        
-                } catch {
-                    debugPrint(error)
-                }
+                // Run the update command
+                try await supabase
+                    .from("notes")
+                    .update(updatedNote)
+                    .eq("id", value: updatedNote.id!)   // Only update the row whose id
+                    .execute()                          // matches that of the note being deleted
                 
+            } catch {
+                debugPrint(error)
             }
             
         }
+        
+    }
 }

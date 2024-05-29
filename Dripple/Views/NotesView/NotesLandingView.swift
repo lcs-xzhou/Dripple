@@ -1,5 +1,5 @@
 //
-//  NotesColumnsView.swift
+//  NotesLandingView.swift
 //  Dripple
 //
 //  Created by Fiona ZHOU on 2024-05-22.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NotesColumnsView: View {
+struct NotesLandingView: View {
     
     // MARK: Stored properties
     let twoColumns = [
@@ -59,17 +59,49 @@ struct NotesColumnsView: View {
                             // Show the list of items
                             ForEach($viewModel.notes) { $note in
                                 
-                                NotesItemView(currentItem: $note, viewModel: viewModel)
-                                    .tint(.brown1)
-                                    .contextMenu {
-                                        Button(
-                                            "Delete",
-                                            role: .destructive,
-                                            action: {
-                                                viewModel.delete(note)
+                                // Is there an image attached to the note item?
+                                if note.imageURL == nil {
+                                    
+                                    // If no, just show the text of the note item
+                                    NotesItemView(currentItem: $note, viewModel: NotesViewModel)
+                                        // Delete item
+                                        .swipeActions {
+                                            Button(
+                                                "Delete",
+                                                role: .destructive,
+                                                action: {
+                                                    viewModel.delete(note)
+                                                }
+                                            )
+                                            .foregroundStyle(.brown1)
+                                        }
+                                    
+                                } else {
+                                    
+                                    // If yes, show a navigation
+                                    // link that leads to the detail view
+                                    NavigationLink(destination: {
+                                        
+                                        NotesItemDetailView(currentItem: $note)
+                                        
+                                    }, label: {
+                                        
+                                        NotesItemView(currentItem: $note)
+                                            // Delete item
+                                            .swipeActions {
+                                                Button(
+                                                    "Delete",
+                                                    role: .destructive,
+                                                    action: {
+                                                        viewModel.delete(note)
+                                                    }
+                                                )
+                                                .foregroundStyle(.brown1)
                                             }
-                                        )
-                                    }
+
+                                    })
+                                    
+                                }
                             }
                             
                         }
@@ -103,5 +135,5 @@ struct NotesColumnsView: View {
 }
 
 #Preview {
-    NotesColumnsView()
+    NotesLandingView()
 }
