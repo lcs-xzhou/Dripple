@@ -78,7 +78,7 @@ struct NotesColumnsView: View {
             }
             // Show the sheet to add a new item
             .sheet(isPresented: $presentingNewItemSheet) {
-                Text("Hello, world!")
+                NotesNewItemView(showSheet: $presentingNewItemSheet)
                     .presentationDetents([.fraction(0.15)])
             }
             // Add a tool bar to the top of the interface
