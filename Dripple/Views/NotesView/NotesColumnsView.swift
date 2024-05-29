@@ -73,8 +73,7 @@ struct NotesColumnsView: View {
                         newItemTitle = ""
                     }
                     .font(.caption)
-                    .disabled(newItemTitle.trimmingCharacters(in: .whitespaces).isEmpty == true)
-                }
+                    .disabled(newItemTitle.trimmingCharacters(in: .whitespaces).isEmpty == true)                }
                 .padding(20)
             }
             .sheet(isPresented: $presentingNewItemSheet) {
