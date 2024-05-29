@@ -42,10 +42,10 @@ class NotesViewModel {
     
     func createNotes(withTitle title: String, withContext context: String) {
         
-        // Create a unit of asynchronous work to add the to-do item
+        // Create a unit of asynchronous work to add the note item
         Task {
             
-            // Create the new to-do item instance
+            // Create the new note item instance
             // NOTE: The id will be nil for now
             let note = NotesItem(
                 title: title,
@@ -55,7 +55,7 @@ class NotesViewModel {
             // Write it to the database
             do {
                 
-                // Insert the new to-do item, and then immediately select
+                // Insert the new note item, and then immediately select
                 // it back out of the database
                 let newlyInsertedItem: NotesItem = try await supabase
                     .from("notes")
@@ -64,7 +64,7 @@ class NotesViewModel {
                     .single()       // Ensure just one row is returned
                     .execute()      // Run the query
                     .value          // Automatically decode the JSON into an instance of NotesItem
-
+                
                 // Finally, insert the note item instance we just selected back from the
                 // database into the array used by the view model
                 // NOTE: We do this to obtain the id that is automatically assigned by Supabase
@@ -76,10 +76,30 @@ class NotesViewModel {
             }
         }
     }
+    
     func delete(_ note: NotesItem) {
         
-        // Remove the provided note item from the array
-        notes.removeAll { currentItem in
-            currentItem.id == note.id}
+        // Create a unit of asynchronous work to add the note item
+        Task {
+            
+            do {
+                
+                // Run the delete command
+                try await supabase
+                    .from("notes")
+                    .delete()
+                    .eq("id", value: note.id!)  // Only delete the row whose id
+                    .execute()                  // matches that of the note being deleted
+                
+                // Update the list of note items held in memory to reflect the deletion
+                try await self.getNotes()
+                
+            } catch {
+                debugPrint(error)
+            }
+            
+            
+        }
+        
     }
 }
