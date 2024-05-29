@@ -5,16 +5,12 @@
 //  Created by Fiona ZHOU on 2024-05-20.
 //
 
-import SwiftUI
+import Foundation
 
-class NotesItem: Identifiable {
+struct NotesItem: Identifiable, Codable {
+    var id: Int?
     var title: String
     var context:  String
-    
-    init(title: String, context: String) {
-        self.title = title
-        self.context = context
-    }
 }
 
 let firstItem = NotesItem(title: "Apr 14, 2024", context: "Started my day with a cup of smooth Colombian Arabica coffee. Noted the rich flavour and how it perked up my morning. Kept track of my caffeine intake and the environmental impact. Each sip, a journey of flavour and reflection.")

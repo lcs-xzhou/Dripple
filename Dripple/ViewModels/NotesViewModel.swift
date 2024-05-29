@@ -17,9 +17,29 @@ class NotesViewModel {
     // MARK: Initializer(s)
     init(notes: [NotesItem] = []) {
         self.notes = notes
+        Task {
+            try await getNotes()
+        }
     }
     
     // MARK: Functions
+    func getNotes() async throws {
+        
+        do {
+            let results: [NotesItem] = try await supabase
+                .from("notes")
+                .select()
+                .execute()
+                .value
+            
+            self.notes = results
+            
+        } catch {
+            debugPrint(error)
+        }
+        
+    }
+    
     func createNotes(withTitle title: String, withContext context: String) {
         
         // Create the new note item instance
