@@ -42,15 +42,40 @@ class NotesViewModel {
     
     func createNotes(withTitle title: String, withContext context: String) {
         
-        // Create the new note item instance
-        let note = NotesItem(
-            title: title,
-            context: context
-        )
-        // Append to the array
-        notes.append(note)
+        // Create a unit of asynchronous work to add the to-do item
+        Task {
+            
+            // Create the new to-do item instance
+            // NOTE: The id will be nil for now
+            let note = NotesItem(
+                title: title,
+                context: context
+            )
+            
+            // Write it to the database
+            do {
+                
+                // Insert the new to-do item, and then immediately select
+                // it back out of the database
+                let newlyInsertedItem: NotesItem = try await supabase
+                    .from("notes")
+                    .insert(note)   // Insert the note item created locally in memory
+                    .select()       // Select the item just inserted
+                    .single()       // Ensure just one row is returned
+                    .execute()      // Run the query
+                    .value          // Automatically decode the JSON into an instance of NotesItem
+
+                // Finally, insert the note item instance we just selected back from the
+                // database into the array used by the view model
+                // NOTE: We do this to obtain the id that is automatically assigned by Supabase
+                //       when the note item was inserted into the database table
+                self.notes.append(newlyInsertedItem)
+                
+            } catch {
+                debugPrint(error)
+            }
+        }
     }
-    
     func delete(_ note: NotesItem) {
         
         // Remove the provided note item from the array
