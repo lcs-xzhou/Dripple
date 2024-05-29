@@ -15,15 +15,6 @@ struct NotesColumnsView: View {
         GridItem(.adaptive(minimum: 100, maximum: 200), alignment: .top),
     ]
     
-    // The title currently being added
-    @State var newItemTitle = ""
-    
-    // The context currently being added
-    @State var newItemContext = ""
-    
-    // The search text
-    @State var searchText = ""
-    
     // The view model
     @State var viewModel = NotesViewModel()
     
@@ -62,19 +53,6 @@ struct NotesColumnsView: View {
                     }
                 }
                 
-                HStack {
-                    TextField("Enter a date", text: $newItemTitle)
-                    
-                    Button("Add") {
-                        // Add the new note item
-                        viewModel.createNotes(withTitle: newItemTitle, withContext: newItemContext)
-                        
-                        // Clear the stored property bound to the input textfield
-                        newItemTitle = ""
-                    }
-                    .font(.caption)
-                    .disabled(newItemTitle.trimmingCharacters(in: .whitespaces).isEmpty == true)                }
-                .padding(20)
             }
             // Show the sheet to add a new item
             .sheet(isPresented: $presentingNewItemSheet) {
