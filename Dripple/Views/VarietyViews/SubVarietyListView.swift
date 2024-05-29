@@ -9,7 +9,6 @@ import SwiftUI
 
 struct SubVarietyListView: View {
     
-    @State var searchText = ""
     let mainType: MainTypeVariety
     
     var body: some View {
@@ -24,7 +23,6 @@ struct SubVarietyListView: View {
         }
         .padding(.trailing)
         .listStyle(.plain)
-        .searchable(text: $searchText)
     }
 }
 

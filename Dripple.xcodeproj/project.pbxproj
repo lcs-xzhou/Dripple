@@ -29,6 +29,8 @@
 		2D6D649D2C077A0400D84023 /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = 2D6D649C2C077A0400D84023 /* Storage */; };
 		2D6D649F2C077A0400D84023 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 2D6D649E2C077A0400D84023 /* Supabase */; };
 		2D6D64A12C077AE100D84023 /* Supabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6D64A02C077AE100D84023 /* Supabase.swift */; };
+		2D6D64A52C0787E900D84023 /* AppEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6D64A42C0787E900D84023 /* AppEntryView.swift */; };
+		2D6D64A72C07882600D84023 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6D64A62C07882600D84023 /* AuthView.swift */; };
 		2DA212E32BFE4282009E23A3 /* NotesColumnsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA212E22BFE4282009E23A3 /* NotesColumnsView.swift */; };
 		2DA212E52BFE42BE009E23A3 /* NotesItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA212E42BFE42BE009E23A3 /* NotesItemView.swift */; };
 /* End PBXBuildFile section */
@@ -51,6 +53,8 @@
 		2D6D648D2C07692800D84023 /* NotesItemImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesItemImage.swift; sourceTree = "<group>"; };
 		2D6D64912C07741D00D84023 /* NotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewModel.swift; sourceTree = "<group>"; };
 		2D6D64A02C077AE100D84023 /* Supabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Supabase.swift; sourceTree = "<group>"; };
+		2D6D64A42C0787E900D84023 /* AppEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEntryView.swift; sourceTree = "<group>"; };
+		2D6D64A62C07882600D84023 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		2DA212E22BFE4282009E23A3 /* NotesColumnsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesColumnsView.swift; sourceTree = "<group>"; };
 		2DA212E42BFE42BE009E23A3 /* NotesItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -168,6 +172,8 @@
 		2D5D71E52BF708C0009F83C6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2D6D64A42C0787E900D84023 /* AppEntryView.swift */,
+				2D6D64A62C07882600D84023 /* AuthView.swift */,
 				2D1B7D752BFC186C00390E54 /* NotesView */,
 				2D1B7D6A2BFBB49500390E54 /* CountingViews */,
 				2D1B7D672BF8E74000390E54 /* VarietyViews */,
@@ -282,9 +288,11 @@
 				2D1B7D6C2BFBB4B900390E54 /* CountingTemplate1.swift in Sources */,
 				2D6D648E2C07692800D84023 /* NotesItemImage.swift in Sources */,
 				2D1B7D642BF8E26200390E54 /* MainVarietyItemView.swift in Sources */,
+				2D6D64A72C07882600D84023 /* AuthView.swift in Sources */,
 				2D56E52F2BF8404E0091500C /* SubVarietyItemView.swift in Sources */,
 				2D5D71D62BF70790009F83C6 /* DrippleApp.swift in Sources */,
 				2D5D71E72BF709ED009F83C6 /* CoffeeBeansVariety.swift in Sources */,
+				2D6D64A52C0787E900D84023 /* AppEntryView.swift in Sources */,
 				2D6D64922C07741D00D84023 /* NotesViewModel.swift in Sources */,
 				2DA212E32BFE4282009E23A3 /* NotesColumnsView.swift in Sources */,
 				2D6D64A12C077AE100D84023 /* Supabase.swift in Sources */,
