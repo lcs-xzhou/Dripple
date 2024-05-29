@@ -24,8 +24,8 @@ struct NotesColumnsView: View {
     // The search text
     @State var searchText = ""
     
-    // The list of note items
-    @State var notes: [NotesItem] = exampleItems
+    // The view model
+    @State var viewModel = NotesViewModel()
     
     // Is the sheet to add a new note item showing right now?
     @State var presentingNewItemSheet = false
@@ -44,7 +44,7 @@ struct NotesColumnsView: View {
                 ScrollView {
                     LazyVGrid(columns: twoColumns) {
                         
-                        ForEach($notes) { $note in
+                        ForEach($viewModel.notes) { $note in
                             
                             NotesItemView(currentItem: $note)
                                 .tint(.brown1)
@@ -53,7 +53,7 @@ struct NotesColumnsView: View {
                                         "Delete",
                                         role: .destructive,
                                         action: {
-                                            delete(note)
+                                            viewModel.delete(note)
                                         }
                                     )
                                 }
@@ -67,7 +67,7 @@ struct NotesColumnsView: View {
                     
                     Button("Add") {
                         // Add the new note item
-                        createNotes(withTitle: newItemTitle, withContext: newItemContext)
+                        viewModel.createNotes(withTitle: newItemTitle, withContext: newItemContext)
                         
                         // Clear the stored property bound to the input textfield
                         newItemTitle = ""
@@ -98,25 +98,6 @@ struct NotesColumnsView: View {
             }
         }
         Spacer()
-    }
-    
-    // MARK: Functions
-    func createNotes(withTitle title: String, withContext context: String) {
-        
-        // Create the new note item instance
-        let note = NotesItem(
-            title: title,
-            context: context
-        )
-        // Append to the array
-        notes.append(note)
-    }
-    
-    func delete(_ note: NotesItem) {
-        
-        // Remove the provided note item from the array
-        notes.removeAll { currentItem in
-            currentItem.id == note.id}
     }
 }
 
