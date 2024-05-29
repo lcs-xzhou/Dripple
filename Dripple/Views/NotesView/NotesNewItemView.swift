@@ -103,7 +103,7 @@ struct NotesNewItemView: View {
     // MARK: Functions
     
     // Transfer the data from the PhotosPicker selection result into the stored property that
-    // will hold the actual image for the new to-do item
+    // will hold the actual image for the new notes item
     private func loadTransferable(from imageSelection: PhotosPickerItem) {
         Task {
             do {

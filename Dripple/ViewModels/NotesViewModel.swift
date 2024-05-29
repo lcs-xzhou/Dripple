@@ -12,7 +12,7 @@ import Storage
 class NotesViewModel {
     
     // MARK: Stored properties
-    // The list of to-do items
+    // The list of notes items
     var notes: [NotesItem]
     
     // Track when note items are initially being fetched
@@ -159,7 +159,7 @@ class NotesViewModel {
                     }
                 }
                 
-                // Run the delete command to remove to-do item from database table.
+                // Run the delete command to remove notes item from database table.
                 try await supabase
                     .from("notes")
                     .delete()

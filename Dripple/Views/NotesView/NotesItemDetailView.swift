@@ -10,10 +10,10 @@ import SwiftUI
 struct NotesItemDetailView: View {
     
     // MARK: Stored properties
-    // Holds a reference to the current to-do item
+    // Holds a reference to the current notes item
     @Binding var currentItem: NotesItem
     
-    // Holds the image for this to-do item
+    // Holds the image for this notes item
     @State var currentItemImage: NotesItemImage?
     
     // Access the view model through the environment
@@ -65,7 +65,7 @@ struct NotesItemDetailView: View {
                 }
             }
         }
-        // Add a button to allow for deletion of the to-do item
+        // Add a button to allow for deletion of the notes item
         .toolbar {
             ToolbarItem(placement: .automatic) {
                 Button("Delete", role: .destructive) {

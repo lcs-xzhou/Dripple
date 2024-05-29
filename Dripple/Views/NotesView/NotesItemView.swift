@@ -21,7 +21,7 @@ struct NotesItemView: View {
     var body: some View {
         VStack(spacing: 0) {
             
-            // When an image has been successfully downloaded for this to-do item,
+            // When an image has been successfully downloaded for this notes item,
             // (it is not nil), then show a preview of the image (not too big since it is in a list)
             if let currentItemImage = currentItemImage {
                 currentItemImage.image
@@ -41,7 +41,7 @@ struct NotesItemView: View {
         .padding()
         // Adds an asynchronous task to perform before this view appears.
         .task {
-            // If the image URL for this to-do item is not nil, and if it is not an empty string...
+            // If the image URL for this notes item is not nil, and if it is not an empty string...
             if let notesItemImageURL = currentItem.imageURL, notesItemImageURL.isEmpty == false {
                 
                 // ... then attempt to download the image so it can be displayed in this view
