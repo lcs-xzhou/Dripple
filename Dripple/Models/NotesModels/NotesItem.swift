@@ -11,6 +11,16 @@ struct NotesItem: Identifiable, Codable {
     var id: Int?
     var title: String
     var context:  String
+    var imageURL: String?
+
+    // When decoding and encoding from JSON, translate snake_case
+    // column names into camelCase
+    enum CodingKeys: String, CodingKey {
+        case id
+        case title
+        case context
+        case imageURL = "image_url"
+    }
 }
 
 let firstItem = NotesItem(title: "Apr 14, 2024", context: "Started my day with a cup of smooth Colombian Arabica coffee. Noted the rich flavour and how it perked up my morning. Kept track of my caffeine intake and the environmental impact. Each sip, a journey of flavour and reflection.")
