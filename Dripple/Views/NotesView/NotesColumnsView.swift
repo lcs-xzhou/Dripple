@@ -76,6 +76,7 @@ struct NotesColumnsView: View {
                     .disabled(newItemTitle.trimmingCharacters(in: .whitespaces).isEmpty == true)                }
                 .padding(20)
             }
+            // Show the sheet to add a new item
             .sheet(isPresented: $presentingNewItemSheet) {
                 Text("Hello, world!")
                     .presentationDetents([.fraction(0.15)])
