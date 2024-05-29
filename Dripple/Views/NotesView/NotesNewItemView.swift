@@ -37,7 +37,7 @@ struct NotesNewItemView: View {
                     
                     Button("Add") {
                         // Add the new note item
-                        viewModel.createNotes(withTitle: newItemTitle, withContext: newItemContext)
+                        viewModel.createNotes(withTitle: newItemTitle, withContext: newItemContext, andImage: newItemImage)
                         
                         // Clear the stored property bound to the input textfield
                         newItemTitle = ""

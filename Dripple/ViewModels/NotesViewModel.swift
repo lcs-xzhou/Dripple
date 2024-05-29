@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Storage
 
 @Observable
 class NotesViewModel {
@@ -50,16 +51,22 @@ class NotesViewModel {
         
     }
     
-    func createNotes(withTitle title: String, withContext context: String) {
+    func createNotes(withTitle title: String, withContext context: String, andImage providedImage: NotesItemImage?) {
         
         // Create a unit of asynchronous work to add the note item
         Task {
+            
+            // Upload an image.
+            // If one was not provided to this function, then this
+            // function call will return a nil value.
+            let imageURL = try await uploadImage(providedImage)
             
             // Create the new note item instance
             // NOTE: The id will be nil for now
             let note = NotesItem(
                 title: title,
-                context: context
+                context: context,
+                imageURL: imageURL
             )
             
             // Write it to the database
@@ -85,6 +92,31 @@ class NotesViewModel {
                 debugPrint(error)
             }
         }
+    }
+    
+    // We mark the function as "private" meaning it can only be invoked from inside
+    // the view model itself (it will not be accessible from the view layer)
+    private func uploadImage(_ image: NotesItemImage?) async throws -> String? {
+        
+        // Only continue past this point if an image was provided.
+        // If an image was provided, obtain the raw image data.
+        guard let imageData = image?.data else {
+            return nil
+        }
+        
+        // Generate a unique file path for the provided image
+        let filePath = "\(UUID().uuidString).jpeg"
+        
+        // Attempt to upload the raw image data to the bucket at Supabase
+        try await supabase.storage
+            .from("notes_images")
+            .upload(
+                path: filePath,
+                file: imageData,
+                options: FileOptions(contentType: "image/jpeg")
+            )
+        
+        return filePath
     }
     
     func delete(_ note: NotesItem) {
