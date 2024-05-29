@@ -63,7 +63,7 @@ struct NotesLandingView: View {
                                 if note.imageURL == nil {
                                     
                                     // If no, just show the text of the note item
-                                    NotesItemView(currentItem: $note, viewModel: NotesViewModel)
+                                    NotesItemView(currentItem: $note)
                                         // Delete item
                                         .swipeActions {
                                             Button(
@@ -130,6 +130,7 @@ struct NotesLandingView: View {
                 }
             }
         }
+        .environment(viewModel)
         Spacer()
     }
 }

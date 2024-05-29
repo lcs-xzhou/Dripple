@@ -15,8 +15,8 @@ struct NotesItemView: View {
     // Holds the image for this note item, if an image exists
     @State var currentItemImage: NotesItemImage?
     
-    // Recieve a reference to the view model from the parent view
-    @Bindable var viewModel: NotesViewModel
+    // Access the view model through the environment
+    @Environment(NotesViewModel.self) var viewModel
     
     var body: some View {
         VStack(spacing: 0) {
@@ -61,6 +61,6 @@ struct NotesItemView: View {
     @State var previewsViewModel = NotesViewModel()
     
     return VStack {
-        NotesItemView(currentItem: .constant(firstItem), viewModel: previewsViewModel)
+        NotesItemView(currentItem: .constant(firstItem))
     }
 }
