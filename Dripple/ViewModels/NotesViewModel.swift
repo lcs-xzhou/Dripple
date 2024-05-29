@@ -102,4 +102,26 @@ class NotesViewModel {
         }
         
     }
+    
+    func update(note updatedNote: NotesItem) {
+            
+            // Create a unit of asynchronous work to add the note item
+            Task {
+                
+                do {
+                    
+                    // Run the update command
+                    try await supabase
+                        .from("notes")
+                        .update(updatedNote)
+                        .eq("id", value: updatedNote.id!)   // Only update the row whose id
+                        .execute()                          // matches that of the note being deleted
+                        
+                } catch {
+                    debugPrint(error)
+                }
+                
+            }
+            
+        }
 }

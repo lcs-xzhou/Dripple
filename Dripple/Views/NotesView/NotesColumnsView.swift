@@ -46,7 +46,7 @@ struct NotesColumnsView: View {
                         
                         ForEach($viewModel.notes) { $note in
                             
-                            NotesItemView(currentItem: $note)
+                            NotesItemView(currentItem: $note, viewModel: viewModel)
                                 .tint(.brown1)
                                 .contextMenu {
                                     Button(

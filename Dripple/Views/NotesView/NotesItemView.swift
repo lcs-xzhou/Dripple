@@ -11,6 +11,9 @@ struct NotesItemView: View {
     
     @Binding var currentItem: NotesItem
     
+    // Recieve a reference to the view model from the parent view
+    @Bindable var viewModel: NotesViewModel
+    
     var body: some View {
         VStack(spacing: 0) {
             
@@ -23,12 +26,19 @@ struct NotesItemView: View {
                 .multilineTextAlignment(.center)
                 .foregroundColor(.brown1)
                 .fontDesign(.rounded)
+                .onSubmit {
+                    viewModel.update(note: currentItem)
+                }
         }
         .padding()
     }
 }
 
 #Preview {
-    NotesItemView(currentItem: .constant(firstItem))
-        .frame(idealHeight: 200, maxHeight: 200)
+    
+    @State var previewsViewModel = NotesViewModel()
+    
+    return VStack {
+        NotesItemView(currentItem: .constant(firstItem), viewModel: previewsViewModel)
+    }
 }
