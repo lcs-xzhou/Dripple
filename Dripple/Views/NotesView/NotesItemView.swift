@@ -17,7 +17,7 @@ struct NotesItemView: View {
             Image("NotePicture1")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-
+            
             TextField("Please enter a date", text: $currentItem.title, axis: .vertical)
                 .font(.headline)
                 .multilineTextAlignment(.center)

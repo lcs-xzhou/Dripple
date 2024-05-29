@@ -15,7 +15,7 @@ struct NotesDetailView: View {
     
     // The selection made in the PhotosPicker
     @State var selectionResult: PhotosPickerItem?
-
+    
     // The actual image loaded from the selection that was made
     @State var newItemImage: NotesItemImage?
     
@@ -29,6 +29,8 @@ struct NotesDetailView: View {
                 .multilineTextAlignment(.center)
             
             Image("NotePicture1")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
             
             TextField("Please note down your thoughts", text: $currentItem.context)
                 .padding(.horizontal)
@@ -40,7 +42,7 @@ struct NotesDetailView: View {
     }
     
     // MARK: Functions
-
+    
     // Transfer the data from the PhotosPicker selection result into the stored property that
     // will hold the actual image for the new to-do item
     private func loadTransferable(from imageSelection: PhotosPickerItem) {

@@ -65,6 +65,9 @@ struct NotesColumnsView: View {
                     Button("Add") {
                         // Add the new note item
                         createNotes(withTitle: newItemTitle, withContext: newItemContext)
+                        
+                        // Clear the stored property bound to the input textfield
+                        newItemTitle = ""
                     }
                     .font(.caption)
                     .disabled(newItemTitle.isEmpty == true)
