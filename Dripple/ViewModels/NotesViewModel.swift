@@ -119,6 +119,26 @@ class NotesViewModel {
         return filePath
     }
     
+    func downloadTodoItemImage(fromPath path: String) async throws -> NotesItemImage? {
+        
+        // Attempt to download an image from the provided path
+        do {
+            let data = try await supabase
+                .storage
+                .from("notes_images")
+                .download(path: path)
+            
+            return NotesItemImage(rawImageData: data)
+            
+        } catch {
+            debugPrint(error)
+        }
+        
+        // If we landed here, something went wrong, so return nil
+        return nil
+        
+    }
+    
     func delete(_ note: NotesItem) {
         
         // Create a unit of asynchronous work to add the note item
