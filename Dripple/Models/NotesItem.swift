@@ -5,15 +5,13 @@
 //  Created by Fiona ZHOU on 2024-05-20.
 //
 
-import SwiftData
 import SwiftUI
 
-@Model
 class NotesItem: Identifiable {
     var title: String
     var context:  String
     
-    init(title: String, picture: Data? = nil, context: String) {
+    init(title: String, context: String) {
         self.title = title
         self.context = context
     }

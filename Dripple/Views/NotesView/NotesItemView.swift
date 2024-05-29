@@ -9,42 +9,26 @@ import SwiftUI
 
 struct NotesItemView: View {
     
-    enum FocusedField {
-        case currentItem
-    }
-    @FocusState private var focusedField: FocusedField?
-    @Bindable var currentItem: NotesItem
-    var onTap: () -> Void
+    @Binding var currentItem: NotesItem
     
     var body: some View {
         VStack(spacing: 0) {
             
-            Form {
-                TextField("Please enter a date", text: Binding<String>(
-                    get: { currentItem.title },
-                    set: { _ in }
-                ))
+            Image("NotePicture1")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+
+            TextField("Please enter a date", text: $currentItem.title, axis: .vertical)
                 .font(.headline)
                 .multilineTextAlignment(.center)
                 .foregroundColor(.brown1)
                 .fontDesign(.rounded)
-            }
-            .onAppear{
-                focusedField = .currentItem
-            }
         }
         .padding()
-        .onTapGesture {
-            onTap()
-        }
     }
 }
 
-//#Preview {
-//     HStack {
-//        NotesItemView(currentItem: firstItem, onTap: {})
-//            .frame(idealHeight: 200, maxHeight: 200)
-//        NotesItemView(currentItem: secondItem, onTap: {})
-//            .frame(idealHeight: 200, maxHeight: 200)
-//    }
-//}
+#Preview {
+    NotesItemView(currentItem: .constant(firstItem))
+        .frame(idealHeight: 200, maxHeight: 200)
+}

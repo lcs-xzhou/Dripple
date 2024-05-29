@@ -5,13 +5,11 @@
 //  Created by Fiona ZHOU on 2024-05-22.
 //
 
-import SwiftData
 import SwiftUI
 
 struct NotesColumnsView: View {
     
     // MARK: Stored properties
-    @Environment(\.modelContext) var modelContext
     let twoColumns = [
         GridItem(.adaptive(minimum: 100, maximum: 200), alignment: .top),
         GridItem(.adaptive(minimum: 100, maximum: 200), alignment: .top),
@@ -41,29 +39,32 @@ struct NotesColumnsView: View {
                     .padding()
                 
                 ScrollView {
-                    LazyVGrid(columns: twoColumns) { $note in
+                    LazyVGrid(columns: twoColumns) {
                         
-                        NotesItemView(currentItem: $note)
-                            .tint(.brown1)
-                            .contextMenu {
-                                Button(
-                                    "Delete",
-                                    role: .destructive,
-                                    action: {
-                                        delete(note)
-                                    }
-                                )
-                            }
+                        ForEach($notes) { $note in
+                            
+                            NotesItemView(currentItem: $note)
+                                .tint(.brown1)
+                                .contextMenu {
+                                    Button(
+                                        "Delete",
+                                        role: .destructive,
+                                        action: {
+                                            delete(note)
+                                        }
+                                    )
+                                }
+                        }
+                        
                     }
                 }
-                .searchable(text: $searchText)
                 
                 HStack {
                     TextField("Enter a date", text: $newItemTitle)
                     
                     Button("Add") {
                         // Add the new note item
-                        createNotes(withTitle: $newItemTitle, withContext: $newItemContext)
+                        createNotes(withTitle: newItemTitle, withContext: newItemContext)
                     }
                     .font(.caption)
                     .disabled(newItemTitle.isEmpty == true)
@@ -86,13 +87,14 @@ struct NotesColumnsView: View {
         notes.append(note)
     }
     
-    func removeRows(at offsets: IndexSet) {
-        for offset in offsets {
-            modelContext.delete(notes[offset])
-        }
+    func delete(_ note: NotesItem) {
+        
+        // Remove the provided note item from the array
+        notes.removeAll { currentItem in
+            currentItem.id == note.id}
     }
 }
 
-//#Preview {
-//    NotesColumnsView(onSave: { _, _, _ in }, onDelete: {})
-//}
+#Preview {
+    NotesColumnsView()
+}

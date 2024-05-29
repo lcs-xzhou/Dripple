@@ -5,11 +5,19 @@
 //  Created by Fiona ZHOU on 2024-05-20.
 //
 
+import PhotosUI
 import SwiftUI
 
 struct NotesDetailView: View {
     
-    @Bindable var currentItem: NotesItem
+    // MARK: Stored properties
+    @Binding var currentItem: NotesItem
+    
+    // The selection made in the PhotosPicker
+    @State var selectionResult: PhotosPickerItem?
+
+    // The actual image loaded from the selection that was made
+    @State var newItemImage: NotesItemImage?
     
     var body: some View {
         ScrollView {
@@ -30,9 +38,25 @@ struct NotesDetailView: View {
         }
         .padding()
     }
+    
+    // MARK: Functions
+
+    // Transfer the data from the PhotosPicker selection result into the stored property that
+    // will hold the actual image for the new to-do item
+    private func loadTransferable(from imageSelection: PhotosPickerItem) {
+        Task {
+            do {
+                // Attempt to set the stored property that holds the image data
+                newItemImage = try await imageSelection.loadTransferable(type: NotesItemImage.self)
+            } catch {
+                debugPrint(error)
+            }
+        }
+    }
+    
 }
 
 
 #Preview {
-    NotesDetailView(currentItem: firstItem)
+    NotesDetailView(currentItem: .constant(firstItem))
 }
