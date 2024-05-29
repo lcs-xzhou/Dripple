@@ -29,6 +29,7 @@ class NotesViewModel {
             let results: [NotesItem] = try await supabase
                 .from("notes")
                 .select()
+                .order("id", ascending: true)
                 .execute()
                 .value
             
