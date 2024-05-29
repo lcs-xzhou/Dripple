@@ -35,21 +35,32 @@ struct NotesColumnsView: View {
                 ScrollView {
                     LazyVGrid(columns: twoColumns) {
                         
-                        ForEach($viewModel.notes) { $note in
+                        if viewModel.notes.isEmpty {
+                            // Show the prompt to add a new note item
+                            ContentUnavailableView(
+                                "No note items",
+                                systemImage: "pencil.tip.crop.circle.badge.plus",
+                                description: Text("Add a reminder to get started")
+                            )
+                        } else {
                             
-                            NotesItemView(currentItem: $note, viewModel: viewModel)
-                                .tint(.brown1)
-                                .contextMenu {
-                                    Button(
-                                        "Delete",
-                                        role: .destructive,
-                                        action: {
-                                            viewModel.delete(note)
-                                        }
-                                    )
-                                }
+                            // Show the list of items
+                            ForEach($viewModel.notes) { $note in
+                                
+                                NotesItemView(currentItem: $note, viewModel: viewModel)
+                                    .tint(.brown1)
+                                    .contextMenu {
+                                        Button(
+                                            "Delete",
+                                            role: .destructive,
+                                            action: {
+                                                viewModel.delete(note)
+                                            }
+                                        )
+                                    }
+                            }
+                            
                         }
-                        
                     }
                 }
                 
