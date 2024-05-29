@@ -36,12 +36,24 @@ struct NotesColumnsView: View {
                     LazyVGrid(columns: twoColumns) {
                         
                         if viewModel.notes.isEmpty {
-                            // Show the prompt to add a new note item
-                            ContentUnavailableView(
-                                "No note items",
-                                systemImage: "pencil.tip.crop.circle.badge.plus",
-                                description: Text("Add a reminder to get started")
-                            )
+                            if viewModel.fetchingNotes {
+                                
+                                Spacer()
+                                
+                                ProgressView()
+                                
+                                Spacer()
+                                
+                            } else {
+                                
+                                ContentUnavailableView(
+                                    "No note items",
+                                    systemImage: "pencil.tip.crop.circle.badge.plus",
+                                    description: Text("Add a note to get started")
+                                )
+                                
+                            }
+                            
                         } else {
                             
                             // Show the list of items

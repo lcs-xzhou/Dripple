@@ -14,6 +14,9 @@ class NotesViewModel {
     // The list of to-do items
     var notes: [NotesItem]
     
+    // Track when note items are initially being fetched
+    var fetchingNotes: Bool = false
+    
     // MARK: Initializer(s)
     init(notes: [NotesItem] = []) {
         self.notes = notes
@@ -25,6 +28,9 @@ class NotesViewModel {
     // MARK: Functions
     func getNotes() async throws {
         
+        // Indicate that app is in the process of getting note items from cloud
+        fetchingNotes = true
+        
         do {
             let results: [NotesItem] = try await supabase
                 .from("notes")
@@ -34,6 +40,9 @@ class NotesViewModel {
                 .value
             
             self.notes = results
+            
+            // Finished getting note items
+            fetchingNotes = false
             
         } catch {
             debugPrint(error)
