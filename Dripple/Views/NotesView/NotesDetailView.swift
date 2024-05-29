@@ -11,6 +11,8 @@ import SwiftUI
 struct NotesDetailView: View {
     
     // MARK: Stored properties
+    
+    // The item currently being added
     @Binding var currentItem: NotesItem
     
     // The selection made in the PhotosPicker
