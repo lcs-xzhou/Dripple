@@ -46,7 +46,9 @@ struct NotesNewItemView: View {
                         // Clear the loaded photo
                         newItemImage = nil
                     }
-                    .font(.caption)
+                    .foregroundColor(.brown1)
+                    .fontWeight(.semibold)
+                    .fontDesign(.rounded)
                     .disabled(newItemTitle.trimmingCharacters(in: .whitespaces).isEmpty == true)                }
                 
                 HStack {
@@ -75,17 +77,7 @@ struct NotesNewItemView: View {
                 .frame(height: 100)
             }
             .padding(20)
-            .toolbar {
-                ToolbarItem(placement: .automatic) {
-                    Button {
-                        showSheet = false
-                    } label: {
-                        Text("Done")
-                            .foregroundColor(.brown1)
-                            .fontWeight(.semibold)
-                    }
-                }
-            }
+
             
             // This block of code is invoked whenever the selection from the picker changes
             .onChange(of: selectionResult) {

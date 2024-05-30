@@ -51,6 +51,7 @@ struct NotesLandingView: View {
                                     systemImage: "pencil.tip.crop.circle.badge.plus",
                                     description: Text("Add a note to get started")
                                 )
+                                .foregroundColor(.brown1)
                                 
                             }
                             
