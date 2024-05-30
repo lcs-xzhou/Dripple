@@ -11,28 +11,36 @@ struct SubCountingStructureView: View {
         
     let titleValue: String
     let variable: String
+    let countingPicture: String
     
     var body: some View {
-        VStack {
-            HStack {
-                Text(titleValue)
-                    .fontWeight(.semibold)
-                    .fontDesign(.rounded)
-                    .foregroundColor(.brown1)
-                Spacer()
-            }
-            HStack {
-                Text(variable)
-                    .font(.callout)
-                    .fontDesign(.rounded)
-                    .foregroundColor(.brown1)
-                Spacer()
+        HStack {
+            
+            Image(countingPicture)
+                .resizable()
+                .aspectRatio(1, contentMode: .fit)
+                .frame(height: 100)
+            
+            VStack {
+                HStack {
+                    Text(titleValue)
+                        .fontWeight(.semibold)
+                        .fontDesign(.rounded)
+                        .foregroundColor(.brown1)
+                    Spacer()
+                }
+                HStack {
+                    Text(variable)
+                        .font(.callout)
+                        .fontDesign(.rounded)
+                        .foregroundColor(.gray1)
+                    Spacer()
+                }
             }
         }
-        .padding()
     }
 }
 
 #Preview {
-    SubCountingStructureView(titleValue: "waterNeeded", variable: "90 ml")
+    SubCountingStructureView(titleValue: "Water Needed", variable: "90 ml", countingPicture: "CountingPicture2")
 }

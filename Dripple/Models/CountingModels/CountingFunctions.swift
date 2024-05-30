@@ -16,7 +16,7 @@ struct CountingFunctions {
     var WaterNeeded: Double {
         return round(gramsOfCoffeeBeans * 16)
     }
-    var CoffeinIntake: Double {
+    var CaffeinIntake: Double {
         return round(gramsOfCoffeeBeans * 12)
     }
     var CarbonProduces: Double {

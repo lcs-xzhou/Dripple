@@ -44,9 +44,9 @@ struct SubCountingView: View {
                     .font(.system(size: 20))
                     .fontWeight(.bold)
                 
-                Slider(value: $currentGrams.gramsOfCoffeeBeans, in: 0...500)
+                Slider(value: $currentGrams.gramsOfCoffeeBeans, in: 0...300)
                 
-                Text("500 g")
+                Text("300 g")
                     .foregroundColor(.brown1)
                     .font(.system(size: 20))
                     .fontWeight(.bold)
@@ -54,8 +54,14 @@ struct SubCountingView: View {
             .padding()
             
             List {
+                SubCountingStructureView(titleValue: "Water Needed", variable: "\(currentGrams.WaterNeeded) ml", countingPicture: "CountingPicture2")
                 
+                SubCountingStructureView(titleValue: "Caffeine Intake", variable: "\(currentGrams.CaffeinIntake) mg", countingPicture: "CountingPicture3")
+                
+                SubCountingStructureView(titleValue: "Carbon Produced", variable: "\(currentGrams.CarbonProduces) kt", countingPicture: "CountingPicture4")
             }
+            .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+            .listStyle(.plain)
             
             Spacer()
         }
