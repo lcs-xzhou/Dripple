@@ -38,7 +38,7 @@ struct NotesItemDetailView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .padding()
-
+                
             } else {
                 
                 // While waiting for the image to download
@@ -67,14 +67,15 @@ struct NotesItemDetailView: View {
             }
         }
         // Add a button to allow for deletion of the notes item
-//        .toolbar {
-//            ToolbarItem(placement: .automatic) {
-//                Button("Delete", role: .destructive) {
-//                    viewModel.delete(currentItem)
-//                }
-//                .foregroundStyle(.brown1)
-//            }
-//        }
+        .toolbar {
+            ToolbarItem(placement: .automatic) {
+                Button("Delete", role: .destructive) {
+                    viewModel.delete(currentItem)
+                }
+                .foregroundStyle(.brown1)
+                .fontWeight(.semibold)
+            }
+        }
     }
 }
 

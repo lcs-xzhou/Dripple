@@ -137,6 +137,8 @@
 			isa = PBXGroup;
 			children = (
 				2D5D71D52BF70790009F83C6 /* DrippleApp.swift */,
+				2D6D64A62C07882600D84023 /* AuthView.swift */,
+				2D6D64A42C0787E900D84023 /* AppEntryView.swift */,
 				2D1B7D8B2BFD151700390E54 /* ViewModels */,
 				2D5D71E32BF708AA009F83C6 /* Helpers */,
 				2D5D71E42BF708B8009F83C6 /* Models */,
@@ -175,8 +177,6 @@
 		2D5D71E52BF708C0009F83C6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				2D6D64A42C0787E900D84023 /* AppEntryView.swift */,
-				2D6D64A62C07882600D84023 /* AuthView.swift */,
 				2D1B7D752BFC186C00390E54 /* NotesView */,
 				2D1B7D6A2BFBB49500390E54 /* CountingViews */,
 				2D1B7D672BF8E74000390E54 /* VarietyViews */,

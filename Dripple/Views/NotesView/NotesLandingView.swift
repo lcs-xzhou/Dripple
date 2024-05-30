@@ -33,7 +33,7 @@ struct NotesLandingView: View {
                     .padding()
                 
                 ScrollView {
-                    LazyVGrid(columns: twoColumns) {
+                    VStack {
                         
                         if viewModel.notes.isEmpty {
                             if viewModel.fetchingNotes {
@@ -45,6 +45,7 @@ struct NotesLandingView: View {
                                 Spacer()
                                 
                             } else {
+                                Spacer()
                                 
                                 ContentUnavailableView(
                                     "No note items",
@@ -53,58 +54,38 @@ struct NotesLandingView: View {
                                 )
                                 .foregroundColor(.brown1)
                                 
+                                Spacer()
                             }
                             
                         } else {
                             
-                            // Show the list of items
-                            ForEach($viewModel.notes) { $note in
-                                
-                                // Is there an image attached to the note item?
-                                if note.imageURL == nil {
+                            LazyVGrid(columns: twoColumns) {
+                                // Show the list of items
+                                ForEach($viewModel.notes) { $note in
                                     
-                                    // If no, just show the text of the note item
-                                    NotesItemView(currentItem: $note)
-                                        // Delete item
-                                        .swipeActions {
-                                            Button(
-                                                "Delete",
-                                                role: .destructive,
-                                                action: {
-                                                    viewModel.delete(note)
-                                                }
-                                            )
-                                            .foregroundStyle(.brown1)
-                                        }
-                                    
-                                } else {
-                                    
-                                    // If yes, show a navigation
-                                    // link that leads to the detail view
-                                    NavigationLink(destination: {
+                                    // Is there an image attached to the note item?
+                                    if note.imageURL == nil {
                                         
-                                        NotesItemDetailView(currentItem: $note)
-                                        
-                                    }, label: {
-                                        
+                                        // If no, just show the text of the note item
                                         NotesItemView(currentItem: $note)
-                                            // Delete item
-                                            .swipeActions {
-                                                Button(
-                                                    "Delete",
-                                                    role: .destructive,
-                                                    action: {
-                                                        viewModel.delete(note)
-                                                    }
-                                                )
-                                                .foregroundStyle(.brown1)
-                                            }
-
-                                    })
-                                    
+                                        
+                                    } else {
+                                        
+                                        // If yes, show a navigation
+                                        // link that leads to the detail view
+                                        NavigationLink(destination: {
+                                            
+                                            NotesItemDetailView(currentItem: $note)
+                                            
+                                        }, label: {
+                                            
+                                            NotesItemView(currentItem: $note)
+                                            
+                                        })
+                                        
+                                    }
                                 }
                             }
-                            
                         }
                     }
                 }
