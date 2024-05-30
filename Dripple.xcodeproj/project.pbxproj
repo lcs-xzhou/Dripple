@@ -18,6 +18,7 @@
 		2D2DBD2A2C0918490047CFD2 /* MainPortfolioListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2DBD292C0918490047CFD2 /* MainPortfolioListView.swift */; };
 		2D2DBD2D2C091CB20047CFD2 /* UserImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2DBD2C2C091CB20047CFD2 /* UserImage.swift */; };
 		2D2DBD2F2C091DA90047CFD2 /* Enumerations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2DBD2E2C091DA90047CFD2 /* Enumerations.swift */; };
+		2D2DBD312C0943AF0047CFD2 /* UserItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2DBD302C0943AF0047CFD2 /* UserItem.swift */; };
 		2D56E52F2BF8404E0091500C /* SubVarietyItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D56E52E2BF8404E0091500C /* SubVarietyItemView.swift */; };
 		2D56E5312BF846050091500C /* SubVarietyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D56E5302BF846050091500C /* SubVarietyListView.swift */; };
 		2D5D71D62BF70790009F83C6 /* DrippleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D71D52BF70790009F83C6 /* DrippleApp.swift */; };
@@ -53,6 +54,7 @@
 		2D2DBD292C0918490047CFD2 /* MainPortfolioListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPortfolioListView.swift; sourceTree = "<group>"; };
 		2D2DBD2C2C091CB20047CFD2 /* UserImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImage.swift; sourceTree = "<group>"; };
 		2D2DBD2E2C091DA90047CFD2 /* Enumerations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enumerations.swift; sourceTree = "<group>"; };
+		2D2DBD302C0943AF0047CFD2 /* UserItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserItem.swift; sourceTree = "<group>"; };
 		2D56E52E2BF8404E0091500C /* SubVarietyItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubVarietyItemView.swift; sourceTree = "<group>"; };
 		2D56E5302BF846050091500C /* SubVarietyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubVarietyListView.swift; sourceTree = "<group>"; };
 		2D5D71D22BF70790009F83C6 /* Dripple.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dripple.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				2D2DBD2C2C091CB20047CFD2 /* UserImage.swift */,
+				2D2DBD302C0943AF0047CFD2 /* UserItem.swift */,
 			);
 			path = PortfolioModels;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				2D2DBD232C08D7690047CFD2 /* CountingFunctions.swift in Sources */,
 				2D2DBD272C08E2DC0047CFD2 /* SubCountingItemView.swift in Sources */,
 				2D56E52F2BF8404E0091500C /* SubVarietyItemView.swift in Sources */,
+				2D2DBD312C0943AF0047CFD2 /* UserItem.swift in Sources */,
 				2D5D71D62BF70790009F83C6 /* DrippleApp.swift in Sources */,
 				2D5D71E72BF709ED009F83C6 /* CoffeeBeansVariety.swift in Sources */,
 				2D6D64A52C0787E900D84023 /* AppEntryView.swift in Sources */,
