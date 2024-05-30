@@ -11,6 +11,7 @@ struct SubCountingView: View {
     
     // MARK: Stored properties
     @State var currentGrams = CountingFunctions(gramsOfCoffeeBeans: 10.0)
+    let question: String
     
     // MARK: Computed properties
     var body: some View {
@@ -18,9 +19,9 @@ struct SubCountingView: View {
             
             Spacer()
             
-            Text("How many grams of coffee beans have you put in your cup?")
+            Text(question)
                 .font(.title)
-                .fontWeight(.medium)
+                .fontWeight(.semibold)
                 .foregroundColor(.brown1)
                 .fontDesign(.rounded)
                 .multilineTextAlignment(.center)
@@ -53,6 +54,19 @@ struct SubCountingView: View {
             }
             .padding()
             
+            Button(action: {}) {
+                Text("Next")
+                    .foregroundColor(.white)
+                    .font(.title2)
+                    .fontWeight(.semibold)
+                    .fontDesign(.rounded)
+                    .bold()
+                    .padding()
+            }
+            .background(RoundedRectangle(cornerRadius: 10)
+                .fill(Color(.brown1)))
+            .padding()
+            
             Spacer()
         }
         .padding()
@@ -60,5 +74,5 @@ struct SubCountingView: View {
 }
 
 #Preview {
-    SubCountingView()
+    SubCountingView(question: "How many grams of coffee beans have you put in your cup?")
 }
