@@ -1,13 +1,13 @@
 //
-//  TodoItemImage.swift
+//  UserImage.swift
 //  Dripple
 //
-//  Created by Fiona ZHOU on 2024-05-29.
+//  Created by Fiona ZHOU on 2024-05-30.
 //
 
 import SwiftUI
 
-struct NotesItemImage: Transferable, Equatable {
+struct UserImage: Transferable, Equatable {
     
     // MARK: Stored properties
     let image: Image
@@ -21,8 +21,8 @@ struct NotesItemImage: Transferable, Equatable {
         
         return DataRepresentation(importedContentType: .image) { importedImageData in
             
-            // Attempt to create an instance of TodoItemImage from the imported data
-            guard let image = NotesItemImage(rawImageData: importedImageData) else {
+            // Attempt to create an instance of UserImage from the imported data
+            guard let image = UserImage(rawImageData: importedImageData) else {
                 // If the important did not work, throw an error
                 throw TransferError.importFailed
             }
@@ -34,11 +34,11 @@ struct NotesItemImage: Transferable, Equatable {
 }
 
 // Extend the structure to add new capabilities
-extension NotesItemImage {
+extension UserImage {
     
     // MARK: Initializer(s)
     
-    // An initializer to create an instance of TodoItemImage from the image data
+    // An initializer to create an instance of UserImage from the image data
     // returned by the PhotosPicker
     init?(rawImageData: Data) {
         
@@ -55,3 +55,4 @@ extension NotesItemImage {
     }
     
 }
+
