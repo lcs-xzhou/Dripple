@@ -14,7 +14,7 @@
 		2D1B7D7B2BFC1BCE00390E54 /* NotesItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1B7D7A2BFC1BCE00390E54 /* NotesItem.swift */; };
 		2D1B7D7D2BFC1EBA00390E54 /* NotesItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1B7D7C2BFC1EBA00390E54 /* NotesItemDetailView.swift */; };
 		2D2DBD232C08D7690047CFD2 /* CountingFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2DBD222C08D7690047CFD2 /* CountingFunctions.swift */; };
-		2D2DBD272C08E2DC0047CFD2 /* CountingFeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2DBD262C08E2DC0047CFD2 /* CountingFeedbackView.swift */; };
+		2D2DBD272C08E2DC0047CFD2 /* SubCountingStructureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2DBD262C08E2DC0047CFD2 /* SubCountingStructureView.swift */; };
 		2D56E52F2BF8404E0091500C /* SubVarietyItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D56E52E2BF8404E0091500C /* SubVarietyItemView.swift */; };
 		2D56E5312BF846050091500C /* SubVarietyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D56E5302BF846050091500C /* SubVarietyListView.swift */; };
 		2D5D71D62BF70790009F83C6 /* DrippleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D71D52BF70790009F83C6 /* DrippleApp.swift */; };
@@ -46,7 +46,7 @@
 		2D1B7D7A2BFC1BCE00390E54 /* NotesItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesItem.swift; sourceTree = "<group>"; };
 		2D1B7D7C2BFC1EBA00390E54 /* NotesItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesItemDetailView.swift; sourceTree = "<group>"; };
 		2D2DBD222C08D7690047CFD2 /* CountingFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountingFunctions.swift; sourceTree = "<group>"; };
-		2D2DBD262C08E2DC0047CFD2 /* CountingFeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountingFeedbackView.swift; sourceTree = "<group>"; };
+		2D2DBD262C08E2DC0047CFD2 /* SubCountingStructureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCountingStructureView.swift; sourceTree = "<group>"; };
 		2D56E52E2BF8404E0091500C /* SubVarietyItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubVarietyItemView.swift; sourceTree = "<group>"; };
 		2D56E5302BF846050091500C /* SubVarietyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubVarietyListView.swift; sourceTree = "<group>"; };
 		2D5D71D22BF70790009F83C6 /* Dripple.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dripple.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,7 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				2D1B7D6B2BFBB4B900390E54 /* SubCountingView.swift */,
-				2D2DBD262C08E2DC0047CFD2 /* CountingFeedbackView.swift */,
+				2D2DBD262C08E2DC0047CFD2 /* SubCountingStructureView.swift */,
 			);
 			path = CountingViews;
 			sourceTree = "<group>";
@@ -308,7 +308,7 @@
 				2D1B7D642BF8E26200390E54 /* MainVarietyItemView.swift in Sources */,
 				2D6D64A72C07882600D84023 /* AuthView.swift in Sources */,
 				2D2DBD232C08D7690047CFD2 /* CountingFunctions.swift in Sources */,
-				2D2DBD272C08E2DC0047CFD2 /* CountingFeedbackView.swift in Sources */,
+				2D2DBD272C08E2DC0047CFD2 /* SubCountingStructureView.swift in Sources */,
 				2D56E52F2BF8404E0091500C /* SubVarietyItemView.swift in Sources */,
 				2D5D71D62BF70790009F83C6 /* DrippleApp.swift in Sources */,
 				2D5D71E72BF709ED009F83C6 /* CoffeeBeansVariety.swift in Sources */,
