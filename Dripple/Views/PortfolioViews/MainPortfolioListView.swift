@@ -15,7 +15,7 @@ struct MainPortfolioListView: View {
     @State var selectionResult: PhotosPickerItem?
     
     // The actual image loaded from the selection that was made
-    @State var newItemImage: UserImage?
+//    @State var newItemImage: UserImage?
     
     var body: some View {
         NavigationView {
@@ -25,15 +25,15 @@ struct MainPortfolioListView: View {
                     PhotosPicker(selection: $selectionResult, matching: .images) {
                         
                         // Has an image been loaded?
-                        if let newItemImage = newItemImage {
+//                        if let newItemImage = newItemImage {
                             
                             // Yes, show it
-                            newItemImage.image
-                                .resizable()
-                                .scaledToFit()
-                                .frame(height: 150)
+//                            newItemImage.image
+//                                .resizable()
+//                                .scaledToFit()
+//                                .frame(height: 150)
                             
-                        } else {
+//                        } else {
                             
                             // No, show an icon instead
                             Image(systemName: "photo.badge.plus")
@@ -51,15 +51,15 @@ struct MainPortfolioListView: View {
             }
         }
         // This block of code is invoked whenever the selection from the picker changes
-        .onChange(of: selectionResult) {
+//        .onChange(of: selectionResult) {
             // When the selection result is not nil...
-            if let imageSelection = selectionResult {
+//            if let imageSelection = selectionResult {
                 // ... transfer the data from the selection result into
                 // an actual instance of TodoItemImage
-                loadTransferable(from: imageSelection)
-            }
+//                loadTransferable(from: imageSelection)
+//            }
         }
-    }
+//    }
     
     // MARK: Functions
     
@@ -69,13 +69,13 @@ struct MainPortfolioListView: View {
         Task {
             do {
                 // Attempt to set the stored property that holds the image data
-                newItemImage = try await imageSelection.loadTransferable(type: UserImage.self)
-            } catch {
-                debugPrint(error)
+//                newItemImage = try await imageSelection.loadTransferable(type: UserImage.self)
+//            } catch {
+//                debugPrint(error)
             }
         }
     }
-}
+//}
 
 #Preview {
     MainPortfolioListView()
