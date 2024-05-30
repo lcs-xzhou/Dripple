@@ -16,8 +16,6 @@ struct MainCountingView: View {
     var body: some View {
         VStack {
             
-            Spacer()
-            
             Text("How many grams of coffee beans have you put in your cup?")
                 .font(.title)
                 .fontWeight(.semibold)
@@ -63,8 +61,6 @@ struct MainCountingView: View {
             }
             .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
             .listStyle(.plain)
-            
-            Spacer()
         }
         .padding()
     }
