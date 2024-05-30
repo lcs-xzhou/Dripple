@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SubCountingStructureView: View {
+struct SubCountingItemView: View {
         
     let titleValue: String
     let variable: String
@@ -42,5 +42,5 @@ struct SubCountingStructureView: View {
 }
 
 #Preview {
-    SubCountingStructureView(titleValue: "Water Needed", variable: "90 ml", countingPicture: "CountingPicture2")
+    SubCountingItemView(titleValue: "Water Needed", variable: "90 ml", countingPicture: "CountingPicture2")
 }
