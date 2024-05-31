@@ -14,6 +14,7 @@ struct MainPortfolioListView: View {
     
     // The item currently being added
     @State var userName = ""
+    @State var userId = ""
     
     // The selection made in the PhotosPicker
     @State var selectionResult: PhotosPickerItem?
@@ -21,9 +22,15 @@ struct MainPortfolioListView: View {
     // The actual image loaded from the selection that was made
     @State var newItemImage: UserItemImage?
     
+    // Access the view model through the environment
+//    @Environment(UsersViewModel.self) var viewModel
+    
     var body: some View {
         NavigationView {
-            VStack {
+            VStack(spacing: 0) {
+                
+                Spacer()
+                
                 HStack {
                     
                     PhotosPicker(selection: $selectionResult, matching: .images) {
@@ -50,10 +57,46 @@ struct MainPortfolioListView: View {
                     }
                     
                 }
+                .padding(.top)
                 
-                TextField("Enter a user name", text: $userName)
+                Text(userName)
                     .foregroundColor(.brown1)
+                    .multilineTextAlignment(.center)
+                    .font(.title3)
+                    .fontDesign(.rounded)
+                    .fontWeight(.bold)
+                
+                List {
+                    HStack {
+                        Text("Name")
+                            .foregroundColor(.brown1)
+                        
+                        TextField("Enter a user name", text: $userName)
+                            .multilineTextAlignment(.trailing)
+                            .foregroundColor(.gray1)
+                    }
+                    HStack {
+                        Text("ID")
+                            .foregroundColor(.brown1)
+                        
+                        TextField("Enter a user id", text: $userId) .multilineTextAlignment(.trailing)
+                            .foregroundColor(.gray1)
+                    }
+                    //                    NavigationLink(destination: {
+                    
+                    //                    }, label: {
+                    //                        Text("More")
+                    //                    })
+                    //                    .tint(.brown1)
+                    
+                }
+                .listStyle(.plain)
+                .padding()
+                .fontWeight(.semibold)
+                .fontDesign(.rounded)
             }
+            
+            Spacer()
         }
         // This block of code is invoked whenever the selection from the picker changes
         .onChange(of: selectionResult) {
@@ -81,6 +124,7 @@ struct MainPortfolioListView: View {
         }
     }
 }
+
 
 #Preview {
     MainPortfolioListView()
