@@ -40,6 +40,7 @@
 		2D6D64A92C078B0400D84023 /* NotesNewItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6D64A82C078B0400D84023 /* NotesNewItemView.swift */; };
 		2DA212E32BFE4282009E23A3 /* NotesLandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA212E22BFE4282009E23A3 /* NotesLandingView.swift */; };
 		2DA212E52BFE42BE009E23A3 /* NotesItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA212E42BFE42BE009E23A3 /* NotesItemView.swift */; };
+		2DCFF3D82C0A4AB600E59D12 /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCFF3D72C0A4AB600E59D12 /* UsersViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,7 @@
 		2D6D64A82C078B0400D84023 /* NotesNewItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesNewItemView.swift; sourceTree = "<group>"; };
 		2DA212E22BFE4282009E23A3 /* NotesLandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesLandingView.swift; sourceTree = "<group>"; };
 		2DA212E42BFE42BE009E23A3 /* NotesItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesItemView.swift; sourceTree = "<group>"; };
+		2DCFF3D72C0A4AB600E59D12 /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				2D6D64912C07741D00D84023 /* NotesViewModel.swift */,
+				2DCFF3D72C0A4AB600E59D12 /* UsersViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D6D64A92C078B0400D84023 /* NotesNewItemView.swift in Sources */,
+				2DCFF3D82C0A4AB600E59D12 /* UsersViewModel.swift in Sources */,
 				2D2DBD2D2C091CB20047CFD2 /* UserItemImage.swift in Sources */,
 				2D1B7D7D2BFC1EBA00390E54 /* NotesItemDetailView.swift in Sources */,
 				2D1B7D692BF8E7ED00390E54 /* MainVarietyListView.swift in Sources */,
