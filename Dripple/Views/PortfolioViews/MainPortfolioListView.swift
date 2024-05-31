@@ -23,7 +23,7 @@ struct MainPortfolioListView: View {
     @State var newItemImage: UserItemImage?
     
     // Access the view model through the environment
-//    @Environment(UsersViewModel.self) var viewModel
+    //    @Environment(UsersViewModel.self) var viewModel
     
     var body: some View {
         NavigationView {
@@ -82,6 +82,7 @@ struct MainPortfolioListView: View {
                         TextField("Enter a user id", text: $userId) .multilineTextAlignment(.trailing)
                             .foregroundColor(.gray1)
                     }
+                    
                     //                    NavigationLink(destination: {
                     
                     //                    }, label: {
@@ -94,6 +95,27 @@ struct MainPortfolioListView: View {
                 .padding()
                 .fontWeight(.semibold)
                 .fontDesign(.rounded)
+                
+                ZStack {
+                    HStack {
+                        Image("PortfolioPicture1")
+                            .resizable()
+                            .scaledToFit()
+                            .padding(.bottom, 50.0)
+                            .padding(.leading, 20.0)
+                        Spacer()
+                    }
+                    
+                    HStack {
+                        Spacer()
+                        Image("PortfolioPicture2")
+                            .resizable()
+                            .scaledToFit()
+                            .padding(.top, 60.0)
+                            .padding(.trailing, 20.0)
+                    }
+                }
+                .padding()
             }
             
             Spacer()
