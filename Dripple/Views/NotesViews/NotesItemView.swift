@@ -29,7 +29,7 @@ struct NotesItemView: View {
                     .aspectRatio(contentMode: .fill)
             }
             
-            TextField("Please enter a date", text: $currentItem.title, axis: .vertical)
+            TextField("Please enter a title", text: $currentItem.title, axis: .vertical)
                 .font(.headline)
                 .multilineTextAlignment(.center)
                 .foregroundColor(.brown1)

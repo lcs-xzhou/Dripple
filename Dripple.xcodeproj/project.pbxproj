@@ -41,6 +41,7 @@
 		2DA212E32BFE4282009E23A3 /* NotesLandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA212E22BFE4282009E23A3 /* NotesLandingView.swift */; };
 		2DA212E52BFE42BE009E23A3 /* NotesItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA212E42BFE42BE009E23A3 /* NotesItemView.swift */; };
 		2DCFF3D82C0A4AB600E59D12 /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCFF3D72C0A4AB600E59D12 /* UsersViewModel.swift */; };
+		2DCFF3DA2C0A5BE200E59D12 /* PortfolioListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCFF3D92C0A5BE200E59D12 /* PortfolioListItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,7 @@
 		2DA212E22BFE4282009E23A3 /* NotesLandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesLandingView.swift; sourceTree = "<group>"; };
 		2DA212E42BFE42BE009E23A3 /* NotesItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesItemView.swift; sourceTree = "<group>"; };
 		2DCFF3D72C0A4AB600E59D12 /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
+		2DCFF3D92C0A5BE200E59D12 /* PortfolioListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioListItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				2D2DBD292C0918490047CFD2 /* MainPortfolioListView.swift */,
+				2DCFF3D92C0A5BE200E59D12 /* PortfolioListItemView.swift */,
 			);
 			path = PortfolioViews;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				2D1B7D7B2BFC1BCE00390E54 /* NotesItem.swift in Sources */,
 				2D5D71E92BF821E1009F83C6 /* SubVarietyDetailView.swift in Sources */,
 				2DA212E52BFE42BE009E23A3 /* NotesItemView.swift in Sources */,
+				2DCFF3DA2C0A5BE200E59D12 /* PortfolioListItemView.swift in Sources */,
 				2D2DBD2A2C0918490047CFD2 /* MainPortfolioListView.swift in Sources */,
 				2D1B7D6C2BFBB4B900390E54 /* MainCountingView.swift in Sources */,
 				2D6D648E2C07692800D84023 /* NotesItemImage.swift in Sources */,

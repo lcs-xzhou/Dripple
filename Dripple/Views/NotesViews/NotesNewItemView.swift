@@ -33,7 +33,7 @@ struct NotesNewItemView: View {
         NavigationView {
             VStack {
                 HStack {
-                    TextField("Enter a date", text: $newItemTitle)
+                    TextField("Please enter a title", text: $newItemTitle)
                     
                     Button("Add") {
                         // Add the new note item

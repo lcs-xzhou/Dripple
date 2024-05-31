@@ -23,13 +23,11 @@ struct MainPortfolioListView: View {
     @State var newItemImage: UserItemImage?
     
     // Access the view model through the environment
-    //    @Environment(UsersViewModel.self) var viewModel
+    @Environment(UsersViewModel.self) var viewModel
     
     var body: some View {
         NavigationView {
-            VStack(spacing: 0) {
-                
-                Spacer()
+            VStack(alignment: .center, spacing: 0) {
                 
                 HStack {
                     
@@ -55,13 +53,12 @@ struct MainPortfolioListView: View {
                             
                         }
                     }
+                    .padding(.top, 70)
                     
                 }
-                .padding(.top)
                 
                 Text(userName)
                     .foregroundColor(.brown1)
-                    .multilineTextAlignment(.center)
                     .font(.title3)
                     .fontDesign(.rounded)
                     .fontWeight(.bold)
@@ -71,54 +68,32 @@ struct MainPortfolioListView: View {
                         Text("Name")
                             .foregroundColor(.brown1)
                         
-                        TextField("Enter a user name", text: $userName)
-                            .multilineTextAlignment(.trailing)
-                            .foregroundColor(.gray1)
+                        TextField("Enter a user name", text: $userName) {
+                            viewModel.createUsers(withUserName: userName, withUserId: userId, andUserImage: newItemImage)
+                        }
+                        .multilineTextAlignment(.trailing)
+                        .foregroundColor(.gray1)
                     }
-                    HStack {
-                        Text("ID")
-                            .foregroundColor(.brown1)
-                        
-                        TextField("Enter a user id", text: $userId) .multilineTextAlignment(.trailing)
-                            .foregroundColor(.gray1)
-                    }
-                    
-                    //                    NavigationLink(destination: {
-                    
-                    //                    }, label: {
-                    //                        Text("More")
-                    //                    })
-                    //                    .tint(.brown1)
-                    
+                    PortfolioListItemView(input: $userId)
+//                    HStack {
+//                        Text("ID")
+//                            .foregroundColor(.brown1)
+//                        
+//                        TextField("Enter a user id", text: $userId) .multilineTextAlignment(.trailing)
+//                            .foregroundColor(.gray1)
+//                    }
                 }
                 .listStyle(.plain)
                 .padding()
                 .fontWeight(.semibold)
                 .fontDesign(.rounded)
                 
-                ZStack {
-                    HStack {
-                        Image("PortfolioPicture1")
-                            .resizable()
-                            .scaledToFit()
-                            .padding(.bottom, 50.0)
-                            .padding(.leading, 20.0)
-                        Spacer()
-                    }
-                    
-                    HStack {
-                        Spacer()
-                        Image("PortfolioPicture2")
-                            .resizable()
-                            .scaledToFit()
-                            .padding(.top, 60.0)
-                            .padding(.trailing, 20.0)
-                    }
-                }
-                .padding()
+                Image("PortfolioPicture1")
+                    .resizable()
+                    .scaledToFit()
+                    .padding()
             }
             
-            Spacer()
         }
         // This block of code is invoked whenever the selection from the picker changes
         .onChange(of: selectionResult) {

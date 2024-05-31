@@ -21,7 +21,7 @@ struct NotesItemDetailView: View {
     
     var body: some View {
         ScrollView {
-            TextField("Please enter a date", text: $currentItem.title, axis: .vertical)
+            TextField("Please enter a title", text: $currentItem.title, axis: .vertical)
                 .padding(.top)
                 .foregroundColor(.brown1)
                 .fontWeight(.bold)
