@@ -73,12 +73,16 @@ struct MainPortfolioListView: View {
                     PortfolioListItemView(subTitle: "Gender", input: $userGender)
                     PortfolioListItemView(subTitle: "Location", input: $userLocation)
                     PortfolioListItemView(subTitle: "Introduction", input: $userIntro)
-
+                    
                 }
                 .listStyle(.plain)
                 .padding()
                 .fontWeight(.semibold)
                 .fontDesign(.rounded)
+                .onSubmit {
+                    viewModel.createUsers(withUserName: userName, withUserAge: userAge, withUserGender: userGender, withUserLocation: userLocation, withUserIntro: userIntro, andUserImage: newItemImage)
+
+                }
                 
                 Image("PortfolioPicture1")
                     .resizable()
