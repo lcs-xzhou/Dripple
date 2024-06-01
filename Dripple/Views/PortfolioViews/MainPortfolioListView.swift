@@ -14,7 +14,10 @@ struct MainPortfolioListView: View {
     
     // The item currently being added
     @State var userName = ""
-    @State var userId = ""
+    @State var userAge = ""
+    @State var userGender = ""
+    @State var userLocation = ""
+    @State var userIntro = ""
     
     // The selection made in the PhotosPicker
     @State var selectionResult: PhotosPickerItem?
@@ -64,24 +67,13 @@ struct MainPortfolioListView: View {
                     .fontWeight(.bold)
                 
                 List {
-                    HStack {
-                        Text("Name")
-                            .foregroundColor(.brown1)
-                        
-                        TextField("Enter a user name", text: $userName) {
-                            viewModel.createUsers(withUserName: userName, withUserId: userId, andUserImage: newItemImage)
-                        }
-                        .multilineTextAlignment(.trailing)
-                        .foregroundColor(.gray1)
-                    }
-                    PortfolioListItemView(input: $userId)
-//                    HStack {
-//                        Text("ID")
-//                            .foregroundColor(.brown1)
-//                        
-//                        TextField("Enter a user id", text: $userId) .multilineTextAlignment(.trailing)
-//                            .foregroundColor(.gray1)
-//                    }
+                    
+                    PortfolioListItemView(subTitle: "Name", input: $userName)
+                    PortfolioListItemView(subTitle: "Age", input: $userAge)
+                    PortfolioListItemView(subTitle: "Gender", input: $userGender)
+                    PortfolioListItemView(subTitle: "Location", input: $userLocation)
+                    PortfolioListItemView(subTitle: "Introduction", input: $userIntro)
+
                 }
                 .listStyle(.plain)
                 .padding()

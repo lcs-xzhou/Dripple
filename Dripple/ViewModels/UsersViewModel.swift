@@ -51,7 +51,7 @@ class UsersViewModel {
         
     }
     
-    func createUsers(withUserName userName: String, withUserId userId: String, andUserImage providedUserImage: UserItemImage?) {
+    func createUsers(withUserName userName: String, withUserAge userAge: String, withUserGender userGender: String, withUserLocation userLocation: String, withUserIntro userIntro: String, andUserImage providedUserImage: UserItemImage?) {
         
         // Create a unit of asynchronous work to add the user item
         Task {
@@ -65,14 +65,17 @@ class UsersViewModel {
             // NOTE: The id will be nil for now
             let user = UserItem(
                 userName: userName,
-                userId: userId,
+                userAge: userAge,
+                userGender: userGender,
+                userLocation: userLocation,
+                userIntro: userIntro,
                 userImage: userImage
             )
             
             // Write it to the database
             do {
                 
-                // Insert the new note item, and then immediately select
+                // Insert the new user item, and then immediately select
                 // it back out of the database
                 let newlyInsertedItem: UserItem = try await supabase
                     .from("notes")

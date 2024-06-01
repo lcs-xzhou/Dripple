@@ -9,11 +9,12 @@ import SwiftUI
 
 struct PortfolioListItemView: View {
     
+    let subTitle: String
     @Binding var input: String
     
     var body: some View {
         HStack {
-            Text("Name")
+            Text(subTitle)
                 .foregroundColor(.brown1)
             
             TextField("Enter a user name", text: $input)
@@ -24,5 +25,5 @@ struct PortfolioListItemView: View {
 }
 
 #Preview {
-    PortfolioListItemView(input: Binding.constant("CL12345"))
+    PortfolioListItemView(subTitle: "Name", input: Binding.constant("CL12345"))
 }
