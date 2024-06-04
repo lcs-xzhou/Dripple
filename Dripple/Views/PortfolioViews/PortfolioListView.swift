@@ -8,7 +8,7 @@
 import PhotosUI
 import SwiftUI
 
-struct MainPortfolioListView: View {
+struct PortfolioListView: View {
     
     // MARK: Stored properties
     
@@ -120,5 +120,5 @@ struct MainPortfolioListView: View {
 
 
 #Preview {
-    MainPortfolioListView()
+    PortfolioListView()
 }
