@@ -42,6 +42,8 @@
 		2DA212E52BFE42BE009E23A3 /* NotesItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA212E42BFE42BE009E23A3 /* NotesItemView.swift */; };
 		2DCFF3D82C0A4AB600E59D12 /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCFF3D72C0A4AB600E59D12 /* UsersViewModel.swift */; };
 		2DCFF3DA2C0A5BE200E59D12 /* PortfolioListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCFF3D92C0A5BE200E59D12 /* PortfolioListItemView.swift */; };
+		2DF980882C0F522F00A011F8 /* AppStartingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF980872C0F522F00A011F8 /* AppStartingView.swift */; };
+		2DF9808A2C0F556400A011F8 /* AppIntro1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF980892C0F556400A011F8 /* AppIntro1View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +77,8 @@
 		2DA212E42BFE42BE009E23A3 /* NotesItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesItemView.swift; sourceTree = "<group>"; };
 		2DCFF3D72C0A4AB600E59D12 /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
 		2DCFF3D92C0A5BE200E59D12 /* PortfolioListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioListItemView.swift; sourceTree = "<group>"; };
+		2DF980872C0F522F00A011F8 /* AppStartingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStartingView.swift; sourceTree = "<group>"; };
+		2DF980892C0F556400A011F8 /* AppIntro1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntro1View.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +220,7 @@
 		2D5D71E52BF708C0009F83C6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2DF980862C0F520100A011F8 /* AppStartingViews */,
 				2D2DBD282C0917C80047CFD2 /* PortfolioViews */,
 				2D1B7D752BFC186C00390E54 /* NotesViews */,
 				2D1B7D6A2BFBB49500390E54 /* CountingViews */,
@@ -248,6 +253,15 @@
 				2D2DBD222C08D7690047CFD2 /* CountingFunctions.swift */,
 			);
 			path = CountingModels;
+			sourceTree = "<group>";
+		};
+		2DF980862C0F520100A011F8 /* AppStartingViews */ = {
+			isa = PBXGroup;
+			children = (
+				2DF980872C0F522F00A011F8 /* AppStartingView.swift */,
+				2DF980892C0F556400A011F8 /* AppIntro1View.swift */,
+			);
+			path = AppStartingViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,8 +353,10 @@
 				2D1B7D7B2BFC1BCE00390E54 /* NotesItem.swift in Sources */,
 				2D5D71E92BF821E1009F83C6 /* SubVarietyDetailView.swift in Sources */,
 				2DA212E52BFE42BE009E23A3 /* NotesItemView.swift in Sources */,
+				2DF980882C0F522F00A011F8 /* AppStartingView.swift in Sources */,
 				2DCFF3DA2C0A5BE200E59D12 /* PortfolioListItemView.swift in Sources */,
 				2D2DBD2A2C0918490047CFD2 /* PortfolioListView.swift in Sources */,
+				2DF9808A2C0F556400A011F8 /* AppIntro1View.swift in Sources */,
 				2D1B7D6C2BFBB4B900390E54 /* MainCountingView.swift in Sources */,
 				2D6D648E2C07692800D84023 /* NotesItemImage.swift in Sources */,
 				2D1B7D642BF8E26200390E54 /* MainVarietyItemView.swift in Sources */,
