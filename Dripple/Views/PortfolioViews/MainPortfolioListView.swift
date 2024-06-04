@@ -26,7 +26,7 @@ struct MainPortfolioListView: View {
     @State var newItemImage: UserItemImage?
     
     // Access the view model through the environment
-    @Environment(UsersViewModel.self) var viewModel
+//    @Environment(UsersViewModel.self) var viewModel
     
     var body: some View {
         NavigationView {
@@ -68,11 +68,11 @@ struct MainPortfolioListView: View {
                 
                 List {
                     
-                    PortfolioListItemView(subTitle: "Name", input: $userName)
-                    PortfolioListItemView(subTitle: "Age", input: $userAge)
-                    PortfolioListItemView(subTitle: "Gender", input: $userGender)
-                    PortfolioListItemView(subTitle: "Location", input: $userLocation)
-                    PortfolioListItemView(subTitle: "Introduction", input: $userIntro)
+                    PortfolioListItemView(subTitle: "Name", inputHint: "Please enter your name", input: $userName)
+                    PortfolioListItemView(subTitle: "Age", inputHint: "Please enter your age", input: $userAge)
+                    PortfolioListItemView(subTitle: "Gender", inputHint: "Please enter your gender", input: $userGender)
+                    PortfolioListItemView(subTitle: "Location", inputHint: "Please enter your location", input: $userLocation)
+                    PortfolioListItemView(subTitle: "Introduction", inputHint: "Please share who you are", input: $userIntro)
                     
                 }
                 .listStyle(.plain)
@@ -80,7 +80,7 @@ struct MainPortfolioListView: View {
                 .fontWeight(.semibold)
                 .fontDesign(.rounded)
                 .onSubmit {
-                    viewModel.createUsers(withUserName: userName, withUserAge: userAge, withUserGender: userGender, withUserLocation: userLocation, withUserIntro: userIntro, andUserImage: newItemImage)
+//                    viewModel.createUsers(withUserName: userName, withUserAge: userAge, withUserGender: userGender, withUserLocation: userLocation, withUserIntro: userIntro, andUserImage: newItemImage)
 
                 }
                 
