@@ -19,10 +19,9 @@ struct MainVarietyItemView: View {
                 .aspectRatio(2, contentMode: .fit)
                 .padding(.horizontal)
             Text(mainType.typeName)
-                .font(.title2)
                 .foregroundStyle(Color.brown1)
                 .fontWeight(.semibold)
-                .fontDesign(.rounded)
+                .font(.custom("Chalkduster", size: 20))
             Spacer()
         }
     }

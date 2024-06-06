@@ -43,7 +43,7 @@
 		2DCFF3D82C0A4AB600E59D12 /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCFF3D72C0A4AB600E59D12 /* UsersViewModel.swift */; };
 		2DCFF3DA2C0A5BE200E59D12 /* PortfolioListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCFF3D92C0A5BE200E59D12 /* PortfolioListItemView.swift */; };
 		2DF980882C0F522F00A011F8 /* AppStartingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF980872C0F522F00A011F8 /* AppStartingView.swift */; };
-		2DF9808A2C0F556400A011F8 /* AppIntro1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF980892C0F556400A011F8 /* AppIntro1View.swift */; };
+		2DF9808A2C0F556400A011F8 /* AppIntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF980892C0F556400A011F8 /* AppIntroView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,7 +78,7 @@
 		2DCFF3D72C0A4AB600E59D12 /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
 		2DCFF3D92C0A5BE200E59D12 /* PortfolioListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioListItemView.swift; sourceTree = "<group>"; };
 		2DF980872C0F522F00A011F8 /* AppStartingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStartingView.swift; sourceTree = "<group>"; };
-		2DF980892C0F556400A011F8 /* AppIntro1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntro1View.swift; sourceTree = "<group>"; };
+		2DF980892C0F556400A011F8 /* AppIntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntroView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,7 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				2DF980872C0F522F00A011F8 /* AppStartingView.swift */,
-				2DF980892C0F556400A011F8 /* AppIntro1View.swift */,
+				2DF980892C0F556400A011F8 /* AppIntroView.swift */,
 			);
 			path = AppStartingViews;
 			sourceTree = "<group>";
@@ -356,7 +356,7 @@
 				2DF980882C0F522F00A011F8 /* AppStartingView.swift in Sources */,
 				2DCFF3DA2C0A5BE200E59D12 /* PortfolioListItemView.swift in Sources */,
 				2D2DBD2A2C0918490047CFD2 /* PortfolioListView.swift in Sources */,
-				2DF9808A2C0F556400A011F8 /* AppIntro1View.swift in Sources */,
+				2DF9808A2C0F556400A011F8 /* AppIntroView.swift in Sources */,
 				2D1B7D6C2BFBB4B900390E54 /* MainCountingView.swift in Sources */,
 				2D6D648E2C07692800D84023 /* NotesItemImage.swift in Sources */,
 				2D1B7D642BF8E26200390E54 /* MainVarietyItemView.swift in Sources */,

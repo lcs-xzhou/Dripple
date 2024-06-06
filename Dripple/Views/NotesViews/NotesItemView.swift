@@ -30,10 +30,9 @@ struct NotesItemView: View {
             }
             
             TextField("Please enter a title", text: $currentItem.title, axis: .vertical)
-                .font(.headline)
                 .multilineTextAlignment(.center)
                 .foregroundColor(.brown1)
-                .fontDesign(.rounded)
+                .font(.custom("Chalkduster", size: 20))
                 .onSubmit {
                     viewModel.update(note: currentItem)
                 }

@@ -26,10 +26,9 @@ struct NotesLandingView: View {
             
             VStack {
                 Text("Notes")
-                    .font(.largeTitle)
                     .fontWeight(.bold)
                     .foregroundStyle(.brown1)
-                    .fontDesign(.rounded)
+                    .font(.custom("Chalkduster", size: 45))
                     .padding()
                 
                 ScrollView {
@@ -48,9 +47,9 @@ struct NotesLandingView: View {
                                 Spacer()
                                 
                                 ContentUnavailableView(
-                                    "No note items",
-                                    systemImage: "pencil.tip.crop.circle.badge.plus",
+                                    "", systemImage: "pencil.tip.crop.circle.badge.plus",
                                     description: Text("Add a note to get started")
+                                        .font(.custom("Chalkduster", size: 20))
                                 )
                                 .foregroundColor(.brown1)
                                 
@@ -108,6 +107,7 @@ struct NotesLandingView: View {
                         Image(systemName: "plus")
                             .foregroundColor(.brown1)
                             .fontWeight(.semibold)
+                            .font(.custom("Chalkduster", size: 20))
                     }
                 }
             }

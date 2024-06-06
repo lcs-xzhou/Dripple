@@ -19,10 +19,9 @@ struct SubVarietyItemView: View {
                 .aspectRatio(2, contentMode: .fit)
                 .padding(.horizontal)
             Text(variety.nameOfBeans)
-                .font(.title2)
                 .foregroundStyle(Color.brown1)
                 .fontWeight(.semibold)
-                .fontDesign(.rounded)
+                .font(.custom("Chalkduster", size: 20))
             Spacer()
         }
     }

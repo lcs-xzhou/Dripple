@@ -15,9 +15,10 @@ struct SubVarietyDetailView: View {
         ScrollView{
             VStack(alignment: .center, spacing: 20) {
                 Text(variety.nameOfBeans)
-                    .font(.largeTitle)
                     .fontWeight(.heavy)
                     .foregroundStyle(Color.brown1)
+                    .font(.custom("Chalkduster", size: 40))
+
                 Image(variety.image1Name)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
@@ -32,7 +33,7 @@ struct SubVarietyDetailView: View {
                     .fontWeight(.medium)
             }
             .padding(25.0)
-            .fontDesign(.rounded)
+            .font(.custom("Chalkduster", size: 15))
         }
     }
 }

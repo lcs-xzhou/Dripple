@@ -24,15 +24,7 @@ struct AppStartingView: View {
                 Text("Brew. Sip. Love. Your coffee, perfected.")
                     .foregroundColor(.white)
                     .fontWeight(.semibold)
-                    .fontDesign(.rounded)
-                                
-                Button("Welcome To Dripple!", action: {})
-                    .buttonStyle(BorderlessButtonStyle())
-                    .foregroundColor(.white)
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .fontDesign(.rounded)
-                    .padding(.top, 70)
+                    .font(.custom("Chalkduster", size: 12))
             }
         }
     }

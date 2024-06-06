@@ -26,7 +26,7 @@ struct PortfolioListView: View {
     @State var newItemImage: UserItemImage?
     
     // Access the view model through the environment
-//    @Environment(UsersViewModel.self) var viewModel
+    @Environment(UsersViewModel.self) var viewModel
     
     var body: some View {
         NavigationView {
@@ -62,8 +62,7 @@ struct PortfolioListView: View {
                 
                 Text(userName)
                     .foregroundColor(.brown1)
-                    .font(.title3)
-                    .fontDesign(.rounded)
+                    .font(.custom("Chalkduster", size: 24))
                     .fontWeight(.bold)
                 
                 List {
@@ -78,9 +77,9 @@ struct PortfolioListView: View {
                 .listStyle(.plain)
                 .padding()
                 .fontWeight(.semibold)
-                .fontDesign(.rounded)
+                .font(.custom("Chalkduster", size: 12))
                 .onSubmit {
-//                    viewModel.createUsers(withUserName: userName, withUserAge: userAge, withUserGender: userGender, withUserLocation: userLocation, withUserIntro: userIntro, andUserImage: newItemImage)
+                    viewModel.createUsers(withUserName: userName, withUserAge: userAge, withUserGender: userGender, withUserLocation: userLocation, withUserIntro: userIntro, andUserImage: newItemImage)
 
                 }
                 

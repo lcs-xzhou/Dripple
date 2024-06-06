@@ -25,7 +25,7 @@ struct NotesItemDetailView: View {
                 .padding(.top)
                 .foregroundColor(.brown1)
                 .fontWeight(.bold)
-                .fontDesign(.rounded)
+                .font(.custom("Chalkduster", size: 20))
                 .multilineTextAlignment(.center)
                 .onSubmit {
                     viewModel.update(note: currentItem)
@@ -50,7 +50,7 @@ struct NotesItemDetailView: View {
                 .padding(.horizontal)
                 .foregroundColor(.brown1)
                 .fontWeight(.semibold)
-                .fontDesign(.rounded)
+                .font(.custom("Chalkduster", size: 15))
                 .onSubmit {
                     viewModel.update(note: currentItem)
                 }
@@ -72,6 +72,7 @@ struct NotesItemDetailView: View {
                 Button("Delete", role: .destructive) {
                     viewModel.delete(currentItem)
                 }
+                .font(.custom("Chalkduster", size: 15))
                 .foregroundStyle(.brown1)
                 .fontWeight(.semibold)
             }

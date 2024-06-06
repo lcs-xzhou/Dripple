@@ -17,12 +17,12 @@ struct MainCountingView: View {
         VStack {
             
             Text("How many grams of coffee beans have you put in your cup?")
-                .font(.title)
                 .fontWeight(.semibold)
                 .foregroundColor(.brown1)
-                .fontDesign(.rounded)
+                .font(.custom("Chalkduster", size: 24))
                 .multilineTextAlignment(.center)
-                .padding()
+                .padding(.horizontal)
+                .padding(.top)
             
             ZStack {
                 Image("CountingPicture1")
@@ -31,26 +31,27 @@ struct MainCountingView: View {
                 
                 Text("\(currentGrams.roundedGrams)g")
                     .foregroundColor(.white)
-                    .font(.system(size: 50))
+                    .font(.custom("Chalkduster", size: 40))
                     .fontWeight(.bold)
             }
-            .padding()
+            .padding(.horizontal)
             
             HStack {
                 
                 Text("0 g")
                     .foregroundColor(.brown1)
-                    .font(.system(size: 20))
+                    .font(.custom("Chalkduster", size: 20))
                     .fontWeight(.bold)
                 
                 Slider(value: $currentGrams.gramsOfCoffeeBeans, in: 0...300)
                 
                 Text("300 g")
                     .foregroundColor(.brown1)
-                    .font(.system(size: 20))
+                    .font(.custom("Chalkduster", size: 20))
                     .fontWeight(.bold)
             }
-            .padding()
+            .padding(.horizontal)
+            .padding(.bottom)
             
             List {
                 SubCountingItemView(titleValue: "Water Needed", variable: "\(currentGrams.WaterNeeded) ml", countingPicture: "CountingPicture2")

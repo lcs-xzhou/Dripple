@@ -12,16 +12,14 @@ struct MainVarietyListView: View {
         NavigationStack {
             VStack {
                 Text("Variety")
-                    .font(.largeTitle)
                     .fontWeight(.bold)
                     .foregroundStyle(.brown1)
-                    .fontDesign(.rounded)
+                    .font(.custom("Chalkduster", size: 45))
                     .padding()
+                    .padding(.top)
                 Text("Information about different types of coffee beans")
-                    .font(.subheadline)
-                    .fontWeight(.medium)
                     .foregroundStyle(.brown1)
-                    .fontDesign(.rounded)
+                    .font(.custom("Chalkduster", size: 12))
                     .padding(.bottom)
                 
                 List(allMainTypes) { currentMainType in

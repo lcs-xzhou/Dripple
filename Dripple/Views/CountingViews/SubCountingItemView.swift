@@ -25,14 +25,13 @@ struct SubCountingItemView: View {
                 HStack {
                     Text(titleValue)
                         .fontWeight(.semibold)
-                        .fontDesign(.rounded)
+                        .font(.custom("Chalkduster", size: 20))
                         .foregroundColor(.brown1)
                     Spacer()
                 }
                 HStack {
                     Text(variable)
-                        .font(.callout)
-                        .fontDesign(.rounded)
+                        .font(.custom("Chalkduster", size: 20))
                         .foregroundColor(.gray1)
                     Spacer()
                 }

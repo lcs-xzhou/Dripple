@@ -34,6 +34,7 @@ struct NotesNewItemView: View {
             VStack {
                 HStack {
                     TextField("Please enter a title", text: $newItemTitle)
+                        .font(.custom("Chalkduster", size: 15))
                     
                     Button("Add") {
                         // Add the new note item
@@ -48,7 +49,7 @@ struct NotesNewItemView: View {
                     }
                     .foregroundColor(.brown1)
                     .fontWeight(.semibold)
-                    .fontDesign(.rounded)
+                    .font(.custom("Chalkduster", size: 15))
                     .disabled(newItemTitle.trimmingCharacters(in: .whitespaces).isEmpty == true)                }
                 
                 HStack {
@@ -68,7 +69,7 @@ struct NotesNewItemView: View {
                             // No, show an icon instead
                             Image(systemName: "photo.badge.plus")
                                 .symbolRenderingMode(.multicolor)
-                                .font(.system(size: 30))
+                                .font(.custom("Chalkduster", size: 40))
                                 .foregroundStyle(.brown1)
                         }
                     }
