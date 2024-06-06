@@ -9,7 +9,27 @@ import SwiftUI
 
 struct MainAppEntryView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView {
+            MainVarietyListView()
+                .tabItem {
+                    Image(systemName: "books.vertical.circle.fill")
+                }
+            
+            MainCountingView()
+                .tabItem {
+                    Image(systemName: "plus.circle.fill")
+                }
+            
+            AppEntryView()
+                .tabItem {
+                    Image(systemName: "list.bullet.clipboard.fill")
+                }
+            
+            PortfolioListView()
+                .tabItem {
+                    Image(systemName: "person.circle.fill")
+                }
+        }
     }
 }
 
