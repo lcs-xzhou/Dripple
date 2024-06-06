@@ -42,8 +42,9 @@
 		2DA212E52BFE42BE009E23A3 /* NotesItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA212E42BFE42BE009E23A3 /* NotesItemView.swift */; };
 		2DCFF3D82C0A4AB600E59D12 /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCFF3D72C0A4AB600E59D12 /* UsersViewModel.swift */; };
 		2DCFF3DA2C0A5BE200E59D12 /* PortfolioListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCFF3D92C0A5BE200E59D12 /* PortfolioListItemView.swift */; };
-		2DF980882C0F522F00A011F8 /* AppStartingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF980872C0F522F00A011F8 /* AppStartingView.swift */; };
-		2DF9808A2C0F556400A011F8 /* AppIntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF980892C0F556400A011F8 /* AppIntroView.swift */; };
+		2DF980882C0F522F00A011F8 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF980872C0F522F00A011F8 /* SplashScreenView.swift */; };
+		2DF9808A2C0F556400A011F8 /* AppLandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF980892C0F556400A011F8 /* AppLandingView.swift */; };
+		2DF9808C2C1215FC00A011F8 /* OpeningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF9808B2C1215FC00A011F8 /* OpeningView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,8 +78,9 @@
 		2DA212E42BFE42BE009E23A3 /* NotesItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesItemView.swift; sourceTree = "<group>"; };
 		2DCFF3D72C0A4AB600E59D12 /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
 		2DCFF3D92C0A5BE200E59D12 /* PortfolioListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioListItemView.swift; sourceTree = "<group>"; };
-		2DF980872C0F522F00A011F8 /* AppStartingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStartingView.swift; sourceTree = "<group>"; };
-		2DF980892C0F556400A011F8 /* AppIntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntroView.swift; sourceTree = "<group>"; };
+		2DF980872C0F522F00A011F8 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		2DF980892C0F556400A011F8 /* AppLandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLandingView.swift; sourceTree = "<group>"; };
+		2DF9808B2C1215FC00A011F8 /* OpeningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,8 +260,9 @@
 		2DF980862C0F520100A011F8 /* AppStartingViews */ = {
 			isa = PBXGroup;
 			children = (
-				2DF980872C0F522F00A011F8 /* AppStartingView.swift */,
-				2DF980892C0F556400A011F8 /* AppIntroView.swift */,
+				2DF980872C0F522F00A011F8 /* SplashScreenView.swift */,
+				2DF980892C0F556400A011F8 /* AppLandingView.swift */,
+				2DF9808B2C1215FC00A011F8 /* OpeningView.swift */,
 			);
 			path = AppStartingViews;
 			sourceTree = "<group>";
@@ -350,13 +353,14 @@
 				2D2DBD2D2C091CB20047CFD2 /* UserItemImage.swift in Sources */,
 				2D1B7D7D2BFC1EBA00390E54 /* NotesItemDetailView.swift in Sources */,
 				2D1B7D692BF8E7ED00390E54 /* MainVarietyListView.swift in Sources */,
+				2DF9808C2C1215FC00A011F8 /* OpeningView.swift in Sources */,
 				2D1B7D7B2BFC1BCE00390E54 /* NotesItem.swift in Sources */,
 				2D5D71E92BF821E1009F83C6 /* SubVarietyDetailView.swift in Sources */,
 				2DA212E52BFE42BE009E23A3 /* NotesItemView.swift in Sources */,
-				2DF980882C0F522F00A011F8 /* AppStartingView.swift in Sources */,
+				2DF980882C0F522F00A011F8 /* SplashScreenView.swift in Sources */,
 				2DCFF3DA2C0A5BE200E59D12 /* PortfolioListItemView.swift in Sources */,
 				2D2DBD2A2C0918490047CFD2 /* PortfolioListView.swift in Sources */,
-				2DF9808A2C0F556400A011F8 /* AppIntroView.swift in Sources */,
+				2DF9808A2C0F556400A011F8 /* AppLandingView.swift in Sources */,
 				2D1B7D6C2BFBB4B900390E54 /* MainCountingView.swift in Sources */,
 				2D6D648E2C07692800D84023 /* NotesItemImage.swift in Sources */,
 				2D1B7D642BF8E26200390E54 /* MainVarietyItemView.swift in Sources */,
