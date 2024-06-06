@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct OpeningView: View {
+struct AppOpeningView: View {
     
     // MARK: Stored properties
     @State private var hasChosenGetStarted = false
@@ -16,13 +16,13 @@ struct OpeningView: View {
     var body: some View {
 
         if hasChosenGetStarted == false {
-            SplashScreenView(getStarted: $hasChosenGetStarted)
+            AppSplashScreenView(welcomeToDripple: $hasChosenGetStarted)
         } else {
-            AppLandingView()
+            MainAppLandingView()
         }
     }
 }
 
 #Preview {
-    OpeningView()
+    AppOpeningView()
 }

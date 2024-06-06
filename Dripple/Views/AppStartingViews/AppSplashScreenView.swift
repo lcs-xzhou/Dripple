@@ -7,16 +7,15 @@
 
 import SwiftUI
 
-struct SplashScreenView: View {
+struct AppSplashScreenView: View {
     
     // MARK: Stored properties
-    @Binding var getStarted: Bool
+    @Binding var welcomeToDripple: Bool
     
     // MARK: Computed properties
     var body: some View {
         ZStack {
-            Rectangle()
-                .fill(.brown1)
+            Color.brown1
                 .ignoresSafeArea()
             
             VStack {
@@ -40,7 +39,7 @@ struct SplashScreenView: View {
                     .fontWeight(.bold)
                     .font(.custom("Chalkduster", size: 45))
                     .onTapGesture {
-                        getStarted = true
+                        welcomeToDripple = true
                     }
                 
                 Spacer()
@@ -50,5 +49,5 @@ struct SplashScreenView: View {
 }
 
 #Preview {
-    SplashScreenView(getStarted: Binding.constant(false))
+    AppSplashScreenView(welcomeToDripple: Binding.constant(false))
 }
