@@ -20,6 +20,7 @@ struct AppSplashScreenView: View {
             
             VStack {
                 Spacer()
+                Spacer()
                                 
                 Image("AppEntryPicture1")
                     .resizable()
@@ -42,6 +43,7 @@ struct AppSplashScreenView: View {
                         welcomeToDripple = true
                     }
                 
+                Spacer()
                 Spacer()
             }
         }

@@ -10,7 +10,8 @@ import SwiftUI
 struct MainAppLandingView: View {
     
     // MARK: Stored properties
-    @State private var hasChosenGetStartedNext = false
+    @State private var hasChosenGetStarted = false
+    @Binding var letsStart: Bool
     
     // MARK: Computed properties
     var body: some View {
@@ -23,7 +24,23 @@ struct MainAppLandingView: View {
                 
                 SubAppLandingView(title: "Drink", context: "Empower your coffee routine with our app, offering tailored water ratios, caffeine tracking, and environmental impact insights for every cup!", picture: "AppIntroPicture2")
                 
-                SubAppLandingView(title: "Note", context: "Capture your coffee journey and daily reflections with our app, your personal diary for all things coffee and beyond!", picture: "AppIntroPicture3")
+                ZStack {
+                    SubAppLandingView(title: "Note", context: "Capture your coffee journey and daily reflections with our app, your personal diary for all things coffee and beyond!", picture: "AppIntroPicture3")
+                    VStack {
+                        Spacer()
+                        Button("Let's start~") {}
+                            .foregroundColor(.brown1)
+                            .fontWeight(.bold)
+                            .multilineTextAlignment(.center)
+                            .font(.custom("Chalkduster", size: 30))
+                            .padding(.bottom, 45.0)
+                            .buttonStyle(.borderedProminent)
+                            .tint(.white)
+                            .onTapGesture {
+                                letsStart = true
+                            }
+                    }
+                }
             }
             // Present the tab view
             .tabViewStyle(.page)
@@ -34,5 +51,5 @@ struct MainAppLandingView: View {
 }
 
 #Preview {
-    MainAppLandingView()
+    MainAppLandingView(letsStart: Binding.constant(false))
 }

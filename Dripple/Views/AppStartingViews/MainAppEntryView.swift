@@ -41,13 +41,7 @@ struct MainAppEntryView: View {
 //                }
         }
         .font(.custom("Chalkduster", size: 15))
-        .tint(.white)
-        .onAppear {
-            let appearance = UITabBarAppearance()
-            appearance.backgroundColor = UIColor(Color.brown1)
-            UITabBar.appearance().standardAppearance = appearance
-            UITabBar.appearance().scrollEdgeAppearance = appearance
-        }
+        .tint(.brown1)
     }
     
 }
