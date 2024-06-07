@@ -29,19 +29,19 @@ struct MainAppEntryView: View {
                         .font(.custom("Chalkduster", size: 15))
                 }
             
-            AppEntryView()
+            NotesAppEntryView()
                 .tabItem {
                     Image(systemName: "clipboard")
                     Text("Notes")
                         .font(.custom("Chalkduster", size: 15))
                 }
             
-//          PortfolioListView()
-//                .tabItem {
-//                    Image(systemName: "person.circle")
-//                    Text("Portfolio")
-//                    .font(.custom("Chalkduster", size: 15))
-//                }
+          PortfolioListView()
+                .tabItem {
+                    Image(systemName: "person.circle")
+                    Text("Portfolio")
+                    .font(.custom("Chalkduster", size: 15))
+                }
         }
         .font(.custom("Chalkduster", size: 15))
         .tint(.brown1)

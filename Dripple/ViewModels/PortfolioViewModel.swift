@@ -1,5 +1,5 @@
 //
-//  UsersViewModel.swift
+//  PortfolioViewModel.swift
 //  Dripple
 //
 //  Created by Fiona ZHOU on 2024-05-31.
@@ -9,17 +9,17 @@ import Foundation
 import Storage
 
 @Observable
-class UsersViewModel {
+class PortfolioViewModel {
     
     // MARK: Stored properties
     // The list of users items
-    var users: [UserItem]
+    var users: [PortfolioListItem]
     
     // Track when user items are initially being fetched
     var fetchingUsers: Bool = false
     
     // MARK: Initializer(s)
-    init(users: [UserItem] = []) {
+    init(users: [PortfolioListItem] = []) {
         self.users = users
         Task {
             try await getUsers()
@@ -33,7 +33,7 @@ class UsersViewModel {
         fetchingUsers = true
         
         do {
-            let results: [UserItem] = try await supabase
+            let results: [PortfolioListItem] = try await supabase
                 .from("notes")
                 .select()
                 .order("id", ascending: true)
@@ -51,7 +51,7 @@ class UsersViewModel {
         
     }
     
-    func createUsers(withName name: String, withAge age: String, withGender gender: String, withLocation location: String, withIntro intro: String, andUserImage providedUserImage: UserItemImage?) {
+    func createUsers(withName name: String, withAge age: String, withGender gender: String, withLocation location: String, withIntro intro: String, andUserImage providedUserImage: PortfolioListItemImage?) {
         
         // Create a unit of asynchronous work to add the user item
         Task {
@@ -63,7 +63,7 @@ class UsersViewModel {
             
             // Create the new note item instance
             // NOTE: The id will be nil for now
-            let user = UserItem(
+            let user = PortfolioListItem(
                 name: name,
                 age: age,
                 gender: gender,
@@ -77,7 +77,7 @@ class UsersViewModel {
                 
                 // Insert the new user item, and then immediately select
                 // it back out of the database
-                let newlyInsertedItem: UserItem = try await supabase
+                let newlyInsertedItem: PortfolioListItem = try await supabase
                     .from("notes")
                     .insert(user)   // Insert the note item created locally in memory
                     .select()       // Select the item just inserted
@@ -99,7 +99,7 @@ class UsersViewModel {
     
     // We mark the function as "private" meaning it can only be invoked from inside
     // the view model itself (it will not be accessible from the view layer)
-    private func uploadImage(_ image: UserItemImage?) async throws -> String? {
+    private func uploadImage(_ image: PortfolioListItemImage?) async throws -> String? {
         
         // Only continue past this point if an image was provided.
         // If an image was provided, obtain the raw image data.
@@ -122,7 +122,7 @@ class UsersViewModel {
         return filePath
     }
     
-    func downloadUserItemImage(fromPath path: String) async throws -> UserItemImage? {
+    func downloadPortfolioListItemImage(fromPath path: String) async throws -> PortfolioListItemImage? {
         
         // Attempt to download an image from the provided path
         do {
@@ -131,7 +131,7 @@ class UsersViewModel {
                 .from("user_images")
                 .download(path: path)
             
-            return UserItemImage(rawImageData: data)
+            return PortfolioListItemImage(rawImageData: data)
             
         } catch {
             debugPrint(error)
@@ -142,7 +142,7 @@ class UsersViewModel {
         
     }
         
-    func update(user updatedUser: UserItem) {
+    func update(user updatedUser: PortfolioListItem) {
         
         // Create a unit of asynchronous work to add the note item
         Task {

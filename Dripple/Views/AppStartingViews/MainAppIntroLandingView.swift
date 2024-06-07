@@ -39,7 +39,10 @@ struct MainAppLandingView: View {
                                 letsStart = true
                             }
                             .padding()
-                            .background(Color.white, in: RoundedRectangle(cornerRadius: 15))
+                            .background {
+                                RoundedRectangle(cornerRadius: 15.0)
+                                    .foregroundStyle(Color.white)
+                            }
                     }
                 }
             }

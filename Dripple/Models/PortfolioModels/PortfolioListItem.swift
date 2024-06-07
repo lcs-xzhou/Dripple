@@ -1,5 +1,5 @@
 //
-//  UserItem.swift
+//  PortfolioListItem.swift
 //  Dripple
 //
 //  Created by Fiona ZHOU on 2024-05-30.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct UserItem: Identifiable, Codable {
+struct PortfolioListItem: Identifiable, Codable {
     var id: Int?
     var name: String
     var age: String
@@ -29,7 +29,7 @@ struct UserItem: Identifiable, Codable {
     }
 }
 
-let firstUser = UserItem(name: "Coffee Lover", age: "16", gender: "Female", location: "Canada", intro: "Motcha is the best!!!")
+let firstUser = PortfolioListItem(name: "Coffee Lover", age: "16", gender: "Female", location: "Canada", intro: "Motcha is the best!!!")
 
 let exampleUsers = [firstUser]
 

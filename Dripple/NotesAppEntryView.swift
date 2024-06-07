@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AppEntryView: View {
+struct NotesAppEntryView: View {
     
     // MARK: Stored properties
     
@@ -49,5 +49,5 @@ struct AppEntryView: View {
 }
 
 #Preview {
-    AppEntryView()
+    NotesAppEntryView()
 }

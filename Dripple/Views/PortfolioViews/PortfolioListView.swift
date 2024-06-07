@@ -22,9 +22,9 @@ struct PortfolioListView: View {
     // The selection made in the PhotosPicker
     @State var selectionResult: PhotosPickerItem?
     // The actual image loaded from the selection that was made
-    @State var newItemImage: UserItemImage?
-    // Access the view model through the environment
-    @Environment(UsersViewModel.self) var viewModel
+    @State var newItemImage: PortfolioListItemImage?
+    // Create the source of truth for the view model
+    @State var viewModel = PortfolioViewModel()
     
     var body: some View {
         NavigationView {
@@ -67,11 +67,7 @@ struct PortfolioListView: View {
                     
                     PortfolioListItemView(subTitle: "Name", inputHint: "Enter", input: $name)
                     PortfolioListItemView(subTitle: "Age", inputHint: "Enter", input: $age)
-                    Picker("Gender", selection: $gender) {
-                        Text("Female").tag("Female")
-                        Text("Male").tag("Male")
-                        Text("Other").tag("Other")
-                    }
+                    PortfolioListItemView(subTitle: "Gender", inputHint: "Enter", input: $gender)
                     PortfolioListItemView(subTitle: "Location", inputHint: "Enter", input: $location)
                     PortfolioListItemView(subTitle: "Introduction", inputHint: "Enter", input: $intro)
                 }
@@ -109,7 +105,7 @@ struct PortfolioListView: View {
         Task {
             do {
                 // Attempt to set the stored property that holds the image data
-                newItemImage = try await imageSelection.loadTransferable(type: UserItemImage.self)
+                newItemImage = try await imageSelection.loadTransferable(type: PortfolioListItemImage.self)
             } catch {
                 debugPrint(error)
             }
