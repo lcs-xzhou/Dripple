@@ -51,7 +51,7 @@ class UsersViewModel {
         
     }
     
-    func createUsers(withUserName userName: String, withUserAge userAge: String, withUserGender userGender: String, withUserLocation userLocation: String, withUserIntro userIntro: String, andUserImage providedUserImage: UserItemImage?) {
+    func createUsers(withUserName name: String, withUserAge age: String, withUserGender gender: String, withUserLocation location: String, withUserIntro intro: String, andUserImage providedUserImage: UserItemImage?) {
         
         // Create a unit of asynchronous work to add the user item
         Task {
@@ -64,11 +64,11 @@ class UsersViewModel {
             // Create the new note item instance
             // NOTE: The id will be nil for now
             let user = UserItem(
-                userName: userName,
-                userAge: userAge,
-                userGender: userGender,
-                userLocation: userLocation,
-                userIntro: userIntro,
+                name: name,
+                age: age,
+                gender: gender,
+                location: location,
+                intro: intro,
                 userImage: userImage
             )
             

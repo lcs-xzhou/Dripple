@@ -9,27 +9,27 @@ import Foundation
 
 struct UserItem: Identifiable, Codable {
     var id: Int?
-    var userName: String
-    var userAge: String
-    var userGender: String
-    var userLocation: String
-    var userIntro: String
+    var name: String
+    var age: String
+    var gender: String
+    var location: String
+    var intro: String
     var userImage: String?
     
     // When decoding and encoding from JSON, translate snake_case
     // column names into camelCase
     enum CodingKeys: String, CodingKey {
         case id
-        case userName
-        case userAge
-        case userGender
-        case userLocation
-        case userIntro
+        case name
+        case age
+        case gender
+        case location
+        case intro
         case userImage = "user_image"
     }
 }
 
-let firstUser = UserItem(userName: "Coffee Lover", userAge: "16", userGender: "Female", userLocation: "Canada", userIntro: "Motcha is the best!!!")
+let firstUser = UserItem(name: "Coffee Lover", age: "16", gender: "Female", location: "Canada", intro: "Motcha is the best!!!")
 
 let exampleUsers = [firstUser]
 

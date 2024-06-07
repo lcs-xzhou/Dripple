@@ -38,6 +38,7 @@ struct MainAppLandingView: View {
                             .onTapGesture {
                                 letsStart = true
                             }
+                            .padding()
                             .background(Color.white, in: RoundedRectangle(cornerRadius: 15))
                     }
                 }
