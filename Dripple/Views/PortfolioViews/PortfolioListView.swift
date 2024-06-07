@@ -54,13 +54,13 @@ struct PortfolioListView: View {
                             
                         }
                     }
-                    .padding(.top, 70)
+                    .padding(.top, 50)
                     
                 }
                 
                 Text(name)
                     .foregroundColor(.brown1)
-                    .font(.custom("Chalkduster", size: 24))
+                    .font(.custom("Chalkduster", size: 20))
                     .fontWeight(.bold)
                 
                 List {
@@ -74,17 +74,23 @@ struct PortfolioListView: View {
                 .listStyle(.plain)
                 .padding()
                 .fontWeight(.semibold)
-                .font(.custom("Chalkduster", size: 20))
-                .onSubmit {
-                    viewModel.createUsers(withName: name, withAge: age, withGender: gender, withLocation: location, withIntro: intro, andUserImage: newItemImage)
-                }
+                .font(.custom("Chalkduster", size: 15))
                 
                 Image("PortfolioPicture1")
                     .resizable()
                     .scaledToFit()
                     .padding()
             }
-            
+            .toolbar {
+                ToolbarItem {
+                    Text("Confirm")
+                        .onSubmit {
+                            viewModel.createUsers(withName: name, withAge: age, withGender: gender, withLocation: location, withIntro: intro, andUserImage: newItemImage)
+                        }
+                        .font(.custom("Chalkduster", size: 15))
+                        .foregroundColor(.brown1)
+                }
+            }
         }
         // This block of code is invoked whenever the selection from the picker changes
         .onChange(of: selectionResult) {

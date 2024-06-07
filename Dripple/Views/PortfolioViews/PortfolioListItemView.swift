@@ -17,13 +17,14 @@ struct PortfolioListItemView: View {
         HStack {
             Text(subTitle)
                 .foregroundColor(.brown1)
-                .font(.custom("Chalkduster", size: 20))
+                .font(.custom("Chalkduster", size: 15))
             
             TextField(inputHint, text: $input)
                 .multilineTextAlignment(.trailing)
                 .foregroundColor(.gray1)
                 .padding(.leading, 10) // Add some padding for better spacing
-                .font(.custom("Chalkduster", size: 20))
+                .font(.custom("Chalkduster", size: 15))
+                .fontWeight(.light)
         }
     }
 }

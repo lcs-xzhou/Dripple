@@ -36,11 +36,11 @@ struct MainAppEntryView: View {
                         .font(.custom("Chalkduster", size: 15))
                 }
             
-          PortfolioListView()
+            PortfolioAppEntryView()
                 .tabItem {
                     Image(systemName: "person.circle")
                     Text("Portfolio")
-                    .font(.custom("Chalkduster", size: 15))
+                        .font(.custom("Chalkduster", size: 15))
                 }
         }
         .font(.custom("Chalkduster", size: 15))
