@@ -11,6 +11,7 @@ struct AppOpeningView: View {
     
     // MARK: Stored properties
     @State private var hasChosenGetStarted = false
+    @State private var hasChosenGetStartedNext = false
     
     // MARK: Computed properties
     var body: some View {
@@ -18,8 +19,11 @@ struct AppOpeningView: View {
         if hasChosenGetStarted == false {
             AppSplashScreenView(welcomeToDripple: $hasChosenGetStarted)
         } else {
-            MainAppLandingView()
-        }
+            if hasChosenGetStartedNext == false {
+                MainAppLandingView(letsStart: $hasChosenGetStartedNext)
+            } else {
+                MainAppEntryView()
+            }        }
     }
 }
 

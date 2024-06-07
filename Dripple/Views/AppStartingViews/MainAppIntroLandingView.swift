@@ -11,6 +11,7 @@ struct MainAppLandingView: View {
     
     // MARK: Stored properties
     @State private var hasChosenGetStarted = false
+    @State private var hasChosenGetStartedNext = false
     @Binding var letsStart: Bool
     
     // MARK: Computed properties
@@ -28,17 +29,16 @@ struct MainAppLandingView: View {
                     SubAppLandingView(title: "Note", context: "Capture your coffee journey and daily reflections with our app, your personal diary for all things coffee and beyond!", picture: "AppIntroPicture3")
                     VStack {
                         Spacer()
-                        Button("Let's start~") {}
-                            .foregroundColor(.brown1)
+                        Text("Let's start~")
                             .fontWeight(.bold)
                             .multilineTextAlignment(.center)
                             .font(.custom("Chalkduster", size: 30))
                             .padding(.bottom, 45.0)
-                            .buttonStyle(.borderedProminent)
-                            .tint(.white)
+                            .foregroundColor(.brown1)
                             .onTapGesture {
                                 letsStart = true
                             }
+                            .background(Color.white, in: RoundedRectangle(cornerRadius: 15))
                     }
                 }
             }

@@ -9,6 +9,9 @@ import SwiftUI
 
 struct MainAppEntryView: View {
     
+    // MARK: Stored properties
+    @State private var hasChosenGetStartedNext = false
+    
     var body: some View {
         TabView {
             MainVarietyListView()
