@@ -65,20 +65,22 @@ struct PortfolioListView: View {
                 
                 List {
                     
-                    PortfolioListItemView(subTitle: "Name", inputHint: "Please enter your name", input: $name)
-                    PortfolioListItemView(subTitle: "Age", inputHint: "Please enter your age", input: $age)
-                    PortfolioListItemView(subTitle: "Gender", inputHint: "Please enter your gender", input: $gender)
-                    PortfolioListItemView(subTitle: "Location", inputHint: "Please enter your location", input: $location)
-                    PortfolioListItemView(subTitle: "Introduction", inputHint: "Please share who you are", input: $intro)
-                    
+                    PortfolioListItemView(subTitle: "Name", inputHint: "Enter", input: $name)
+                    PortfolioListItemView(subTitle: "Age", inputHint: "Enter", input: $age)
+                    Picker("Gender", selection: $gender) {
+                        Text("Female").tag("Female")
+                        Text("Male").tag("Male")
+                        Text("Other").tag("Other")
+                    }
+                    PortfolioListItemView(subTitle: "Location", inputHint: "Enter", input: $location)
+                    PortfolioListItemView(subTitle: "Introduction", inputHint: "Enter", input: $intro)
                 }
                 .listStyle(.plain)
                 .padding()
                 .fontWeight(.semibold)
-                .font(.custom("Chalkduster", size: 12))
+                .font(.custom("Chalkduster", size: 20))
                 .onSubmit {
-                    viewModel.createUsers(withUserName: name, withUserAge: age, withUserGender: gender, withUserLocation: location, withUserIntro: intro, andUserImage: newItemImage)
-
+                    viewModel.createUsers(withName: name, withAge: age, withGender: gender, withLocation: location, withIntro: intro, andUserImage: newItemImage)
                 }
                 
                 Image("PortfolioPicture1")

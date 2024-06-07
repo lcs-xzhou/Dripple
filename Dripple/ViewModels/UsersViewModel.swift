@@ -51,7 +51,7 @@ class UsersViewModel {
         
     }
     
-    func createUsers(withUserName name: String, withUserAge age: String, withUserGender gender: String, withUserLocation location: String, withUserIntro intro: String, andUserImage providedUserImage: UserItemImage?) {
+    func createUsers(withName name: String, withAge age: String, withGender gender: String, withLocation location: String, withIntro intro: String, andUserImage providedUserImage: UserItemImage?) {
         
         // Create a unit of asynchronous work to add the user item
         Task {
@@ -141,46 +141,7 @@ class UsersViewModel {
         return nil
         
     }
-    
-    func delete(_ note: UserItem) {
         
-        // Create a unit of asynchronous work to add the note item
-        Task {
-            
-            do {
-                
-                // If an image exists for this note item...
-                if let userImage = note.userImage, userImage.isEmpty == false {
-                    // ... then delete the image from the storage bucket first.
-                    do {
-                        let _ = try await supabase
-                            .storage
-                            .from("user_images")
-                            .remove(paths: [userImage])
-                    } catch {
-                        debugPrint(error)
-                    }
-                }
-                
-                // Run the delete command to remove notes item from database table.
-                try await supabase
-                    .from("notes")
-                    .delete()
-                    .eq("id", value: note.id!)  // Only delete the row whose id
-                    .execute()                  // matches that of the note being deleted
-                
-                // Update the list of note items held in memory to reflect the deletion
-                try await self.getUsers()
-                
-            } catch {
-                debugPrint(error)
-            }
-            
-            
-        }
-        
-    }
-    
     func update(user updatedUser: UserItem) {
         
         // Create a unit of asynchronous work to add the note item
