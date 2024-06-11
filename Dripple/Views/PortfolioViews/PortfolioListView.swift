@@ -17,7 +17,7 @@ struct PortfolioListView: View {
     @State var age = ""
     @State var gender = ""
     @State var location = ""
-    @State var intro = ""
+    @State var info = ""
     
     // The selection made in the PhotosPicker
     @State var selectionResult: PhotosPickerItem?
@@ -69,7 +69,7 @@ struct PortfolioListView: View {
                     PortfolioListItemView(subTitle: "Age", inputHint: "Enter", input: $age)
                     PortfolioListItemView(subTitle: "Gender", inputHint: "Enter", input: $gender)
                     PortfolioListItemView(subTitle: "Location", inputHint: "Enter", input: $location)
-                    PortfolioListItemView(subTitle: "Introduction", inputHint: "Enter", input: $intro)
+                    PortfolioListItemView(subTitle: "Introduction", inputHint: "Enter", input: $info)
                 }
                 .listStyle(.plain)
                 .padding()
@@ -84,7 +84,7 @@ struct PortfolioListView: View {
             .toolbar {
                 ToolbarItem {
                     Button {
-                        viewModel.createPortfolio(withName: name, withAge: age, withGender: gender, withLocation: location, withIntro: intro, andImage: newItemImage)
+                        viewModel.createPortfolio(withName: name, withAge: age, withGender: gender, withLocation: location, withInfo: info, andImage: newItemImage)
                     } label: {
                         Text("Confirm")
                             .font(.custom("Chalkduster", size: 15))

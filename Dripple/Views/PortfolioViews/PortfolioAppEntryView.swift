@@ -1,8 +1,8 @@
-
-  PortfolioAppEntryView.swift
-  Dripple
-
-  Created by Fiona ZHOU on 2024-06-07.
+//
+//  PortfolioAppEntryView.swift
+//  Dripple
+//
+//  Created by Fiona ZHOU on 2024-06-07.
 
 
 import SwiftUI

@@ -13,7 +13,7 @@ struct PortfolioListItem: Identifiable, Codable {
     var age: String
     var gender: String
     var location: String
-    var intro: String
+    var info: String
     var user_image: String?
     
     // When decoding and encoding from JSON, translate snake_case
@@ -24,12 +24,12 @@ struct PortfolioListItem: Identifiable, Codable {
         case age
         case gender
         case location
-        case intro
+        case info
         case user_image = "user_image"
     }
 }
 
-let firstUser = PortfolioListItem(name: "Coffee Lover", age: "16", gender: "Female", location: "Canada", intro: "Motcha is the best!!!")
+let firstUser = PortfolioListItem(name: "Coffee Lover", age: "16", gender: "Female", location: "Canada", info: "Motcha is the best!!!")
 
 let exampleUsers = [firstUser]
 

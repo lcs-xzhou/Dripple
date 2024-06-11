@@ -1,8 +1,8 @@
-
-  AppEntryView.swift
-  Dripple
-
-  Created by Fiona ZHOU on 2024-05-29.
+//
+//  AppEntryView.swift
+//  Dripple
+//
+//  Created by Fiona ZHOU on 2024-05-29.
 
 
 import SwiftUI

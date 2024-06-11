@@ -51,7 +51,7 @@ class PortfolioViewModel {
         
     }
     
-    func createPortfolio(withName name: String, withAge age: String, withGender gender: String, withLocation location: String, withIntro intro: String, andImage providedImage: PortfolioListItemImage?) {
+    func createPortfolio(withName name: String, withAge age: String, withGender gender: String, withLocation location: String, withInfo info: String, andImage providedImage: PortfolioListItemImage?) {
         
         // Create a unit of asynchronous work to add the user item
         Task {
@@ -68,7 +68,7 @@ class PortfolioViewModel {
                 age: age,
                 gender: gender,
                 location: location,
-                intro: intro,
+                info: info,
                 user_image: user_image
             )
             
