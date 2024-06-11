@@ -14,7 +14,7 @@ struct PortfolioListItem: Identifiable, Codable {
     var gender: String
     var location: String
     var intro: String
-    var userImage: String?
+    var imageURL: String?
     
     // When decoding and encoding from JSON, translate snake_case
     // column names into camelCase
@@ -25,7 +25,7 @@ struct PortfolioListItem: Identifiable, Codable {
         case gender
         case location
         case intro
-        case userImage = "user_image"
+        case imageURL = "user_image"
     }
 }
 

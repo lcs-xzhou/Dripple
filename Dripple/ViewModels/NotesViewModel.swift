@@ -9,11 +9,11 @@ import Foundation
 import Storage
 
 @Observable
-class NotesViewModel {
+class NotesViewModel: Observable {
     
     // MARK: Stored properties
     // The list of notes items
-    var notes: [NotesItem]
+    var notes: [NotesItem] = []
     
     // Track when note items are initially being fetched
     var fetchingNotes: Bool = false

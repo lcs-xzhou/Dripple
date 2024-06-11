@@ -85,7 +85,7 @@ struct PortfolioListView: View {
                 ToolbarItem {
                     Text("Confirm")
                         .onSubmit {
-                            viewModel.createUsers(withName: name, withAge: age, withGender: gender, withLocation: location, withIntro: intro, andUserImage: newItemImage)
+                            viewModel.createPortfolio(withName: name, withAge: age, withGender: gender, withLocation: location, withIntro: intro, andImage: newItemImage)
                         }
                         .font(.custom("Chalkduster", size: 15))
                         .foregroundColor(.brown1)

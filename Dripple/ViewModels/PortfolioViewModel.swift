@@ -12,38 +12,38 @@ import Storage
 class PortfolioViewModel {
     
     // MARK: Stored properties
-    // The list of users items
-    var users: [PortfolioListItem]
+    // The list of portfolio items
+    var portfolio: [PortfolioListItem] = []
     
     // Track when user items are initially being fetched
-    var fetchingUsers: Bool = false
+    var fetchingPortfolio: Bool = false
     
     // MARK: Initializer(s)
-    init(users: [PortfolioListItem] = []) {
-        self.users = users
+    init(portfolio: [PortfolioListItem] = []) {
+        self.portfolio = portfolio
         Task {
-            try await getUsers()
+            try await getPortfolio()
         }
     }
     
     // MARK: Functions
-    func getUsers() async throws {
+    func getPortfolio() async throws {
         
         // Indicate that app is in the process of getting user items from cloud
-        fetchingUsers = true
+        fetchingPortfolio = true
         
         do {
             let results: [PortfolioListItem] = try await supabase
-                .from("notes")
+                .from("portfolio")
                 .select()
                 .order("id", ascending: true)
                 .execute()
                 .value
             
-            self.users = results
+            self.portfolio = results
             
             // Finished getting note items
-            fetchingUsers = false
+            fetchingPortfolio = false
             
         } catch {
             debugPrint(error)
@@ -51,7 +51,7 @@ class PortfolioViewModel {
         
     }
     
-    func createUsers(withName name: String, withAge age: String, withGender gender: String, withLocation location: String, withIntro intro: String, andUserImage providedUserImage: PortfolioListItemImage?) {
+    func createPortfolio(withName name: String, withAge age: String, withGender gender: String, withLocation location: String, withIntro intro: String, andImage providedImage: PortfolioListItemImage?) {
         
         // Create a unit of asynchronous work to add the user item
         Task {
@@ -59,17 +59,17 @@ class PortfolioViewModel {
             // Upload an image.
             // If one was not provided to this function, then this
             // function call will return a nil value.
-            let userImage = try await uploadImage(providedUserImage)
+            let imageURL = try await uploadImage(providedImage)
             
             // Create the new note item instance
             // NOTE: The id will be nil for now
-            let user = PortfolioListItem(
+            let portfolio = PortfolioListItem(
                 name: name,
                 age: age,
                 gender: gender,
                 location: location,
                 intro: intro,
-                userImage: userImage
+                imageURL: imageURL
             )
             
             // Write it to the database
@@ -78,8 +78,8 @@ class PortfolioViewModel {
                 // Insert the new user item, and then immediately select
                 // it back out of the database
                 let newlyInsertedItem: PortfolioListItem = try await supabase
-                    .from("notes")
-                    .insert(user)   // Insert the note item created locally in memory
+                    .from("portfolio")
+                    .insert(portfolio)   // Insert the portfolio item created locally in memory
                     .select()       // Select the item just inserted
                     .single()       // Ensure just one row is returned
                     .execute()      // Run the query
@@ -89,7 +89,7 @@ class PortfolioViewModel {
                 // database into the array used by the view model
                 // NOTE: We do this to obtain the id that is automatically assigned by Supabase
                 //       when the note item was inserted into the database table
-                self.users.append(newlyInsertedItem)
+                self.portfolio.append(newlyInsertedItem)
                 
             } catch {
                 debugPrint(error)
@@ -142,18 +142,18 @@ class PortfolioViewModel {
         
     }
         
-    func update(user updatedUser: PortfolioListItem) {
+    func update(user updatedPortfolio: PortfolioListItem) {
         
-        // Create a unit of asynchronous work to add the note item
+        // Create a unit of asynchronous work to add the portfolio item
         Task {
             
             do {
                 
                 // Run the update command
                 try await supabase
-                    .from("notes")
-                    .update(updatedUser)
-                    .eq("id", value: updatedUser.id!)   // Only update the row whose id
+                    .from("portfolio")
+                    .update(updatedPortfolio)
+                    .eq("id", value: updatedPortfolio.id!)   // Only update the row whose id
                     .execute()                          // matches that of the user being deleted
                 
             } catch {
