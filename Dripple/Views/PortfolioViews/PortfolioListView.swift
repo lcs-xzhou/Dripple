@@ -83,12 +83,13 @@ struct PortfolioListView: View {
             }
             .toolbar {
                 ToolbarItem {
-                    Text("Confirm")
-                        .onSubmit {
-                            viewModel.createPortfolio(withName: name, withAge: age, withGender: gender, withLocation: location, withIntro: intro, andImage: newItemImage)
-                        }
-                        .font(.custom("Chalkduster", size: 15))
-                        .foregroundColor(.brown1)
+                    Button {
+                        viewModel.createPortfolio(withName: name, withAge: age, withGender: gender, withLocation: location, withIntro: intro, andImage: newItemImage)
+                    } label: {
+                        Text("Confirm")
+                            .font(.custom("Chalkduster", size: 15))
+                            .foregroundColor(.brown1)
+                    }
                 }
             }
         }

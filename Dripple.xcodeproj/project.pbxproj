@@ -42,12 +42,11 @@
 		2DA212E52BFE42BE009E23A3 /* NotesItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA212E42BFE42BE009E23A3 /* NotesItemView.swift */; };
 		2DCFF3D82C0A4AB600E59D12 /* PortfolioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCFF3D72C0A4AB600E59D12 /* PortfolioViewModel.swift */; };
 		2DCFF3DA2C0A5BE200E59D12 /* PortfolioListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCFF3D92C0A5BE200E59D12 /* PortfolioListItemView.swift */; };
-		2DD7B3392C18BCB300EA2BCA /* MainAppEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD7B3382C18BCB300EA2BCA /* MainAppEntryView.swift */; };
 		2DF980882C0F522F00A011F8 /* AppSplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF980872C0F522F00A011F8 /* AppSplashScreenView.swift */; };
 		2DF9808A2C0F556400A011F8 /* MainAppIntroLandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF980892C0F556400A011F8 /* MainAppIntroLandingView.swift */; };
 		2DF9808C2C1215FC00A011F8 /* AppOpeningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF9808B2C1215FC00A011F8 /* AppOpeningView.swift */; };
 		2DF9808E2C1218B300A011F8 /* SubAppLandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF9808D2C1218B300A011F8 /* SubAppLandingView.swift */; };
-		2DF980902C1234F000A011F8 /* SubAppEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF9808F2C1234F000A011F8 /* SubAppEntryView.swift */; };
+		2DF980902C1234F000A011F8 /* MainAppEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF9808F2C1234F000A011F8 /* MainAppEntryView.swift */; };
 		2DF980942C1397CA00A011F8 /* PortfolioAppEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF980932C1397CA00A011F8 /* PortfolioAppEntryView.swift */; };
 /* End PBXBuildFile section */
 
@@ -82,12 +81,11 @@
 		2DA212E42BFE42BE009E23A3 /* NotesItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesItemView.swift; sourceTree = "<group>"; };
 		2DCFF3D72C0A4AB600E59D12 /* PortfolioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioViewModel.swift; sourceTree = "<group>"; };
 		2DCFF3D92C0A5BE200E59D12 /* PortfolioListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioListItemView.swift; sourceTree = "<group>"; };
-		2DD7B3382C18BCB300EA2BCA /* MainAppEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAppEntryView.swift; sourceTree = "<group>"; };
 		2DF980872C0F522F00A011F8 /* AppSplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSplashScreenView.swift; sourceTree = "<group>"; };
 		2DF980892C0F556400A011F8 /* MainAppIntroLandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAppIntroLandingView.swift; sourceTree = "<group>"; };
 		2DF9808B2C1215FC00A011F8 /* AppOpeningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppOpeningView.swift; sourceTree = "<group>"; };
 		2DF9808D2C1218B300A011F8 /* SubAppLandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubAppLandingView.swift; sourceTree = "<group>"; };
-		2DF9808F2C1234F000A011F8 /* SubAppEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubAppEntryView.swift; sourceTree = "<group>"; };
+		2DF9808F2C1234F000A011F8 /* MainAppEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAppEntryView.swift; sourceTree = "<group>"; };
 		2DF980932C1397CA00A011F8 /* PortfolioAppEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioAppEntryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -273,8 +271,7 @@
 				2DF980892C0F556400A011F8 /* MainAppIntroLandingView.swift */,
 				2DF9808B2C1215FC00A011F8 /* AppOpeningView.swift */,
 				2DF9808D2C1218B300A011F8 /* SubAppLandingView.swift */,
-				2DF9808F2C1234F000A011F8 /* SubAppEntryView.swift */,
-				2DD7B3382C18BCB300EA2BCA /* MainAppEntryView.swift */,
+				2DF9808F2C1234F000A011F8 /* MainAppEntryView.swift */,
 			);
 			path = AppStartingViews;
 			sourceTree = "<group>";
@@ -364,7 +361,7 @@
 				2DCFF3D82C0A4AB600E59D12 /* PortfolioViewModel.swift in Sources */,
 				2D2DBD2D2C091CB20047CFD2 /* PortfolioListItemImage.swift in Sources */,
 				2D1B7D7D2BFC1EBA00390E54 /* NotesItemDetailView.swift in Sources */,
-				2DF980902C1234F000A011F8 /* SubAppEntryView.swift in Sources */,
+				2DF980902C1234F000A011F8 /* MainAppEntryView.swift in Sources */,
 				2D1B7D692BF8E7ED00390E54 /* MainVarietyListView.swift in Sources */,
 				2DF9808C2C1215FC00A011F8 /* AppOpeningView.swift in Sources */,
 				2D1B7D7B2BFC1BCE00390E54 /* NotesItem.swift in Sources */,
@@ -382,7 +379,6 @@
 				2D2DBD272C08E2DC0047CFD2 /* SubCountingItemView.swift in Sources */,
 				2D56E52F2BF8404E0091500C /* SubVarietyItemView.swift in Sources */,
 				2D2DBD312C0943AF0047CFD2 /* PortfolioListItem.swift in Sources */,
-				2DD7B3392C18BCB300EA2BCA /* MainAppEntryView.swift in Sources */,
 				2D5D71D62BF70790009F83C6 /* DrippleApp.swift in Sources */,
 				2DF9808E2C1218B300A011F8 /* SubAppLandingView.swift in Sources */,
 				2DF980942C1397CA00A011F8 /* PortfolioAppEntryView.swift in Sources */,

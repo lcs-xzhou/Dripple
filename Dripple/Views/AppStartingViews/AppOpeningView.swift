@@ -22,7 +22,7 @@ struct AppOpeningView: View {
             if hasChosenGetStartedNext == false {
                 MainAppLandingView(letsStart: $hasChosenGetStartedNext)
             } else {
-                SubAppEntryView()
+                MainAppEntryView()
             }
         }
     }
