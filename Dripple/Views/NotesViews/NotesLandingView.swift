@@ -63,7 +63,7 @@ struct NotesLandingView: View {
                                 ForEach($viewModel.notes) { $note in
                                     
                                     // Is there an image attached to the note item?
-                                    if note.imageURL == nil {
+                                    if note.notes_image == nil {
                                         
                                         // If no, just show the text of the note item
                                         NotesItemView(currentItem: $note)

@@ -9,11 +9,11 @@ import Foundation
 import Storage
 
 @Observable
-class NotesViewModel: Observable {
+class NotesViewModel {
     
     // MARK: Stored properties
     // The list of notes items
-    var notes: [NotesItem] = []
+    var notes: [NotesItem]
     
     // Track when note items are initially being fetched
     var fetchingNotes: Bool = false
@@ -51,7 +51,7 @@ class NotesViewModel: Observable {
         
     }
     
-    func createNotes(withTitle title: String, withContext context: String, andImage providedImage: NotesItemImage?) {
+    func createNotes(withTitle title: String, withContext content: String, andImage providedImage: NotesItemImage?) {
         
         // Create a unit of asynchronous work to add the note item
         Task {
@@ -65,8 +65,8 @@ class NotesViewModel: Observable {
             // NOTE: The id will be nil for now
             let note = NotesItem(
                 title: title,
-                context: context,
-                imageURL: imageURL
+                content: content,
+                notes_image: imageURL
             )
             
             // Write it to the database
@@ -147,13 +147,13 @@ class NotesViewModel: Observable {
             do {
                 
                 // If an image exists for this note item...
-                if let imageURL = note.imageURL, imageURL.isEmpty == false {
+                if let notes_image = note.notes_image, notes_image.isEmpty == false {
                     // ... then delete the image from the storage bucket first.
                     do {
                         let _ = try await supabase
                             .storage
                             .from("notes_images")
-                            .remove(paths: [imageURL])
+                            .remove(paths: [notes_image])
                     } catch {
                         debugPrint(error)
                     }

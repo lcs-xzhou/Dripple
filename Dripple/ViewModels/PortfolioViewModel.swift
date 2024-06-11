@@ -13,7 +13,7 @@ class PortfolioViewModel {
     
     // MARK: Stored properties
     // The list of portfolio items
-    var portfolio: [PortfolioListItem] = []
+    var portfolio: [PortfolioListItem]
     
     // Track when user items are initially being fetched
     var fetchingPortfolio: Bool = false

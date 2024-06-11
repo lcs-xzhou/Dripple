@@ -29,7 +29,7 @@ struct NotesItemView: View {
                     .aspectRatio(contentMode: .fill)
             }
             
-            TextField("Please enter a title", text: $currentItem.title, axis: .vertical)
+            Text(currentItem.title)
                 .multilineTextAlignment(.center)
                 .foregroundColor(.brown1)
                 .font(.custom("Chalkduster", size: 20))
@@ -41,7 +41,7 @@ struct NotesItemView: View {
         // Adds an asynchronous task to perform before this view appears.
         .task {
             // If the image URL for this notes item is not nil, and if it is not an empty string...
-            if let notesItemImageURL = currentItem.imageURL, notesItemImageURL.isEmpty == false {
+            if let notesItemImageURL = currentItem.notes_image, notesItemImageURL.isEmpty == false {
                 
                 // ... then attempt to download the image so it can be displayed in this view
                 do {

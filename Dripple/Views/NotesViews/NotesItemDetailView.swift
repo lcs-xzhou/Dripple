@@ -46,7 +46,7 @@ struct NotesItemDetailView: View {
                 ProgressView()
             }
             
-            TextField("Please note down your thoughts", text: $currentItem.context)
+            TextField("Please note down your thoughts", text: $currentItem.content)
                 .padding(.horizontal)
                 .foregroundColor(.brown1)
                 .fontWeight(.semibold)
@@ -57,7 +57,7 @@ struct NotesItemDetailView: View {
         }
         .padding()
         .task {
-            if let notesItemImageURL = currentItem.imageURL, notesItemImageURL.isEmpty == false {
+            if let notesItemImageURL = currentItem.notes_image, notesItemImageURL.isEmpty == false {
                 
                 do {
                     currentItemImage = try await viewModel.downloadNotesItemImage(fromPath: notesItemImageURL)
