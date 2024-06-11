@@ -59,7 +59,7 @@ class PortfolioViewModel {
             // Upload an image.
             // If one was not provided to this function, then this
             // function call will return a nil value.
-            let imageURL = try await uploadImage(providedImage)
+            let user_image = try await uploadImage(providedImage)
             
             // Create the new note item instance
             // NOTE: The id will be nil for now
@@ -69,7 +69,7 @@ class PortfolioViewModel {
                 gender: gender,
                 location: location,
                 intro: intro,
-                imageURL: imageURL
+                user_image: user_image
             )
             
             // Write it to the database

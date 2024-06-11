@@ -2,7 +2,7 @@
 //  MainAppEntryView.swift
 //  Dripple
 //
-//  Created by Fiona ZHOU on 2024-06-06.
+//  Created by Fiona ZHOU on 2024-06-11.
 //
 
 import SwiftUI
@@ -10,43 +10,42 @@ import SwiftUI
 struct MainAppEntryView: View {
     
     // MARK: Stored properties
-    @State private var hasChosenGetStartedNext = false
     
+    // Keeps track of whether the user has been authenticated
+    @State var isAuthenticated = false
+    
+    // MARK: Computed properties
     var body: some View {
-        TabView {
-            MainVarietyListView()
-                .padding()
-                .tabItem {
-                    Image(systemName: "book")
-                    Text("Variety")
-                        .font(.custom("Chalkduster", size: 15))
-                }
+        Group {
             
-            MainCountingView()
-                .tabItem {
-                    Image(systemName: "plus.circle.fill")
-                    Text("Counting")
-                        .font(.custom("Chalkduster", size: 15))
-                }
-            
-            NotesAppEntryView()
-                .tabItem {
-                    Image(systemName: "clipboard")
-                    Text("Notes")
-                        .font(.custom("Chalkduster", size: 15))
-                }
-            
-            PortfolioAppEntryView()
-                .tabItem {
-                    Image(systemName: "person.circle")
-                    Text("Portfolio")
-                        .font(.custom("Chalkduster", size: 15))
-                }
+            // Directs to appropriate view based on whether
+            // user is authenticated or not
+            if isAuthenticated {
+                
+                // User is authenticated – show main view of our app
+                SubAppEntryView()
+            } else {
+                
+                // User not authenticated
+                AuthView()
+            }
         }
-        .font(.custom("Chalkduster", size: 15))
-        .tint(.brown1)
+        .task {
+            
+            // Monitor authentication state
+            for await state in await supabase.auth.authStateChanges {
+                
+                // If the user has been signed in, signed out, or if this is their
+                // initial session with Supabase, the code block below will run
+                if [.initialSession, .signedIn, .signedOut].contains(state.event) {
+                    
+                    // isAuthenticated set to true when the user has a session
+                    // Otherwise, it is set to false
+                    isAuthenticated = state.session != nil
+                }
+            }
+        }
     }
-    
 }
 
 #Preview {
