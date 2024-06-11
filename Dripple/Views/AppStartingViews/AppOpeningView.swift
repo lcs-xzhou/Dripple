@@ -23,7 +23,8 @@ struct AppOpeningView: View {
                 MainAppLandingView(letsStart: $hasChosenGetStartedNext)
             } else {
                 SubAppEntryView()
-            }        }
+            }
+        }
     }
 }
 
