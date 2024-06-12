@@ -10,7 +10,7 @@ import Foundation
 struct NotesItem: Identifiable, Codable {
     var id: Int?
     var title: String
-    var content:  String
+    var content: String
     var notes_image: String?
     
     // When decoding and encoding from JSON, translate snake_case

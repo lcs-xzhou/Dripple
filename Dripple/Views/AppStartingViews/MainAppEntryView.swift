@@ -15,7 +15,6 @@ struct MainAppEntryView: View {
     var body: some View {
         TabView {
             MainVarietyListView()
-                .padding()
                 .tabItem {
                     Image(systemName: "book")
                     Text("Variety")

@@ -29,20 +29,26 @@ struct MainAppLandingView: View {
                     SubAppLandingView(title: "Note", context: "Capture your coffee journey and daily reflections with our app, your personal diary for all things coffee and beyond!", picture: "AppIntroPicture3")
                     VStack {
                         Spacer()
-                        Text("Let's start~")
-                            .fontWeight(.bold)
-                            .multilineTextAlignment(.center)
-                            .font(.custom("Chalkduster", size: 30))
-                            .padding(.bottom, 45.0)
-                            .foregroundColor(.brown1)
-                            .onTapGesture {
-                                letsStart = true
-                            }
-                            .padding()
-                            .background {
-                                RoundedRectangle(cornerRadius: 15.0)
-                                    .foregroundStyle(Color.white)
-                            }
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 15.0)
+                                .foregroundStyle(Color.white)
+                                .aspectRatio(6, contentMode: .fit)
+                                .multilineTextAlignment(.center)
+                                .padding(70)
+                            
+                            Text("Let's start~")
+                                .fontWeight(.bold)
+                                .multilineTextAlignment(.center)
+                                .font(.custom("Chalkduster", size: 30))
+                                .padding(.bottom, 45.0)
+                                .foregroundColor(.brown1)
+                                .onTapGesture {
+                                    letsStart = true
+                                }
+                                .padding()
+                                .padding(.top)
+                        }
+                        .padding(.top)
                     }
                 }
             }
