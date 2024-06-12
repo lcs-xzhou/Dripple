@@ -37,6 +37,7 @@ struct SubAppLandingView: View {
                     .multilineTextAlignment(.center)
                     .font(.custom("Chalkduster", size: 12))
                     .padding(.horizontal)
+                    .padding(.bottom)
             }
         }
     }

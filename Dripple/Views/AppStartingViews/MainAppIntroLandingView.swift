@@ -27,28 +27,27 @@ struct MainAppLandingView: View {
                 
                 ZStack {
                     SubAppLandingView(title: "Note", context: "Capture your coffee journey and daily reflections with our app, your personal diary for all things coffee and beyond!", picture: "AppIntroPicture3")
+                    
                     VStack {
                         Spacer()
-                        ZStack {
+                        ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)) {
                             RoundedRectangle(cornerRadius: 15.0)
                                 .foregroundStyle(Color.white)
                                 .aspectRatio(6, contentMode: .fit)
                                 .multilineTextAlignment(.center)
-                                .padding(70)
+                                .padding(80)
                             
                             Text("Let's start~")
                                 .fontWeight(.bold)
                                 .multilineTextAlignment(.center)
                                 .font(.custom("Chalkduster", size: 30))
-                                .padding(.bottom, 45.0)
+                                .padding(.bottom, 62.0)
                                 .foregroundColor(.brown1)
                                 .onTapGesture {
                                     letsStart = true
                                 }
                                 .padding()
-                                .padding(.top)
                         }
-                        .padding(.top)
                     }
                 }
             }
