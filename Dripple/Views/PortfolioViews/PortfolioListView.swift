@@ -22,9 +22,9 @@ struct PortfolioListView: View {
     // The selection made in the PhotosPicker
     @State var selectionResult: PhotosPickerItem?
     // The actual image loaded from the selection that was made
-    @State var newItemImage: PortfolioListItemImage?
+    @State var newItemImage: UsersItemImage?
     // Create the source of truth for the view model
-    @State var viewModel = PortfolioViewModel()
+    @State var viewModel = UsersViewModel()
     
     var body: some View {
         NavigationView {
@@ -65,11 +65,11 @@ struct PortfolioListView: View {
                 
                 List {
                     
-                    PortfolioListItemView(subTitle: "Name", inputHint: "Enter", input: $name)
-                    PortfolioListItemView(subTitle: "Age", inputHint: "Enter", input: $age)
-                    PortfolioListItemView(subTitle: "Gender", inputHint: "Enter", input: $gender)
-                    PortfolioListItemView(subTitle: "Location", inputHint: "Enter", input: $location)
-                    PortfolioListItemView(subTitle: "Introduction", inputHint: "Enter", input: $info)
+                    UsersItemView(subTitle: "Name", inputHint: "Enter", input: $name)
+                    UsersItemView(subTitle: "Age", inputHint: "Enter", input: $age)
+                    UsersItemView(subTitle: "Gender", inputHint: "Enter", input: $gender)
+                    UsersItemView(subTitle: "Location", inputHint: "Enter", input: $location)
+                    UsersItemView(subTitle: "Introduction", inputHint: "Enter", input: $info)
                 }
                 .listStyle(.plain)
                 .padding()
@@ -112,7 +112,7 @@ struct PortfolioListView: View {
         Task {
             do {
                 // Attempt to set the stored property that holds the image data
-                newItemImage = try await imageSelection.loadTransferable(type: PortfolioListItemImage.self)
+                newItemImage = try await imageSelection.loadTransferable(type: UsersItemImage.self)
             } catch {
                 debugPrint(error)
             }

@@ -32,6 +32,10 @@ class NotesViewModel {
         // Indicate that app is in the process of getting note items from cloud
         fetchingNotes = true
         
+//        Task {
+//            let newNotesItem = NotesItem(title: NotesItem, content: NotesItem, notesId: UsersItem.id)
+//        }
+        
         do {
             let results: [NotesItem] = try await supabase
                 .from("notes")

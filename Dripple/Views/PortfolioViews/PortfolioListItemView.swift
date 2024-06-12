@@ -1,5 +1,5 @@
 //
-//  PortfolioListItemView.swift
+//  UsersItemView.swift
 //  Dripple
 //
 //  Created by Fiona ZHOU on 2024-05-31.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PortfolioListItemView: View {
+struct UsersItemView: View {
     
     let subTitle: String
     let inputHint: String
@@ -25,10 +25,11 @@ struct PortfolioListItemView: View {
                 .padding(.leading, 10) // Add some padding for better spacing
                 .font(.custom("Chalkduster", size: 15))
                 .fontWeight(.light)
+                .lineLimit(3)
         }
     }
 }
 
 #Preview {
-    PortfolioListItemView(subTitle: "Name", inputHint: "name", input: Binding.constant("CL12345"))
+    UsersItemView(subTitle: "Name", inputHint: "name", input: Binding.constant("CL12345"))
 }

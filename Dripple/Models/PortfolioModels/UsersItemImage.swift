@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PortfolioListItemImage: Transferable, Equatable {
+struct UsersItemImage: Transferable, Equatable {
     
     // MARK: Stored properties
     let image: Image
@@ -22,7 +22,7 @@ struct PortfolioListItemImage: Transferable, Equatable {
         return DataRepresentation(importedContentType: .image) { importedImageData in
             
             // Attempt to create an instance of UserImage from the imported data
-            guard let image = PortfolioListItemImage(rawImageData: importedImageData) else {
+            guard let image = UsersItemImage(rawImageData: importedImageData) else {
                 // If the important did not work, throw an error
                 throw TransferError.importFailed
             }
@@ -34,7 +34,7 @@ struct PortfolioListItemImage: Transferable, Equatable {
 }
 
 // Extend the structure to add new capabilities
-extension PortfolioListItemImage {
+extension UsersItemImage {
     
     // MARK: Initializer(s)
     
