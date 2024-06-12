@@ -28,6 +28,9 @@ struct NotesNewItemView: View {
     // Binding to control whether this view is visible
     @Binding var showSheet: Bool
     
+    // Which user is this notes belong to
+    let currentUser: UsersNotes
+    
     // MARK: Computed properties
     var body: some View {
         NavigationView {
@@ -38,7 +41,7 @@ struct NotesNewItemView: View {
                     
                     Button("Add") {
                         // Add the new note item
-                        viewModel.createNotes(withTitle: newItemTitle, withContext: newItemContext, andImage: newItemImage)
+                        viewModel.createNotes(withTitle: newItemTitle, withContext: newItemContext, andImage: newItemImage, in: currentUser)
                         
                         // Clear the stored property bound to the input textfield
                         newItemTitle = ""
@@ -110,5 +113,5 @@ struct NotesNewItemView: View {
 }
 
 #Preview {
-    NotesNewItemView(showSheet: .constant(true))
+    NotesNewItemView(showSheet: .constant(true), currentUser: <#UsersNotes#>)
 }

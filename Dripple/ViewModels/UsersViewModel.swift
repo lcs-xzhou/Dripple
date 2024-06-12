@@ -13,7 +13,7 @@ class UsersViewModel {
     
     // MARK: Stored properties
     // The list of users items
-    var users: [UsersItem]
+    var users: [UsersItem] = []
     
     // Track when user items are initially being fetched
     var fetchingPortfolio: Bool = false
@@ -26,7 +26,7 @@ class UsersViewModel {
         }
     }
     
-    // MARK: Functions
+    // MARK: Functions    
     func getPortfolio() async throws {
         
         // Indicate that app is in the process of getting user items from cloud

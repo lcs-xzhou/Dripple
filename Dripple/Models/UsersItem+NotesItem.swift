@@ -18,6 +18,20 @@ struct UsersNotes: Identifiable, Codable {
     var location: String
     var user_image: String?
     var info: String
+    let notes: [NotesItem]
+    
+    // When decoding and encoding from JSON, translate snake_case
+    // column names into camelCase
+    enum CodingKeys: String, CodingKey {
+        case id
+        case name
+        case age
+        case gender
+        case location
+        case info
+        case user_image = "user_image"
+        case notes
+    }
   
     // Embedding the Notes structure insidethe UsersNotes structure
     // mimics the one to many relationshipbetween a user and its notes

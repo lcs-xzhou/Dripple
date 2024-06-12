@@ -13,7 +13,8 @@ class NotesViewModel {
     
     // MARK: Stored properties
     // The list of notes items
-    var notes: [NotesItem]
+    var notes: [NotesItem] = []
+    var usersWithNotes: [UsersNotes] = []
     
     // Track when note items are initially being fetched
     var fetchingNotes: Bool = false
@@ -24,17 +25,36 @@ class NotesViewModel {
         Task {
             try await getNotes()
         }
+        Task {
+            try await getUsersWithNotes()
+        }
     }
     
     // MARK: Functions
+    func getUsersWithNotes() async throws {
+        
+        do {
+            let results: [UsersNotes] = try await supabase
+                .from("users")
+                .select("id, name, age, gender, location, user_image, info, notes(id, title, content, notes_image, portfolioId")
+                .execute()
+                .value
+            
+            self.usersWithNotes = results
+            
+        } catch {
+            debugPrint(error)
+        }
+    }
+    
     func getNotes() async throws {
         
         // Indicate that app is in the process of getting note items from cloud
         fetchingNotes = true
         
-//        Task {
-//            let newNotesItem = NotesItem(title: NotesItem, content: NotesItem, notesId: UsersItem.id)
-//        }
+        //        Task {
+        //            let newNotesItem = NotesItem(title: NotesItem, content: NotesItem, notesId: UsersItem.id)
+        //        }
         
         do {
             let results: [NotesItem] = try await supabase
@@ -55,7 +75,7 @@ class NotesViewModel {
         
     }
     
-    func createNotes(withTitle title: String, withContext content: String, andImage providedImage: NotesItemImage?) {
+    func createNotes(withTitle title: String, withContext content: String, andImage providedImage: NotesItemImage?, in users: UsersNotes) {
         
         // Create a unit of asynchronous work to add the note item
         Task {
@@ -72,6 +92,8 @@ class NotesViewModel {
                 content: content,
                 notes_image: imageURL
             )
+            
+            let newNote = NotesItem(title: title, content: content, notes_image: imageURL, portfolioId: users.id)
             
             // Write it to the database
             do {
