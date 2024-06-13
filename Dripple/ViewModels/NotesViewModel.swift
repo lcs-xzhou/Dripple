@@ -19,6 +19,7 @@ class NotesViewModel {
     var fetchingNotes: Bool = false
     
     // MARK: Initializer(s)
+    // Make sure that all of the subclass's properties have a value
     init(notes: [NotesItem] = []) {
         self.notes = notes
         Task {
@@ -28,27 +29,20 @@ class NotesViewModel {
     
     // MARK: Functions
     func getNotes() async throws {
-        
-        // Indicate that app is in the process of getting note items from cloud
+        // Indicate that app is in the process of getting note items from table notes in cloud
         fetchingNotes = true
-        
-        //        Task {
-        //            let newNotesItem = NotesItem(title: NotesItem, content: NotesItem, notesId: UsersItem.id)
-        //        }
-        
         do {
             let results: [NotesItem] = try await supabase
-                .from("notes")
-                .select()
-                .order("id", ascending: true)
-                .execute()
+                .from("notes") // From the table of notes
+                .select() // Select all columns
+                .order("id", ascending: true) // Selecting in the ascending id order
+                .execute() // Execute the order
                 .value
             
             self.notes = results
             
             // Finished getting note items
             fetchingNotes = false
-            
         } catch {
             debugPrint(error)
         }
@@ -56,10 +50,8 @@ class NotesViewModel {
     }
     
     func createNotes(withTitle title: String, withContext content: String, andImage providedImage: NotesItemImage?) {
-        
-        // Create a unit of asynchronous work to add the note item
+        // Create a unit of asynchronous work runing in the background and evaluate functions asynchronously when there is an event of adding note
         Task {
-            
             // Upload an image.
             // If one was not provided to this function, then this
             // function call will return a nil value.
@@ -73,11 +65,10 @@ class NotesViewModel {
                 notes_image: imageURL
             )
             
-//            let newNote = NotesItem(title: title, content: content, notes_image: imageURL, portfolioId: users.id)
+            //            let newNote = NotesItem(title: title, content: content, notes_image: imageURL, portfolioId: users.id)
             
             // Write it to the database
             do {
-                
                 // Insert the new note item, and then immediately select
                 // it back out of the database
                 let newlyInsertedItem: NotesItem = try await supabase
@@ -131,7 +122,7 @@ class NotesViewModel {
         do {
             let data = try await supabase
                 .storage
-                .from("notes_images")
+                .from("notes_images") // From which storage
                 .download(path: path)
             
             return NotesItemImage(rawImageData: data)
@@ -149,9 +140,7 @@ class NotesViewModel {
         
         // Create a unit of asynchronous work to add the note item
         Task {
-            
             do {
-                
                 // If an image exists for this note item...
                 if let notes_image = note.notes_image, notes_image.isEmpty == false {
                     // ... then delete the image from the storage bucket first.
@@ -178,19 +167,13 @@ class NotesViewModel {
             } catch {
                 debugPrint(error)
             }
-            
-            
         }
-        
     }
     
     func update(note updatedNote: NotesItem) {
-        
         // Create a unit of asynchronous work to add the note item
         Task {
-            
             do {
-                
                 // Run the update command
                 try await supabase
                     .from("notes")
@@ -201,8 +184,6 @@ class NotesViewModel {
             } catch {
                 debugPrint(error)
             }
-            
         }
-        
     }
 }

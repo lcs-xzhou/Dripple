@@ -14,7 +14,7 @@ struct NotesItem: Identifiable, Codable {
     var title: String
     var content: String
     var notes_image: String?
-    var portfolioId: Int?
+    var users_id: Int?
     
     // When decoding and encoding from JSON, translate snake_case
     // column names into camelCase
@@ -23,7 +23,7 @@ struct NotesItem: Identifiable, Codable {
         case title
         case content
         case notes_image = "notes_image"
-        case portfolioId = "portfolio_id" // Foreign key is named portfolio_id in the database
+        case users_id = "users_id" // Foreign key is named users_id in the database
     }
 }
 

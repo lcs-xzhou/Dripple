@@ -19,6 +19,7 @@ class UsersViewModel {
     var fetchingPortfolio: Bool = false
     
     // MARK: Initializer(s)
+    // Make sure that all of the subclass's properties have a value
     init(users: [UsersItem] = []) {
         self.users = users
         Task {
@@ -28,23 +29,20 @@ class UsersViewModel {
     
     // MARK: Functions    
     func getPortfolio() async throws {
-        
         // Indicate that app is in the process of getting user items from cloud
         fetchingPortfolio = true
-        
         do {
             let results: [UsersItem] = try await supabase
-                .from("users")
-                .select()
-                .order("id", ascending: true)
-                .execute()
+                .from("users") // From the users table
+                .select() // Select all columns
+                .order("id", ascending: true) // Select in the order of ascending id
+                .execute() // Execute the order
                 .value
             
             self.users = results
             
-            // Finished getting note items
+            // Finished getting users items
             fetchingPortfolio = false
-            
         } catch {
             debugPrint(error)
         }
@@ -55,13 +53,12 @@ class UsersViewModel {
         
         // Create a unit of asynchronous work to add the user item
         Task {
-            
             // Upload an image.
             // If one was not provided to this function, then this
             // function call will return a nil value.
             let user_image = try await uploadImage(providedImage)
             
-            // Create the new note item instance
+            // Create the new users item instance
             // NOTE: The id will be nil for now
             let users = UsersItem(
                 name: name,
@@ -85,10 +82,10 @@ class UsersViewModel {
                     .execute()      // Run the query
                     .value          // Automatically decode the JSON into an instance of UsersItem
                 
-                // Finally, insert the user item instance we just selected back from the
+                // Finally, insert the users item instance we just selected back from the
                 // database into the array used by the view model
                 // NOTE: We do this to obtain the id that is automatically assigned by Supabase
-                //       when the note item was inserted into the database table
+                //       when the users item was inserted into the database table
                 self.users.append(newlyInsertedItem)
                 
             } catch {
@@ -123,7 +120,6 @@ class UsersViewModel {
     }
     
     func downloadUsersItemImage(fromPath path: String) async throws -> UsersItemImage? {
-        
         // Attempt to download an image from the provided path
         do {
             let data = try await supabase
@@ -139,16 +135,13 @@ class UsersViewModel {
         
         // If we landed here, something went wrong, so return nil
         return nil
-        
     }
         
     func update(user updatedPortfolio: UsersItem) {
         
         // Create a unit of asynchronous work to add the users item
         Task {
-            
             do {
-                
                 // Run the update command
                 try await supabase
                     .from("users")
@@ -159,9 +152,7 @@ class UsersViewModel {
             } catch {
                 debugPrint(error)
             }
-            
         }
-        
     }
 }
 
