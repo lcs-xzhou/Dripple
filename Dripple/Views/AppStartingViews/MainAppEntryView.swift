@@ -28,14 +28,14 @@ struct MainAppEntryView: View {
                         .font(.custom("Chalkduster", size: 15))
                 }
             
-            NotesAppEntryView()
+            NotesLandingView()
                 .tabItem {
                     Image(systemName: "clipboard")
                     Text("Notes")
                         .font(.custom("Chalkduster", size: 15))
                 }
             
-            PortfolioAppEntryView()
+            PortfolioListView()
                 .tabItem {
                     Image(systemName: "person.circle")
                     Text("Portfolio")

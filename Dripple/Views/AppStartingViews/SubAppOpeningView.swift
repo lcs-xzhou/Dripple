@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AppOpeningView: View {
+struct SubAppOpeningView: View {
     
     // MARK: Stored properties
     @State private var hasChosenGetStarted = false
@@ -29,5 +29,5 @@ struct AppOpeningView: View {
 }
 
 #Preview {
-    AppOpeningView()
+    SubAppOpeningView()
 }

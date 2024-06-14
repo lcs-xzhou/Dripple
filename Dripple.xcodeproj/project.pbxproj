@@ -19,6 +19,7 @@
 		2D2DBD2D2C091CB20047CFD2 /* UsersItemImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2DBD2C2C091CB20047CFD2 /* UsersItemImage.swift */; };
 		2D2DBD2F2C091DA90047CFD2 /* Enumerations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2DBD2E2C091DA90047CFD2 /* Enumerations.swift */; };
 		2D2DBD312C0943AF0047CFD2 /* UsersItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2DBD302C0943AF0047CFD2 /* UsersItem.swift */; };
+		2D2F98F22C1CA82D00E22E63 /* MainAppOpeningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2F98F12C1CA82D00E22E63 /* MainAppOpeningView.swift */; };
 		2D56E52F2BF8404E0091500C /* SubVarietyItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D56E52E2BF8404E0091500C /* SubVarietyItemView.swift */; };
 		2D56E5312BF846050091500C /* SubVarietyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D56E5302BF846050091500C /* SubVarietyListView.swift */; };
 		2D5D71D62BF70790009F83C6 /* DrippleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D71D52BF70790009F83C6 /* DrippleApp.swift */; };
@@ -35,7 +36,6 @@
 		2D6D649D2C077A0400D84023 /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = 2D6D649C2C077A0400D84023 /* Storage */; };
 		2D6D649F2C077A0400D84023 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 2D6D649E2C077A0400D84023 /* Supabase */; };
 		2D6D64A12C077AE100D84023 /* Supabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6D64A02C077AE100D84023 /* Supabase.swift */; };
-		2D6D64A52C0787E900D84023 /* NotesAppEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6D64A42C0787E900D84023 /* NotesAppEntryView.swift */; };
 		2D6D64A72C07882600D84023 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6D64A62C07882600D84023 /* AuthView.swift */; };
 		2D6D64A92C078B0400D84023 /* NotesNewItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6D64A82C078B0400D84023 /* NotesNewItemView.swift */; };
 		2DA212E32BFE4282009E23A3 /* NotesLandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA212E22BFE4282009E23A3 /* NotesLandingView.swift */; };
@@ -44,10 +44,9 @@
 		2DCFF3DA2C0A5BE200E59D12 /* PortfolioListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCFF3D92C0A5BE200E59D12 /* PortfolioListItemView.swift */; };
 		2DF980882C0F522F00A011F8 /* AppSplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF980872C0F522F00A011F8 /* AppSplashScreenView.swift */; };
 		2DF9808A2C0F556400A011F8 /* MainAppIntroLandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF980892C0F556400A011F8 /* MainAppIntroLandingView.swift */; };
-		2DF9808C2C1215FC00A011F8 /* AppOpeningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF9808B2C1215FC00A011F8 /* AppOpeningView.swift */; };
+		2DF9808C2C1215FC00A011F8 /* SubAppOpeningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF9808B2C1215FC00A011F8 /* SubAppOpeningView.swift */; };
 		2DF9808E2C1218B300A011F8 /* SubAppLandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF9808D2C1218B300A011F8 /* SubAppLandingView.swift */; };
 		2DF980902C1234F000A011F8 /* MainAppEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF9808F2C1234F000A011F8 /* MainAppEntryView.swift */; };
-		2DF980942C1397CA00A011F8 /* PortfolioAppEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF980932C1397CA00A011F8 /* PortfolioAppEntryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +62,7 @@
 		2D2DBD2C2C091CB20047CFD2 /* UsersItemImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersItemImage.swift; sourceTree = "<group>"; };
 		2D2DBD2E2C091DA90047CFD2 /* Enumerations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enumerations.swift; sourceTree = "<group>"; };
 		2D2DBD302C0943AF0047CFD2 /* UsersItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersItem.swift; sourceTree = "<group>"; };
+		2D2F98F12C1CA82D00E22E63 /* MainAppOpeningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAppOpeningView.swift; sourceTree = "<group>"; };
 		2D56E52E2BF8404E0091500C /* SubVarietyItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubVarietyItemView.swift; sourceTree = "<group>"; };
 		2D56E5302BF846050091500C /* SubVarietyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubVarietyListView.swift; sourceTree = "<group>"; };
 		2D5D71D22BF70790009F83C6 /* Dripple.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dripple.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,7 +74,6 @@
 		2D6D648D2C07692800D84023 /* NotesItemImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesItemImage.swift; sourceTree = "<group>"; };
 		2D6D64912C07741D00D84023 /* NotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewModel.swift; sourceTree = "<group>"; };
 		2D6D64A02C077AE100D84023 /* Supabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Supabase.swift; sourceTree = "<group>"; };
-		2D6D64A42C0787E900D84023 /* NotesAppEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesAppEntryView.swift; sourceTree = "<group>"; };
 		2D6D64A62C07882600D84023 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		2D6D64A82C078B0400D84023 /* NotesNewItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesNewItemView.swift; sourceTree = "<group>"; };
 		2DA212E22BFE4282009E23A3 /* NotesLandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesLandingView.swift; sourceTree = "<group>"; };
@@ -83,10 +82,9 @@
 		2DCFF3D92C0A5BE200E59D12 /* PortfolioListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioListItemView.swift; sourceTree = "<group>"; };
 		2DF980872C0F522F00A011F8 /* AppSplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSplashScreenView.swift; sourceTree = "<group>"; };
 		2DF980892C0F556400A011F8 /* MainAppIntroLandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAppIntroLandingView.swift; sourceTree = "<group>"; };
-		2DF9808B2C1215FC00A011F8 /* AppOpeningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppOpeningView.swift; sourceTree = "<group>"; };
+		2DF9808B2C1215FC00A011F8 /* SubAppOpeningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubAppOpeningView.swift; sourceTree = "<group>"; };
 		2DF9808D2C1218B300A011F8 /* SubAppLandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubAppLandingView.swift; sourceTree = "<group>"; };
 		2DF9808F2C1234F000A011F8 /* MainAppEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAppEntryView.swift; sourceTree = "<group>"; };
-		2DF980932C1397CA00A011F8 /* PortfolioAppEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioAppEntryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,7 +128,6 @@
 		2D1B7D752BFC186C00390E54 /* NotesViews */ = {
 			isa = PBXGroup;
 			children = (
-				2D6D64A42C0787E900D84023 /* NotesAppEntryView.swift */,
 				2D1B7D7C2BFC1EBA00390E54 /* NotesItemDetailView.swift */,
 				2DA212E22BFE4282009E23A3 /* NotesLandingView.swift */,
 				2DA212E42BFE42BE009E23A3 /* NotesItemView.swift */,
@@ -153,7 +150,6 @@
 			children = (
 				2D2DBD292C0918490047CFD2 /* PortfolioListView.swift */,
 				2DCFF3D92C0A5BE200E59D12 /* PortfolioListItemView.swift */,
-				2DF980932C1397CA00A011F8 /* PortfolioAppEntryView.swift */,
 			);
 			path = PortfolioViews;
 			sourceTree = "<group>";
@@ -269,9 +265,10 @@
 			children = (
 				2DF980872C0F522F00A011F8 /* AppSplashScreenView.swift */,
 				2DF980892C0F556400A011F8 /* MainAppIntroLandingView.swift */,
-				2DF9808B2C1215FC00A011F8 /* AppOpeningView.swift */,
+				2DF9808B2C1215FC00A011F8 /* SubAppOpeningView.swift */,
 				2DF9808D2C1218B300A011F8 /* SubAppLandingView.swift */,
 				2DF9808F2C1234F000A011F8 /* MainAppEntryView.swift */,
+				2D2F98F12C1CA82D00E22E63 /* MainAppOpeningView.swift */,
 			);
 			path = AppStartingViews;
 			sourceTree = "<group>";
@@ -363,7 +360,7 @@
 				2D1B7D7D2BFC1EBA00390E54 /* NotesItemDetailView.swift in Sources */,
 				2DF980902C1234F000A011F8 /* MainAppEntryView.swift in Sources */,
 				2D1B7D692BF8E7ED00390E54 /* MainVarietyListView.swift in Sources */,
-				2DF9808C2C1215FC00A011F8 /* AppOpeningView.swift in Sources */,
+				2DF9808C2C1215FC00A011F8 /* SubAppOpeningView.swift in Sources */,
 				2D1B7D7B2BFC1BCE00390E54 /* NotesItem.swift in Sources */,
 				2D5D71E92BF821E1009F83C6 /* SubVarietyDetailView.swift in Sources */,
 				2DA212E52BFE42BE009E23A3 /* NotesItemView.swift in Sources */,
@@ -373,6 +370,7 @@
 				2DF9808A2C0F556400A011F8 /* MainAppIntroLandingView.swift in Sources */,
 				2D1B7D6C2BFBB4B900390E54 /* MainCountingView.swift in Sources */,
 				2D6D648E2C07692800D84023 /* NotesItemImage.swift in Sources */,
+				2D2F98F22C1CA82D00E22E63 /* MainAppOpeningView.swift in Sources */,
 				2D1B7D642BF8E26200390E54 /* MainVarietyItemView.swift in Sources */,
 				2D6D64A72C07882600D84023 /* AuthView.swift in Sources */,
 				2D2DBD232C08D7690047CFD2 /* CountingFunctions.swift in Sources */,
@@ -381,9 +379,7 @@
 				2D2DBD312C0943AF0047CFD2 /* UsersItem.swift in Sources */,
 				2D5D71D62BF70790009F83C6 /* DrippleApp.swift in Sources */,
 				2DF9808E2C1218B300A011F8 /* SubAppLandingView.swift in Sources */,
-				2DF980942C1397CA00A011F8 /* PortfolioAppEntryView.swift in Sources */,
 				2D5D71E72BF709ED009F83C6 /* CoffeeBeansVariety.swift in Sources */,
-				2D6D64A52C0787E900D84023 /* NotesAppEntryView.swift in Sources */,
 				2D6D64922C07741D00D84023 /* NotesViewModel.swift in Sources */,
 				2DA212E32BFE4282009E23A3 /* NotesLandingView.swift in Sources */,
 				2D6D64A12C077AE100D84023 /* Supabase.swift in Sources */,

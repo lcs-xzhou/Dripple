@@ -1,13 +1,13 @@
 //
-//  PortfolioAppEntryView.swift
+//  MainAppOpeningView.swift
 //  Dripple
 //
-//  Created by Fiona ZHOU on 2024-06-07.
-
+//  Created by Fiona ZHOU on 2024-06-14.
+//
 
 import SwiftUI
 
-struct PortfolioAppEntryView: View {
+struct MainAppOpeningView: View {
     
     // MARK: Stored properties
     
@@ -23,7 +23,7 @@ struct PortfolioAppEntryView: View {
             if isAuthenticated {
                 
                 // User is authenticated – show main view of our app
-                PortfolioListView()
+                SubAppOpeningView()
             } else {
                 
                 // User not authenticated
@@ -49,5 +49,5 @@ struct PortfolioAppEntryView: View {
 }
 
 #Preview {
-    PortfolioAppEntryView()
+    MainAppOpeningView()
 }
