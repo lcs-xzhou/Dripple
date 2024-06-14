@@ -1,5 +1,5 @@
 //
-//  MainPortfolioView.swift
+//  PortfolioListView.swift
 //  Dripple
 //
 //  Created by Fiona ZHOU on 2024-05-30.
@@ -22,9 +22,9 @@ struct PortfolioListView: View {
     // The selection made in the PhotosPicker
     @State var selectionResult: PhotosPickerItem?
     // The actual image loaded from the selection that was made
-    @State var newItemImage: UsersItemImage?
+    @State var newItemImage: PortfolioItemImage?
     // Create the source of truth for the view model
-    @State var viewModel = UsersViewModel()
+    @State var viewModel = PortfolioViewModel()
     
     var body: some View {
         NavigationView {
@@ -65,11 +65,11 @@ struct PortfolioListView: View {
                 
                 List {
                     
-                    UsersItemView(subTitle: "Name", inputHint: "Enter", input: $name)
-                    UsersItemView(subTitle: "Age", inputHint: "Enter", input: $age)
-                    UsersItemView(subTitle: "Gender", inputHint: "Enter", input: $gender)
-                    UsersItemView(subTitle: "Location", inputHint: "Enter", input: $location)
-                    UsersItemView(subTitle: "Introduction", inputHint: "Enter", input: $info)
+                    PortfolioItemView(subTitle: "Name", inputHint: "Enter", input: $name)
+                    PortfolioItemView(subTitle: "Age", inputHint: "Enter", input: $age)
+                    PortfolioItemView(subTitle: "Gender", inputHint: "Enter", input: $gender)
+                    PortfolioItemView(subTitle: "Location", inputHint: "Enter", input: $location)
+                    PortfolioItemView(subTitle: "Introduction", inputHint: "Enter", input: $info)
                 }
                 .listStyle(.plain)
                 .padding()
@@ -98,7 +98,7 @@ struct PortfolioListView: View {
             // When the selection result is not nil...
             if let imageSelection = selectionResult {
                 // ... transfer the data from the selection result into
-                // an actual instance of TodoItemImage
+                // an actual instance of PortfolioItemImage
                 loadTransferable(from: imageSelection)
             }
         }
@@ -112,7 +112,7 @@ struct PortfolioListView: View {
         Task {
             do {
                 // Attempt to set the stored property that holds the image data
-                newItemImage = try await imageSelection.loadTransferable(type: UsersItemImage.self)
+                newItemImage = try await imageSelection.loadTransferable(type: PortfolioItemImage.self)
             } catch {
                 debugPrint(error)
             }

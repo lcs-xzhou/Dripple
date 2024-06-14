@@ -1,5 +1,5 @@
 //
-//  UsersItemView.swift
+//  PortfolioItemView.swift
 //  Dripple
 //
 //  Created by Fiona ZHOU on 2024-05-31.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct UsersItemView: View {
+struct PortfolioItemView: View {
     
     let subTitle: String
     let inputHint: String
@@ -31,5 +31,5 @@ struct UsersItemView: View {
 }
 
 #Preview {
-    UsersItemView(subTitle: "Name", inputHint: "name", input: Binding.constant("CL12345"))
+    PortfolioItemView(subTitle: "Name", inputHint: "name", input: Binding.constant("CL12345"))
 }

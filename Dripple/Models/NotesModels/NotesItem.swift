@@ -21,7 +21,7 @@ struct NotesItem: Identifiable, Codable {
         case id
         case title
         case content
-        case notes_image = "notes_image"
+        case notes_image
     }
 }
 

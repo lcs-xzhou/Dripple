@@ -1,5 +1,5 @@
 //
-//  UserImage.swift
+//  PortfolioItemImage.swift
 //  Dripple
 //
 //  Created by Fiona ZHOU on 2024-05-30.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct UsersItemImage: Transferable, Equatable {
+struct PortfolioItemImage: Transferable, Equatable {
     
     // MARK: Stored properties
     let image: Image
@@ -16,13 +16,13 @@ struct UsersItemImage: Transferable, Equatable {
     // MARK: Computed properties
     
     // Required to conform to Transferable protocol
-    // Is invoked when user picks (attempts to import) an image from photo library into this app
+    // Is invoked when portfolio picks (attempts to import) an image from photo library into this app
     static var transferRepresentation: some TransferRepresentation {
         
         return DataRepresentation(importedContentType: .image) { importedImageData in
             
-            // Attempt to create an instance of UserImage from the imported data
-            guard let image = UsersItemImage(rawImageData: importedImageData) else {
+            // Attempt to create an instance of PortfolioItemImage from the imported data
+            guard let image = PortfolioItemImage(rawImageData: importedImageData) else {
                 // If the important did not work, throw an error
                 throw TransferError.importFailed
             }
@@ -34,11 +34,11 @@ struct UsersItemImage: Transferable, Equatable {
 }
 
 // Extend the structure to add new capabilities
-extension UsersItemImage {
+extension PortfolioItemImage {
     
     // MARK: Initializer(s)
     
-    // An initializer to create an instance of UserImage from the image data
+    // An initializer to create an instance of PortfolioItemImage from the image data
     // returned by the PhotosPicker
     init?(rawImageData: Data) {
         

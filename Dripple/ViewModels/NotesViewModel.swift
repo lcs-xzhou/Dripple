@@ -65,8 +65,6 @@ class NotesViewModel {
                 notes_image: imageURL
             )
             
-            //            let newNote = NotesItem(title: title, content: content, notes_image: imageURL, portfolioId: users.id)
-            
             // Write it to the database
             do {
                 // Insert the new note item, and then immediately select
