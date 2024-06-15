@@ -102,6 +102,24 @@ struct PortfolioListView: View {
                 loadTransferable(from: imageSelection)
             }
         }
+        
+        .task {
+            do {
+                try await viewModel.getPortfolio()
+                if let firstPortfolio = viewModel.portfolio.first {
+                    name = firstPortfolio.name
+                    age = firstPortfolio.age
+                    gender = firstPortfolio.gender
+                    location = firstPortfolio.location
+                    info = firstPortfolio.info
+                    if let imageURL = firstPortfolio.portfolio_image {
+                        newItemImage = try await viewModel.downloadPortfolioItemImage(fromPath: imageURL)
+                    }
+                }
+            } catch {
+                debugPrint(error)
+            }
+        }
     }
     
     // MARK: Functions
